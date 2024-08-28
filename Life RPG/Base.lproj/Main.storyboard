@@ -113,9 +113,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AjU-C3-A6U">
+                                <rect key="frame" x="40" y="728" width="313" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hDN-gM-7EX"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NaL-eu-T7u"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NaL-eu-T7u" firstAttribute="bottom" secondItem="AjU-C3-A6U" secondAttribute="bottom" constant="40" id="6eJ-e6-YSP"/>
+                            <constraint firstItem="AjU-C3-A6U" firstAttribute="leading" secondItem="NaL-eu-T7u" secondAttribute="leading" constant="40" id="K41-a9-F2S"/>
+                            <constraint firstItem="NaL-eu-T7u" firstAttribute="trailing" secondItem="AjU-C3-A6U" secondAttribute="trailing" constant="40" id="UeJ-6P-C6Z"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3p-ct-NQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

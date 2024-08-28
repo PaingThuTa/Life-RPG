@@ -12,6 +12,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
+        // I had made some changes (Sorracha)
+        print("I made changes")
+        
     }
 
 
