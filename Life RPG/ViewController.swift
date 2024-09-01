@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Life RPG
 //
-//  Created by Paing Thu Ta on 27/8/2567 BE.
+//  Created by Paing Thu Ta & Sorracha on 27/8/2567 BE.
 //
 
 import UIKit
