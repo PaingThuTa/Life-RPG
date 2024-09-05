@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E8BABB972C8480EA006C9569 /* AddTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BABB962C8480EA006C9569 /* AddTopicViewController.swift */; };
-		E8BABB992C848204006C9569 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BABB982C848204006C9569 /* MainViewController.swift */; };
+		E8BABB972C8480EA006C9569 /* AddQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */; };
+		E8BABB992C848204006C9569 /* QuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BABB982C848204006C9569 /* QuestViewController.swift */; };
 		E8DA27062C7DAD4200949A4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DA27052C7DAD4200949A4C /* AppDelegate.swift */; };
 		E8DA27082C7DAD4200949A4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DA27072C7DAD4200949A4C /* SceneDelegate.swift */; };
-		E8DA270A2C7DAD4200949A4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DA27092C7DAD4200949A4C /* ViewController.swift */; };
 		E8DA270D2C7DAD4200949A4C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E8DA270C2C7DAD4200949A4C /* Base */; };
 		E8DA270F2C7DAD4300949A4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8DA270E2C7DAD4300949A4C /* Assets.xcassets */; };
 		E8DA27122C7DAD4300949A4C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E8DA27112C7DAD4300949A4C /* Base */; };
 		E8DA271D2C7DAD4300949A4C /* Life_RPGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DA271C2C7DAD4300949A4C /* Life_RPGTests.swift */; };
 		E8DA27272C7DAD4300949A4C /* Life_RPGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DA27262C7DAD4300949A4C /* Life_RPGUITests.swift */; };
 		E8DA27292C7DAD4300949A4C /* Life_RPGUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DA27282C7DAD4300949A4C /* Life_RPGUITestsLaunchTests.swift */; };
+		E8F7AFA02C89AAE0008AD97C /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F7AF9F2C89AAE0008AD97C /* Quest.swift */; };
+		E8F7AFA22C89AAFE008AD97C /* QuestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F7AFA12C89AAFE008AD97C /* QuestCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,12 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E8BABB962C8480EA006C9569 /* AddTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTopicViewController.swift; sourceTree = "<group>"; };
-		E8BABB982C848204006C9569 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestViewController.swift; sourceTree = "<group>"; };
+		E8BABB982C848204006C9569 /* QuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestViewController.swift; sourceTree = "<group>"; };
 		E8DA27022C7DAD4200949A4C /* Life RPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Life RPG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8DA27052C7DAD4200949A4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8DA27072C7DAD4200949A4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E8DA27092C7DAD4200949A4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E8DA270C2C7DAD4200949A4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8DA270E2C7DAD4300949A4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8DA27112C7DAD4300949A4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +53,8 @@
 		E8DA27222C7DAD4300949A4C /* Life RPGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Life RPGUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8DA27262C7DAD4300949A4C /* Life_RPGUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_RPGUITests.swift; sourceTree = "<group>"; };
 		E8DA27282C7DAD4300949A4C /* Life_RPGUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_RPGUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E8F7AF9F2C89AAE0008AD97C /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
+		E8F7AFA12C89AAFE008AD97C /* QuestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +105,12 @@
 		E8DA27042C7DAD4200949A4C /* Life RPG */ = {
 			isa = PBXGroup;
 			children = (
-				E8BABB962C8480EA006C9569 /* AddTopicViewController.swift */,
-				E8BABB982C848204006C9569 /* MainViewController.swift */,
+				E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */,
+				E8F7AF9F2C89AAE0008AD97C /* Quest.swift */,
+				E8F7AFA12C89AAFE008AD97C /* QuestCell.swift */,
+				E8BABB982C848204006C9569 /* QuestViewController.swift */,
 				E8DA27052C7DAD4200949A4C /* AppDelegate.swift */,
 				E8DA27072C7DAD4200949A4C /* SceneDelegate.swift */,
-				E8DA27092C7DAD4200949A4C /* ViewController.swift */,
 				E8DA270B2C7DAD4200949A4C /* Main.storyboard */,
 				E8DA270E2C7DAD4300949A4C /* Assets.xcassets */,
 				E8DA27102C7DAD4300949A4C /* LaunchScreen.storyboard */,
@@ -264,11 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8DA270A2C7DAD4200949A4C /* ViewController.swift in Sources */,
+				E8F7AFA22C89AAFE008AD97C /* QuestCell.swift in Sources */,
+				E8F7AFA02C89AAE0008AD97C /* Quest.swift in Sources */,
 				E8DA27062C7DAD4200949A4C /* AppDelegate.swift in Sources */,
-				E8BABB972C8480EA006C9569 /* AddTopicViewController.swift in Sources */,
+				E8BABB972C8480EA006C9569 /* AddQuestViewController.swift in Sources */,
 				E8DA27082C7DAD4200949A4C /* SceneDelegate.swift in Sources */,
-				E8BABB992C848204006C9569 /* MainViewController.swift in Sources */,
+				E8BABB992C848204006C9569 /* QuestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
