@@ -55,8 +55,7 @@ class AddQuestViewController: UIViewController {
         let quest = Quest(
             title: title,
             details: details,
-            difficulty: difficultyLevels[selectedDifficultyIndex],
-            expValue: expValues[selectedDifficultyIndex],
+            expValue: expValues[selectedDifficultyIndex], difficulty: difficultyLevels[selectedDifficultyIndex],
             completionDate: selectedDate,
             dueDate: selectedDate // You can customize this if the due date should be different
         )

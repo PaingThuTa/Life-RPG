@@ -7,14 +7,15 @@
 
 import Foundation
 
-struct Quest {
-    let title: String
-    let details: String
-    let difficulty: String
-    let expValue: Int
+struct Quest: Codable {
+    var title: String
+    var details: String
+    var expValue: Int
+    var difficulty: String
     let completionDate: Date
-    let dueDate: Date
+    var dueDate: Date
 }
+
 
 
 //Type something.

@@ -7,12 +7,9 @@
 
 import UIKit
 
-// MARK: - QuestViewController
 class QuestViewController: UIViewController {
     
     @IBOutlet weak var questsTableView: UITableView!
-    
-    // Array to store quests
     var quests: [Quest] = []
     
     override func viewDidLoad() {
@@ -22,8 +19,8 @@ class QuestViewController: UIViewController {
         questsTableView.delegate = self
         questsTableView.dataSource = self
         
-        // Register the custom cell if using one
-        // questsTableView.register(UINib(nibName: "QuestCell", bundle: nil), forCellReuseIdentifier: "QuestCell")
+        // Load saved quests from UserDefaults
+        loadQuests()
     }
     
     // Function to navigate to AddQuestViewController
@@ -35,9 +32,29 @@ class QuestViewController: UIViewController {
                 self?.quests.append(newQuest) // Add the new quest to the array
                 
                 self?.questsTableView.reloadData() // Reload the table to reflect the new data
+                self?.saveQuests() // Save the updated quests to UserDefaults
             }
             
             navigationController?.pushViewController(addQuestVC, animated: true)
+        }
+    }
+    
+    // Save quests to UserDefaults
+    func saveQuests() {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(quests) {
+            UserDefaults.standard.set(encoded, forKey: "savedQuests")
+        }
+    }
+    
+    // Load quests from UserDefaults
+    func loadQuests() {
+        if let savedQuestsData = UserDefaults.standard.object(forKey: "savedQuests") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedQuests = try? decoder.decode([Quest].self, from: savedQuestsData) {
+                quests = loadedQuests
+                questsTableView.reloadData()
+            }
         }
     }
 }
