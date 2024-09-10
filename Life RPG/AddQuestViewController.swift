@@ -15,6 +15,7 @@ class AddQuestViewController: UIViewController {
     @IBOutlet weak var difficultyPickerView: UIPickerView! // UIPickerView for selecting difficulty
     @IBOutlet weak var expValueLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var repeatPopupView: UIButton! // "Beau Added"
     
     // Difficulty levels and corresponding EXP values
     let difficultyLevels = ["Easy", "Normal", "Hard", "Extreme", "Absurd"]
