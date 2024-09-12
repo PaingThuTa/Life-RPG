@@ -24,15 +24,7 @@ class QuestCell: UITableViewCell {
         // Set difficulty label with color
         difficultyLabel.text = quest.difficulty
         setDifficultyColor(for: quest.difficulty)
-        
-        // Set EXP value
-        //expValueLabel.text = "EXP: \(quest.expValue)"
-        
-//        // Set completion date
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.calendar = Calendar(identifier: .gregorian)
-//        dateFormatter.dateFormat = "d MMM yyyy"
-//        completionDateLabel.text = "\(dateFormatter.string(from: quest.completionDate))"
+
         
         // Set due date and days left
         let daysLeft = calculateDaysLeft(until: quest.completionDate) // Assuming due date is same as completion date

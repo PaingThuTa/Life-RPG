@@ -10,7 +10,10 @@ import UIKit
 class QuestViewController: UIViewController {
     
     @IBOutlet weak var questsTableView: UITableView!
-    var quests: [Quest] = []
+    var quests: [Quest] = [] // Array to store all the quests
+
+    // UserDefaults key for storing quests
+    let questsKey = "savedQuests"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,37 +32,44 @@ class QuestViewController: UIViewController {
             
             // Set the completion handler for passing data back
             addQuestVC.addQuestCompletion = { [weak self] newQuest in
-                self?.quests.append(newQuest) // Add the new quest to the array
-                
-                self?.questsTableView.reloadData() // Reload the table to reflect the new data
-                self?.saveQuests() // Save the updated quests to UserDefaults
+                self?.quests.append(newQuest)
+                self?.saveQuests() // Save quests after adding a new one
+                self?.questsTableView.reloadData()
             }
             
             navigationController?.pushViewController(addQuestVC, animated: true)
         }
     }
     
-    // Save quests to UserDefaults
-    func saveQuests() {
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(quests) {
-            UserDefaults.standard.set(encoded, forKey: "savedQuests")
+    // Load saved quests from UserDefaults
+    func loadQuests() {
+        let defaults = UserDefaults.standard
+        
+        // Check if there's data for the questsKey
+        if let savedData = defaults.data(forKey: questsKey) {
+            let decoder = JSONDecoder()
+            do {
+                quests = try decoder.decode([Quest].self, from: savedData) // Decode the saved data
+                questsTableView.reloadData() // Reload the table view with the loaded quests
+            } catch {
+                print("Failed to load quests: \(error.localizedDescription)")
+            }
         }
     }
     
-    // Load quests from UserDefaults
-    func loadQuests() {
-        if let savedQuestsData = UserDefaults.standard.object(forKey: "savedQuests") as? Data {
-            let decoder = JSONDecoder()
-            if let loadedQuests = try? decoder.decode([Quest].self, from: savedQuestsData) {
-                quests = loadedQuests
-                questsTableView.reloadData()
-            }
+    // Save quests to UserDefaults
+    func saveQuests() {
+        let defaults = UserDefaults.standard
+        let encoder = JSONEncoder()
+        do {
+            let encodedData = try encoder.encode(quests) // Encode the quests array into data
+            defaults.set(encodedData, forKey: questsKey) // Save the encoded data to UserDefaults
+        } catch {
+            print("Failed to save quests: \(error.localizedDescription)")
         }
     }
 }
 
-// MARK: - UITableViewDelegate, UITableViewDataSource
 extension QuestViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,17 +77,28 @@ extension QuestViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestCell", for: indexPath) as? QuestCell else {
-            return UITableViewCell()
-        }
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "QuestCell", for: indexPath) as! QuestCell
         let quest = quests[indexPath.row]
-        cell.configure(with: quest) // Configure the cell with quest data
-        
+        cell.configure(with: quest)
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100 // Adjust the height as needed
+    // Handle the quest selection and segue to QuestInfoViewController
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedQuest = quests[indexPath.row]
+        
+        // Perform the segue to QuestInfoViewController
+        if let questInfoVC = storyboard?.instantiateViewController(withIdentifier: "QuestInfoViewController") as? QuestInfoViewController {
+            questInfoVC.quest = selectedQuest // Pass the selected quest to the next view controller
+            
+            // Set the completion handler to update the quest in the quests array
+            questInfoVC.updateQuestCompletion = { [weak self] updatedQuest in
+                self?.quests[indexPath.row] = updatedQuest // Update the quest in the array
+                self?.saveQuests() // Save the updated quests to UserDefaults
+                self?.questsTableView.reloadData() // Reload the table view to show the updated quest
+            }
+            
+            navigationController?.pushViewController(questInfoVC, animated: true)
+        }
     }
 }

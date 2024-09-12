@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rjc-BS-88Y">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -439,7 +439,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2BV-EQ-4jb">
-                                                    <rect key="frame" x="228" y="10" width="125" height="20.333333333333336"/>
+                                                    <rect key="frame" x="228" y="10" width="125" height="20.333333333333332"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beginner" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mh2-nd-U43">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="20.333333333333332"/>
@@ -693,7 +693,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="VW6-du-EhC">
                                         <rect key="frame" x="0.0" y="372.66666666666674" width="313" height="22"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="EPP-83-p7O">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="EPP-83-p7O">
                                                 <rect key="frame" x="0.0" y="0.0" width="147.33333333333334" height="22"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.dashed" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="07b-F8-rFD">
@@ -704,7 +704,7 @@
                                                             <constraint firstAttribute="height" constant="22" id="ZZk-Up-gqq"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTO-EA-MiM">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTO-EA-MiM">
                                                         <rect key="frame" x="24.999999999999993" y="0.0" width="122.33333333333331" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -712,8 +712,11 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cancelled" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMp-O5-WPC">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancelled" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMp-O5-WPC">
                                                 <rect key="frame" x="237.33333333333329" y="0.0" width="75.666666666666657" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="75.666666666666657" id="Xdc-2Q-s5g"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -777,7 +780,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beau" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gb-T9-UwD">
-                                <rect key="frame" x="153" y="203" width="200" height="19.333333333333343"/>
+                                <rect key="frame" x="153" y="203" width="200" height="19.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="cxz-JC-R4L"/>
                                 </constraints>
@@ -786,7 +789,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="beausorracha@gmail.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwQ-lK-tiz">
-                                <rect key="frame" x="103" y="242.33333333333334" width="250" height="19.333333333333343"/>
+                                <rect key="frame" x="103" y="242.66666666666666" width="250" height="18.999999999999972"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="bJn-vh-6uJ"/>
                                 </constraints>
@@ -972,17 +975,17 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bTh-3y-yXM">
                                                 <rect key="frame" x="0.0" y="0.0" width="134" height="21.666666666666668"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="square.stack.3d.up.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QHZ-bi-rst">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="square.stack.3d.up.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QHZ-bi-rst">
                                                         <rect key="frame" x="0.0" y="-1.6666666666666679" width="21.666666666666668" height="23.666666666666671"/>
                                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total EXP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFs-Sl-fJT">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total EXP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFs-Sl-fJT">
                                                         <rect key="frame" x="29.666666666666664" y="0.0" width="76.666666666666686" height="21.666666666666668"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Yhl-zn-E0i">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Yhl-zn-E0i">
                                                         <rect key="frame" x="114.33333333333334" y="0.99999999999999822" width="19.666666666666657" height="20.333333333333336"/>
                                                         <color key="tintColor" red="0.9529411793" green="0.68235301969999995" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </imageView>
@@ -1057,10 +1060,10 @@
             </objects>
             <point key="canvasLocation" x="3904.5801526717555" y="-270.42253521126764"/>
         </scene>
-        <!--View Controller-->
+        <!--Quest Info View Controller-->
         <scene sceneID="QDt-Zs-aub">
             <objects>
-                <viewController id="IC1-DX-bBe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestInfoViewController" id="IC1-DX-bBe" customClass="QuestInfoViewController" customModule="Life_RPG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="krW-Ll-rif">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1087,6 +1090,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="addNewQuestButtonTapped:" destination="yo9-uQ-JQq" eventType="touchUpInside" id="ECU-mh-cbO"/>
+                                            <action selector="editQuestTapped:" destination="IC1-DX-bBe" eventType="touchUpInside" id="U4d-eA-bBx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1318,15 +1322,22 @@
                             <constraint firstItem="gJs-UM-dYK" firstAttribute="trailing" secondItem="TiM-EP-5nk" secondAttribute="trailing" constant="40" id="xB5-oh-I4w"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detailsLabel" destination="mPh-MT-tjt" id="pKJ-sZ-ofs"/>
+                        <outlet property="difficultyLabel" destination="7Js-2U-nCe" id="3Dd-Zu-ETm"/>
+                        <outlet property="dueDateLabel" destination="GAc-iI-6gF" id="76U-fV-B4b"/>
+                        <outlet property="expValueLabel" destination="jAn-aj-5Tx" id="ILq-ih-7yC"/>
+                        <outlet property="titleLabel" destination="FiV-vK-MP5" id="a2J-P0-Fp3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3QU-Ol-c3L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5754.9618320610689" y="-918.30985915492965"/>
         </scene>
-        <!--View Controller-->
+        <!--Quest Edit View Controller-->
         <scene sceneID="hgo-eU-B0l">
             <objects>
-                <viewController id="kvV-4q-GXA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestEditViewController" id="kvV-4q-GXA" customClass="QuestEditViewController" customModule="Life_RPG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0kX-7V-YqG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1515,7 +1526,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Done"/>
                                 <connections>
-                                    <action selector="doneButtonTapped:" destination="y5O-kq-MY2" eventType="touchUpInside" id="lfT-Ke-E0E"/>
+                                    <action selector="doneButtonTapped:" destination="kvV-4q-GXA" eventType="touchUpInside" id="mNS-W7-3YR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1534,6 +1545,13 @@
                             <constraint firstItem="i5f-d2-WY1" firstAttribute="trailing" secondItem="XpV-hK-mOd" secondAttribute="trailing" constant="40" id="z0c-i3-Chd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="0dU-ve-pgC" id="h8Y-iF-rpm"/>
+                        <outlet property="detailsTextField" destination="X4D-SD-Wyr" id="yKe-xM-mST"/>
+                        <outlet property="difficultyPickerView" destination="ob3-xW-Xlo" id="dzu-fw-Jxa"/>
+                        <outlet property="expValueLabel" destination="RAv-Fk-WSL" id="n3M-d0-eSE"/>
+                        <outlet property="titleTextField" destination="TFt-SB-PsL" id="H4U-k9-h43"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmM-Ut-V3U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1933,7 +1951,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Done"/>
                                 <connections>
-                                    <action selector="doneButtonTapped:" destination="y5O-kq-MY2" eventType="touchUpInside" id="nj2-q0-dhF"/>
+                                    <action selector="doneButtonTapped:" destination="y5O-kq-MY2" eventType="touchUpInside" id="Qab-eO-y16"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1957,6 +1975,7 @@
                         <outlet property="detailsTextField" destination="QLl-p5-b16" id="hVD-jM-dW1"/>
                         <outlet property="difficultyPickerView" destination="hT5-2O-Izj" id="hDt-ig-p4K"/>
                         <outlet property="expValueLabel" destination="EWc-Ob-k06" id="MSC-Q7-rcR"/>
+                        <outlet property="repeatPopupView" destination="Izp-B0-UJs" id="hqt-ut-5QM"/>
                         <outlet property="titleTextField" destination="Juy-z3-YlK" id="5z4-GL-pnO"/>
                     </connections>
                 </viewController>
@@ -2091,16 +2110,16 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="underPageBackgroundColor">
             <color red="0.70980392156862748" green="0.71764705882352942" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

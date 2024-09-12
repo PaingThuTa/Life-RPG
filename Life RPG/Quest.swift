@@ -7,6 +7,9 @@
 
 import Foundation
 
+
+
+// Updated Quest struct
 struct Quest: Codable {
     var title: String
     var details: String
@@ -16,6 +19,3 @@ struct Quest: Codable {
     var dueDate: Date
 }
 
-
-
-//Type something.
