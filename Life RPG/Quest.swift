@@ -13,6 +13,7 @@ import Foundation
 struct Quest: Codable {
     var title: String
     var details: String
+    var repeats: String
     var expValue: Int
     var difficulty: String
     let completionDate: Date

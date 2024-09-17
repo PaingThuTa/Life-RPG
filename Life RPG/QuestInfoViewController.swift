@@ -57,6 +57,7 @@ class QuestInfoViewController: UIViewController {
             // Update the UI with the new quest data
             titleLabel.text = quest.title
             detailsLabel.text = quest.details
+            repeatLabel.text = quest.repeats
 
             // Format the date to display it properly
             let dateFormatter = DateFormatter()

@@ -15,7 +15,7 @@ class AddQuestViewController: UIViewController {
     @IBOutlet weak var difficultyPickerView: UIPickerView! // UIPickerView for selecting difficulty
     @IBOutlet weak var expValueLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var repeatPopupView: UIButton! // "Beau Added"
+    @IBOutlet weak var repeatPopupButton: UIButton!
     
     // Difficulty levels and corresponding EXP values
     let difficultyLevels = ["Easy", "Normal", "Hard", "Extreme", "Absurd"]
@@ -26,6 +26,34 @@ class AddQuestViewController: UIViewController {
     
     // Completion handler to pass data back
     var addQuestCompletion: ((Quest) -> Void)?
+    
+    // Popup Button Implementation
+    enum RepeatOption {
+        case none
+        case daily
+        case weekly
+        case monthly
+        case yearly
+        
+        // String representation
+        var description: String {
+            switch self {
+            case .none:
+                return "None"
+            case .daily:
+                return "Every Day"
+            case .weekly:
+                return "Every Week"
+            case .monthly:
+                return "Every Month"
+            case .yearly:
+                return "Every Year"
+            }
+        }
+    }
+    
+    // Keep the Repeat Option Value
+    var selectedRepeatOption: RepeatOption = .none
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +67,42 @@ class AddQuestViewController: UIViewController {
         expValueLabel.text = "\(expValues[selectedDifficultyIndex])"
         
         datePicker.calendar = Calendar(identifier: .gregorian)
+        
+        setRepeatPopupButton()
+    }
+    
+    // Repeat Pop-up Button
+    func setRepeatPopupButton(){
+        let optionClosure = {(action: UIAction) in
+            print(action.title)
+            switch action.title {
+            case "None":
+                self.selectedRepeatOption = .none
+            case "Every Day":
+                self.selectedRepeatOption = .daily
+            case "Every Week":
+                self.selectedRepeatOption = .weekly
+            case "Every Month":
+                self.selectedRepeatOption = .monthly
+            case "Every Year":
+                self.selectedRepeatOption = .yearly
+            default:
+                break
+            }
+            
+            // update the button title to reflect the selection
+            self.repeatPopupButton.setTitle(action.title, for: .normal)
+        }
+        
+        repeatPopupButton.menu = UIMenu(children : [
+            UIAction(title: "None", state: selectedRepeatOption == .none ? .on : .off, handler: optionClosure),
+            UIAction(title: "Every Day", state: selectedRepeatOption == .daily ? .on : .off, handler: optionClosure),
+            UIAction(title: "Every Week", state: selectedRepeatOption == .weekly ? .on : .off, handler: optionClosure),
+            UIAction(title: "Every Month", state: selectedRepeatOption == .monthly ? .on : .off, handler: optionClosure),
+            UIAction(title: "Every Year", state: selectedRepeatOption == .yearly ? .on : .off, handler: optionClosure)])
+        
+        repeatPopupButton.showsMenuAsPrimaryAction = true
+        repeatPopupButton.changesSelectionAsPrimaryAction = true
     }
     
     // Action for Done button
@@ -56,6 +120,7 @@ class AddQuestViewController: UIViewController {
         let quest = Quest(
             title: title,
             details: details,
+            repeats: selectedRepeatOption.description,
             expValue: expValues[selectedDifficultyIndex], difficulty: difficultyLevels[selectedDifficultyIndex],
             completionDate: selectedDate,
             dueDate: selectedDate // You can customize this if the due date should be different

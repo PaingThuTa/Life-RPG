@@ -109,14 +109,14 @@
 		E8DA27042C7DAD4200949A4C /* Life RPG */ = {
 			isa = PBXGroup;
 			children = (
-				E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */,
-				E8F7AF9F2C89AAE0008AD97C /* Quest.swift */,
-				E8F7AFA12C89AAFE008AD97C /* QuestCell.swift */,
-				E8BABB982C848204006C9569 /* QuestViewController.swift */,
-				E8B150942C9314C200571B93 /* QuestInfoViewController.swift */,
 				E8DA27052C7DAD4200949A4C /* AppDelegate.swift */,
 				E8DA27072C7DAD4200949A4C /* SceneDelegate.swift */,
 				E8DA270B2C7DAD4200949A4C /* Main.storyboard */,
+				E8F7AF9F2C89AAE0008AD97C /* Quest.swift */,
+				E8F7AFA12C89AAFE008AD97C /* QuestCell.swift */,
+				E8BABB982C848204006C9569 /* QuestViewController.swift */,
+				E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */,
+				E8B150942C9314C200571B93 /* QuestInfoViewController.swift */,
 				E8B150962C9318D300571B93 /* QuestEditViewController.swift */,
 				E8DA270E2C7DAD4300949A4C /* Assets.xcassets */,
 				E8DA27102C7DAD4300949A4C /* LaunchScreen.storyboard */,
