@@ -24,6 +24,19 @@ class AllRankViewController: UIViewController {
         fetchData()
     }
     
+    private func assignRanks() {
+        // Rank list
+        let ranksList: [String] = ["SSS+", "SSS", "SS", "A", "B", "C", "D", "E"]
+        
+        for (index, rank) in ranks.enumerated() {
+            if index < ranksList.count {
+                ranks[index].alphabetRank = ranksList[index]
+            } else {
+                ranks[index].alphabetRank = "E"
+            }
+        }
+    }
+    
 //    private func inspectJSONResponse() {
 //        AF.request("https://hp-api.herokuapp.com/api/characters/staff").responseJSON { response in
 //            switch response.result {
@@ -41,6 +54,7 @@ class AllRankViewController: UIViewController {
             switch response.result {
             case .success(let values):
                 self.ranks = values.filter { $0.image != nil && !$0.image!.isEmpty }
+                self.assignRanks()
                 self.collectionView.reloadData()
             case .failure(let error):
                 print("Error: \(error)")

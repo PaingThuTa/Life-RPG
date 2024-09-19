@@ -29,6 +29,9 @@ struct Rank: Decodable {
     let isAlive: Bool?
     let image: String?
     
+    // Alphabet Rankings
+    var alphabetRank: String?
+    
     struct Wand: Decodable {
         let wood: String?
         let core: String?

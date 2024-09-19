@@ -12,6 +12,7 @@
 		8B05127F2C9B44B900D4BF3B /* AllRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B05127E2C9B44B900D4BF3B /* AllRankViewController.swift */; };
 		8B0512812C9B503100D4BF3B /* RankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0512802C9B503100D4BF3B /* RankCell.swift */; };
 		8B0512852C9B56FA00D4BF3B /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0512842C9B56FA00D4BF3B /* Rank.swift */; };
+		8B0512872C9C2B2900D4BF3B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0512862C9C2B2800D4BF3B /* SettingsViewController.swift */; };
 		E8B150952C9314C200571B93 /* QuestInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B150942C9314C200571B93 /* QuestInfoViewController.swift */; };
 		E8B150972C9318D300571B93 /* QuestEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B150962C9318D300571B93 /* QuestEditViewController.swift */; };
 		E8BABB972C8480EA006C9569 /* AddQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */; };
@@ -50,6 +51,7 @@
 		8B05127E2C9B44B900D4BF3B /* AllRankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRankViewController.swift; sourceTree = "<group>"; };
 		8B0512802C9B503100D4BF3B /* RankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankCell.swift; sourceTree = "<group>"; };
 		8B0512842C9B56FA00D4BF3B /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
+		8B0512862C9C2B2800D4BF3B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E8B150942C9314C200571B93 /* QuestInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestInfoViewController.swift; sourceTree = "<group>"; };
 		E8B150962C9318D300571B93 /* QuestEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestEditViewController.swift; sourceTree = "<group>"; };
 		E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				8B0512802C9B503100D4BF3B /* RankCell.swift */,
 				8B05127C2C9B3D4200D4BF3B /* RankViewController.swift */,
 				8B05127E2C9B44B900D4BF3B /* AllRankViewController.swift */,
+				8B0512862C9C2B2800D4BF3B /* SettingsViewController.swift */,
 				E8DA270E2C7DAD4300949A4C /* Assets.xcassets */,
 				E8DA27102C7DAD4300949A4C /* LaunchScreen.storyboard */,
 				E8DA27132C7DAD4300949A4C /* Info.plist */,
@@ -303,6 +306,7 @@
 				8B0512812C9B503100D4BF3B /* RankCell.swift in Sources */,
 				E8DA27082C7DAD4200949A4C /* SceneDelegate.swift in Sources */,
 				8B0512852C9B56FA00D4BF3B /* Rank.swift in Sources */,
+				8B0512872C9C2B2900D4BF3B /* SettingsViewController.swift in Sources */,
 				E8BABB992C848204006C9569 /* QuestViewController.swift in Sources */,
 				E8B150972C9318D300571B93 /* QuestEditViewController.swift in Sources */,
 			);

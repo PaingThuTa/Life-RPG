@@ -13,6 +13,7 @@ class RankCell: UICollectionViewCell {
     @IBOutlet weak var rankLabel: UILabel!
     
     func configure(with rank: Rank) {
+        
         rankCharacterLabel.text = rank.name
         
         if let imageUrlString = rank.image, let imageUrl = URL(string: imageUrlString) {
@@ -22,6 +23,11 @@ class RankCell: UICollectionViewCell {
         } else {
             rankImage.image = nil
         }
+        
+        if let alphabetRankLabel = self.rankLabel {
+            alphabetRankLabel.text = "Rank: \(String(describing: rank.alphabetRank!))"
+        }
+            
     }
     private func loadImage(from url: URL) {
         DispatchQueue.global().async { [weak self] in
