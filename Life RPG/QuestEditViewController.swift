@@ -147,7 +147,7 @@ class QuestEditViewController: UIViewController {
             repeats: selectedRepeatOption.description,
             expValue: expValues[selectedDifficultyIndex], // Use the selected EXP value based on difficulty
             difficulty: difficultyLevels[selectedDifficultyIndex], // Use the selected difficulty level
-            completionDate: quest?.completionDate ?? Date(), // Keep the same completion date
+            //completionDate: quest?.completionDate ?? Date(), // Keep the same completion date
             dueDate: datePicker.date // Updated due date
         )
 

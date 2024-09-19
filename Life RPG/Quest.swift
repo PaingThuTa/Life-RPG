@@ -16,7 +16,6 @@ struct Quest: Codable {
     var repeats: String
     var expValue: Int
     var difficulty: String
-    let completionDate: Date
     var dueDate: Date
 }
 

@@ -122,7 +122,6 @@ class AddQuestViewController: UIViewController {
             details: details,
             repeats: selectedRepeatOption.description,
             expValue: expValues[selectedDifficultyIndex], difficulty: difficultyLevels[selectedDifficultyIndex],
-            completionDate: selectedDate,
             dueDate: selectedDate // You can customize this if the due date should be different
         )
         

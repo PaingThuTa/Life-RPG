@@ -27,7 +27,7 @@ class QuestCell: UITableViewCell {
 
         
         // Set due date and days left
-        let daysLeft = calculateDaysLeft(until: quest.completionDate) // Assuming due date is same as completion date
+        let daysLeft = calculateDaysLeft(until: quest.dueDate)
         dueDateLabel.text = "\(daysLeft) days left"
     }
     

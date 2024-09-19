@@ -25,11 +25,9 @@ class QuestInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Ensure quest is not nil before displaying its data
-        if let quest = quest {
-            updateUI() // Call to update the UI with the quest details
-        }
+        
+        updateUI() // Call to update the UI with the quest details
+        
     }
 
     // Action to edit the quest
