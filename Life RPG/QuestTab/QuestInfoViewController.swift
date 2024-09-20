@@ -67,4 +67,7 @@ class QuestInfoViewController: UIViewController {
             difficultyLabel.text = quest.difficulty
         }
     }
+    
+
+
 }

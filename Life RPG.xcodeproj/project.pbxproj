@@ -40,6 +40,8 @@
 		E8B150972C9318D300571B93 /* QuestEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B150962C9318D300571B93 /* QuestEditViewController.swift */; };
 		E8BABB972C8480EA006C9569 /* AddQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */; };
 		E8BABB992C848204006C9569 /* QuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BABB982C848204006C9569 /* QuestViewController.swift */; };
+		E8D3210E2C9DC5D400A038F3 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3210D2C9DC5D400A038F3 /* HistoryTableViewCell.swift */; };
+		E8D321102C9DC61200A038F3 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3210F2C9DC61200A038F3 /* HistoryViewController.swift */; };
 		E8DA27062C7DAD4200949A4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DA27052C7DAD4200949A4C /* AppDelegate.swift */; };
 		E8DA27082C7DAD4200949A4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DA27072C7DAD4200949A4C /* SceneDelegate.swift */; };
 		E8DA270D2C7DAD4200949A4C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E8DA270C2C7DAD4200949A4C /* Base */; };
@@ -102,6 +104,8 @@
 		E8B150962C9318D300571B93 /* QuestEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestEditViewController.swift; sourceTree = "<group>"; };
 		E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestViewController.swift; sourceTree = "<group>"; };
 		E8BABB982C848204006C9569 /* QuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestViewController.swift; sourceTree = "<group>"; };
+		E8D3210D2C9DC5D400A038F3 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		E8D3210F2C9DC61200A038F3 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		E8DA27022C7DAD4200949A4C /* Life RPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Life RPG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8DA27052C7DAD4200949A4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8DA27072C7DAD4200949A4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +194,47 @@
 			path = GhoulFight;
 			sourceTree = "<group>";
 		};
+		E8D321062C9DC47100A038F3 /* QuestTab */ = {
+			isa = PBXGroup;
+			children = (
+				E8F7AF9F2C89AAE0008AD97C /* Quest.swift */,
+				E8F7AFA12C89AAFE008AD97C /* QuestCell.swift */,
+				E8BABB982C848204006C9569 /* QuestViewController.swift */,
+				E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */,
+				E8B150942C9314C200571B93 /* QuestInfoViewController.swift */,
+				E8B150962C9318D300571B93 /* QuestEditViewController.swift */,
+			);
+			path = QuestTab;
+			sourceTree = "<group>";
+		};
+		E8D321072C9DC4DF00A038F3 /* RankTab */ = {
+			isa = PBXGroup;
+			children = (
+				8B0512842C9B56FA00D4BF3B /* Rank.swift */,
+				8B0512802C9B503100D4BF3B /* RankCell.swift */,
+				8B05127C2C9B3D4200D4BF3B /* RankViewController.swift */,
+				8B05127E2C9B44B900D4BF3B /* AllRankViewController.swift */,
+			);
+			path = RankTab;
+			sourceTree = "<group>";
+		};
+		E8D321092C9DC52700A038F3 /* SettingTab */ = {
+			isa = PBXGroup;
+			children = (
+				8B0512862C9C2B2800D4BF3B /* SettingsViewController.swift */,
+			);
+			path = SettingTab;
+			sourceTree = "<group>";
+		};
+		E8D3210A2C9DC55600A038F3 /* HistoryTab */ = {
+			isa = PBXGroup;
+			children = (
+				E8D3210D2C9DC5D400A038F3 /* HistoryTableViewCell.swift */,
+				E8D3210F2C9DC61200A038F3 /* HistoryViewController.swift */,
+			);
+			path = HistoryTab;
+			sourceTree = "<group>";
+		};
 		E8DA26F92C7DAD4200949A4C = {
 			isa = PBXGroup;
 			children = (
@@ -217,17 +262,10 @@
 				E8DA27052C7DAD4200949A4C /* AppDelegate.swift */,
 				E8DA27072C7DAD4200949A4C /* SceneDelegate.swift */,
 				E8DA270B2C7DAD4200949A4C /* Main.storyboard */,
-				E8F7AF9F2C89AAE0008AD97C /* Quest.swift */,
-				E8F7AFA12C89AAFE008AD97C /* QuestCell.swift */,
-				E8BABB982C848204006C9569 /* QuestViewController.swift */,
-				E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */,
-				E8B150942C9314C200571B93 /* QuestInfoViewController.swift */,
-				E8B150962C9318D300571B93 /* QuestEditViewController.swift */,
-				8B0512842C9B56FA00D4BF3B /* Rank.swift */,
-				8B0512802C9B503100D4BF3B /* RankCell.swift */,
-				8B05127C2C9B3D4200D4BF3B /* RankViewController.swift */,
-				8B05127E2C9B44B900D4BF3B /* AllRankViewController.swift */,
-				8B0512862C9C2B2800D4BF3B /* SettingsViewController.swift */,
+				E8D321062C9DC47100A038F3 /* QuestTab */,
+				E8D321072C9DC4DF00A038F3 /* RankTab */,
+				E8D3210A2C9DC55600A038F3 /* HistoryTab */,
+				E8D321092C9DC52700A038F3 /* SettingTab */,
 				E8DA270E2C7DAD4300949A4C /* Assets.xcassets */,
 				E8DA27102C7DAD4300949A4C /* LaunchScreen.storyboard */,
 				E8DA27132C7DAD4300949A4C /* Info.plist */,
@@ -415,11 +453,13 @@
 				E8F7AFA22C89AAFE008AD97C /* QuestCell.swift in Sources */,
 				E8F7AFA02C89AAE0008AD97C /* Quest.swift in Sources */,
 				8B05127D2C9B3D4200D4BF3B /* RankViewController.swift in Sources */,
+				E8D321102C9DC61200A038F3 /* HistoryViewController.swift in Sources */,
 				E8B150952C9314C200571B93 /* QuestInfoViewController.swift in Sources */,
 				E8DA27062C7DAD4200949A4C /* AppDelegate.swift in Sources */,
 				E8BABB972C8480EA006C9569 /* AddQuestViewController.swift in Sources */,
 				8B05127F2C9B44B900D4BF3B /* AllRankViewController.swift in Sources */,
 				8B0512812C9B503100D4BF3B /* RankCell.swift in Sources */,
+				E8D3210E2C9DC5D400A038F3 /* HistoryTableViewCell.swift in Sources */,
 				E8DA27082C7DAD4200949A4C /* SceneDelegate.swift in Sources */,
 				8B0512852C9B56FA00D4BF3B /* Rank.swift in Sources */,
 				8B0512872C9C2B2900D4BF3B /* SettingsViewController.swift in Sources */,
