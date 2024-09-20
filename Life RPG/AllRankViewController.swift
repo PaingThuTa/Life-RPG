@@ -28,7 +28,7 @@ class AllRankViewController: UIViewController {
         // Rank list
         let ranksList: [String] = ["SSS+", "SSS", "SS", "A", "B", "C", "D", "E"]
         
-        for (index, rank) in ranks.enumerated() {
+        for (index, _) in ranks.enumerated() {
             if index < ranksList.count {
                 ranks[index].alphabetRank = ranksList[index]
             } else {

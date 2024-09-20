@@ -13,6 +13,20 @@
 		8B0512812C9B503100D4BF3B /* RankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0512802C9B503100D4BF3B /* RankCell.swift */; };
 		8B0512852C9B56FA00D4BF3B /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0512842C9B56FA00D4BF3B /* Rank.swift */; };
 		8B0512872C9C2B2900D4BF3B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0512862C9C2B2800D4BF3B /* SettingsViewController.swift */; };
+		8B0CE15F2C9CA20900E738A3 /* castingSpell-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1502C9CA20900E738A3 /* castingSpell-0.png */; };
+		8B0CE1602C9CA20900E738A3 /* castingSpell-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1512C9CA20900E738A3 /* castingSpell-1.png */; };
+		8B0CE1612C9CA20900E738A3 /* castingSpell-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1522C9CA20900E738A3 /* castingSpell-2.png */; };
+		8B0CE1622C9CA20900E738A3 /* castingSpell-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1532C9CA20900E738A3 /* castingSpell-3.png */; };
+		8B0CE1632C9CA20900E738A3 /* castingSpell-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1542C9CA20900E738A3 /* castingSpell-4.png */; };
+		8B0CE1642C9CA20900E738A3 /* castingSpell-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1552C9CA20900E738A3 /* castingSpell-5.png */; };
+		8B0CE1652C9CA20900E738A3 /* castingSpell-6.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1562C9CA20900E738A3 /* castingSpell-6.png */; };
+		8B0CE1662C9CA20900E738A3 /* castingSpell-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1572C9CA20900E738A3 /* castingSpell-7.png */; };
+		8B0CE1672C9CA20900E738A3 /* castingSpell-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1582C9CA20900E738A3 /* castingSpell-8.png */; };
+		8B0CE1682C9CA20900E738A3 /* castingSpell-9.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1592C9CA20900E738A3 /* castingSpell-9.png */; };
+		8B0CE1692C9CA20900E738A3 /* castingSpell-10.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE15A2C9CA20900E738A3 /* castingSpell-10.png */; };
+		8B0CE16A2C9CA20900E738A3 /* castingSpell-11.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE15B2C9CA20900E738A3 /* castingSpell-11.png */; };
+		8B0CE16B2C9CA20900E738A3 /* castingSpell-12.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE15C2C9CA20900E738A3 /* castingSpell-12.png */; };
+		8B0CE16C2C9CA20900E738A3 /* castingSpell-13.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE15D2C9CA20900E738A3 /* castingSpell-13.png */; };
 		E8B150952C9314C200571B93 /* QuestInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B150942C9314C200571B93 /* QuestInfoViewController.swift */; };
 		E8B150972C9318D300571B93 /* QuestEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B150962C9318D300571B93 /* QuestEditViewController.swift */; };
 		E8BABB972C8480EA006C9569 /* AddQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */; };
@@ -52,6 +66,20 @@
 		8B0512802C9B503100D4BF3B /* RankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankCell.swift; sourceTree = "<group>"; };
 		8B0512842C9B56FA00D4BF3B /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
 		8B0512862C9C2B2800D4BF3B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8B0CE1502C9CA20900E738A3 /* castingSpell-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "castingSpell-0.png"; sourceTree = "<group>"; };
+		8B0CE1512C9CA20900E738A3 /* castingSpell-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "castingSpell-1.png"; sourceTree = "<group>"; };
+		8B0CE1522C9CA20900E738A3 /* castingSpell-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "castingSpell-2.png"; sourceTree = "<group>"; };
+		8B0CE1532C9CA20900E738A3 /* castingSpell-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "castingSpell-3.png"; sourceTree = "<group>"; };
+		8B0CE1542C9CA20900E738A3 /* castingSpell-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "castingSpell-4.png"; sourceTree = "<group>"; };
+		8B0CE1552C9CA20900E738A3 /* castingSpell-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "castingSpell-5.png"; sourceTree = "<group>"; };
+		8B0CE1562C9CA20900E738A3 /* castingSpell-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "castingSpell-6.png"; sourceTree = "<group>"; };
+		8B0CE1572C9CA20900E738A3 /* castingSpell-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "castingSpell-7.png"; sourceTree = "<group>"; };
+		8B0CE1582C9CA20900E738A3 /* castingSpell-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "castingSpell-8.png"; sourceTree = "<group>"; };
+		8B0CE1592C9CA20900E738A3 /* castingSpell-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "castingSpell-9.png"; sourceTree = "<group>"; };
+		8B0CE15A2C9CA20900E738A3 /* castingSpell-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "castingSpell-10.png"; sourceTree = "<group>"; };
+		8B0CE15B2C9CA20900E738A3 /* castingSpell-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "castingSpell-11.png"; sourceTree = "<group>"; };
+		8B0CE15C2C9CA20900E738A3 /* castingSpell-12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "castingSpell-12.png"; sourceTree = "<group>"; };
+		8B0CE15D2C9CA20900E738A3 /* castingSpell-13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "castingSpell-13.png"; sourceTree = "<group>"; };
 		E8B150942C9314C200571B93 /* QuestInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestInfoViewController.swift; sourceTree = "<group>"; };
 		E8B150962C9318D300571B93 /* QuestEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestEditViewController.swift; sourceTree = "<group>"; };
 		E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +126,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B0CE13C2C9C995800E738A3 /* spikes */ = {
+			isa = PBXGroup;
+			children = (
+				8B0CE15E2C9CA20900E738A3 /* HarryCastingSpell */,
+			);
+			path = spikes;
+			sourceTree = "<group>";
+		};
+		8B0CE15E2C9CA20900E738A3 /* HarryCastingSpell */ = {
+			isa = PBXGroup;
+			children = (
+				8B0CE1502C9CA20900E738A3 /* castingSpell-0.png */,
+				8B0CE1512C9CA20900E738A3 /* castingSpell-1.png */,
+				8B0CE1522C9CA20900E738A3 /* castingSpell-2.png */,
+				8B0CE1532C9CA20900E738A3 /* castingSpell-3.png */,
+				8B0CE1542C9CA20900E738A3 /* castingSpell-4.png */,
+				8B0CE1552C9CA20900E738A3 /* castingSpell-5.png */,
+				8B0CE1562C9CA20900E738A3 /* castingSpell-6.png */,
+				8B0CE1572C9CA20900E738A3 /* castingSpell-7.png */,
+				8B0CE1582C9CA20900E738A3 /* castingSpell-8.png */,
+				8B0CE1592C9CA20900E738A3 /* castingSpell-9.png */,
+				8B0CE15A2C9CA20900E738A3 /* castingSpell-10.png */,
+				8B0CE15B2C9CA20900E738A3 /* castingSpell-11.png */,
+				8B0CE15C2C9CA20900E738A3 /* castingSpell-12.png */,
+				8B0CE15D2C9CA20900E738A3 /* castingSpell-13.png */,
+			);
+			path = HarryCastingSpell;
+			sourceTree = "<group>";
+		};
 		E8DA26F92C7DAD4200949A4C = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +178,7 @@
 		E8DA27042C7DAD4200949A4C /* Life RPG */ = {
 			isa = PBXGroup;
 			children = (
+				8B0CE13C2C9C995800E738A3 /* spikes */,
 				E8DA27052C7DAD4200949A4C /* AppDelegate.swift */,
 				E8DA27072C7DAD4200949A4C /* SceneDelegate.swift */,
 				E8DA270B2C7DAD4200949A4C /* Main.storyboard */,
@@ -269,9 +327,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B0CE1682C9CA20900E738A3 /* castingSpell-9.png in Resources */,
+				8B0CE15F2C9CA20900E738A3 /* castingSpell-0.png in Resources */,
+				8B0CE1662C9CA20900E738A3 /* castingSpell-7.png in Resources */,
+				8B0CE1632C9CA20900E738A3 /* castingSpell-4.png in Resources */,
+				8B0CE1672C9CA20900E738A3 /* castingSpell-8.png in Resources */,
 				E8DA270F2C7DAD4300949A4C /* Assets.xcassets in Resources */,
+				8B0CE1692C9CA20900E738A3 /* castingSpell-10.png in Resources */,
+				8B0CE1642C9CA20900E738A3 /* castingSpell-5.png in Resources */,
 				E8DA27122C7DAD4300949A4C /* Base in Resources */,
+				8B0CE1602C9CA20900E738A3 /* castingSpell-1.png in Resources */,
+				8B0CE16A2C9CA20900E738A3 /* castingSpell-11.png in Resources */,
+				8B0CE1652C9CA20900E738A3 /* castingSpell-6.png in Resources */,
 				E8DA270D2C7DAD4200949A4C /* Base in Resources */,
+				8B0CE1612C9CA20900E738A3 /* castingSpell-2.png in Resources */,
+				8B0CE1622C9CA20900E738A3 /* castingSpell-3.png in Resources */,
+				8B0CE16C2C9CA20900E738A3 /* castingSpell-13.png in Resources */,
+				8B0CE16B2C9CA20900E738A3 /* castingSpell-12.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
