@@ -1124,17 +1124,17 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="harryStill" translatesAutoresizingMaskIntoConstraints="NO" id="MZ5-Wh-Gal">
-                                <rect key="frame" x="248" y="636" width="135" height="128"/>
+                                <rect key="frame" x="248" y="621" width="135" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="5Z3-1x-j8I"/>
                                     <constraint firstAttribute="width" constant="135" id="KJl-RE-TQJ"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NqE-Es-ye8">
-                                <rect key="frame" x="10" y="634" width="145" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ghoul-0.png" translatesAutoresizingMaskIntoConstraints="NO" id="NqE-Es-ye8">
+                                <rect key="frame" x="10" y="584" width="180" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="145" id="KTS-uc-0qE"/>
-                                    <constraint firstAttribute="height" constant="128" id="jpv-MJ-Ot3"/>
+                                    <constraint firstAttribute="width" constant="180" id="KTS-uc-0qE"/>
+                                    <constraint firstAttribute="height" constant="180" id="jpv-MJ-Ot3"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -1154,7 +1154,7 @@
                             <constraint firstItem="USo-fF-Gva" firstAttribute="top" secondItem="kF1-Up-Dfl" secondAttribute="bottom" constant="23.670000000000002" id="Mrn-b1-rzl"/>
                             <constraint firstItem="f00-wG-1RY" firstAttribute="top" secondItem="ELj-S3-E2h" secondAttribute="top" constant="-580" id="Oek-SV-huz"/>
                             <constraint firstItem="gzJ-Zz-uu7" firstAttribute="top" secondItem="ELj-S3-E2h" secondAttribute="top" constant="-580" id="SCZ-NB-Ic6"/>
-                            <constraint firstItem="PTw-4l-zUF" firstAttribute="bottom" secondItem="MZ5-Wh-Gal" secondAttribute="bottom" constant="5" id="UUU-BF-i4r"/>
+                            <constraint firstItem="PTw-4l-zUF" firstAttribute="bottom" secondItem="MZ5-Wh-Gal" secondAttribute="bottom" constant="20" id="UUU-BF-i4r"/>
                             <constraint firstAttribute="trailing" secondItem="fLr-bV-OKx" secondAttribute="trailing" constant="-338" id="Vsl-ft-pZc"/>
                             <constraint firstItem="cdm-tv-ao6" firstAttribute="leading" secondItem="PTw-4l-zUF" secondAttribute="leading" constant="40" id="X69-d9-xZK"/>
                             <constraint firstItem="cdm-tv-ao6" firstAttribute="top" secondItem="USo-fF-Gva" secondAttribute="bottom" constant="60" id="XOK-BM-f5K"/>
@@ -1163,7 +1163,7 @@
                             <constraint firstItem="PTw-4l-zUF" firstAttribute="trailing" secondItem="USo-fF-Gva" secondAttribute="trailing" constant="40" id="aTJ-tr-VFW"/>
                             <constraint firstItem="fLr-bV-OKx" firstAttribute="top" secondItem="ELj-S3-E2h" secondAttribute="top" constant="-580" id="bjg-qD-18k"/>
                             <constraint firstItem="NqE-Es-ye8" firstAttribute="leading" secondItem="PTw-4l-zUF" secondAttribute="leading" constant="10" id="c1q-yU-chA"/>
-                            <constraint firstItem="PTw-4l-zUF" firstAttribute="bottom" secondItem="NqE-Es-ye8" secondAttribute="bottom" constant="7" id="g4H-ju-bQI"/>
+                            <constraint firstItem="PTw-4l-zUF" firstAttribute="bottom" secondItem="NqE-Es-ye8" secondAttribute="bottom" constant="5" id="g4H-ju-bQI"/>
                             <constraint firstItem="PTw-4l-zUF" firstAttribute="trailing" secondItem="MZ5-Wh-Gal" secondAttribute="trailing" constant="10" id="hdT-qE-QUy"/>
                             <constraint firstItem="USo-fF-Gva" firstAttribute="leading" secondItem="PTw-4l-zUF" secondAttribute="leading" constant="40" id="yPm-qP-jtF"/>
                             <constraint firstItem="PTw-4l-zUF" firstAttribute="trailing" secondItem="cdm-tv-ao6" secondAttribute="trailing" constant="40" id="z1Q-Ns-at6"/>
@@ -2346,6 +2346,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Ghoul-0.png" width="537" height="447"/>
         <image name="arrow.up.forward.app" catalog="system" width="128" height="114"/>
         <image name="blob" width="677" height="745"/>
         <image name="blob2" width="756" height="755"/>
