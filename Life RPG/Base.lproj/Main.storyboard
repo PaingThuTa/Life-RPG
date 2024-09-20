@@ -1204,56 +1204,83 @@
                                 <rect key="frame" x="0.0" y="88.666666666666686" width="393" height="753.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gss-xv-qdg">
-                                    <size key="itemSize" width="189" height="338"/>
+                                    <size key="itemSize" width="189" height="384"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RankCell" id="wVB-42-6MI" customClass="RankCell" customModule="Life_RPG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="189" height="338"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="189" height="384"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ltj-4q-wAl">
-                                            <rect key="frame" x="0.0" y="0.0" width="189" height="338"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="189" height="384"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gOG-7h-r4I">
-                                                    <rect key="frame" x="15" y="10" width="159" height="283.33333333333331"/>
+                                                    <rect key="frame" x="15" y="5" width="159" height="305.33333333333331"/>
                                                     <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harry Potter" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3K-j6-GCW">
+                                                            <rect key="frame" x="0.0" y="0.0" width="159" height="19.333333333333332"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                            <color key="textColor" systemColor="systemOrangeColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dd8-vW-13i">
-                                                            <rect key="frame" x="0.0" y="0.0" width="159" height="220"/>
+                                                            <rect key="frame" x="0.0" y="29.333333333333343" width="159" height="220"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="220" id="KMv-lw-ome"/>
                                                                 <constraint firstAttribute="width" constant="160" id="w27-uT-05o"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harry Potter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3K-j6-GCW">
-                                                            <rect key="frame" x="35" y="230" width="89" height="19.333333333333343"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requirements:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugD-tW-eX8">
+                                                            <rect key="frame" x="5" y="259.33333333333331" width="149" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.9529411793" green="0.68235301969999995" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank: SSS+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9w-Hg-Erp">
-                                                            <rect key="frame" x="28.666666666666657" y="259.33333333333331" width="102" height="24"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                            <color key="textColor" systemColor="systemOrangeColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="h2W-Kh-AiH">
+                                                            <rect key="frame" x="5" y="286.33333333333331" width="149" height="19"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4lC-QV-sh3">
+                                                                    <rect key="frame" x="0.0" y="0.99999999999999822" width="19" height="17.666666666666664"/>
+                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="19" id="OG0-RO-j54"/>
+                                                                        <constraint firstAttribute="width" constant="19" id="mH6-tx-tKh"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABI-U9-Et8">
+                                                                    <rect key="frame" x="23" y="0.0" width="126" height="19"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="h2W-Kh-AiH" firstAttribute="leading" secondItem="gOG-7h-r4I" secondAttribute="leading" constant="5" id="4uu-TJ-tyz"/>
+                                                        <constraint firstItem="T3K-j6-GCW" firstAttribute="leading" secondItem="gOG-7h-r4I" secondAttribute="leading" id="Ch6-4C-alx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ugD-tW-eX8" secondAttribute="trailing" constant="5" id="Xld-2N-giD"/>
+                                                        <constraint firstItem="ugD-tW-eX8" firstAttribute="leading" secondItem="gOG-7h-r4I" secondAttribute="leading" constant="5" id="aRh-jb-XwT"/>
+                                                        <constraint firstAttribute="trailing" secondItem="T3K-j6-GCW" secondAttribute="trailing" id="pwb-Wd-8At"/>
+                                                        <constraint firstAttribute="trailing" secondItem="h2W-Kh-AiH" secondAttribute="trailing" constant="5" id="rlM-dl-CgM"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="gOG-7h-r4I" firstAttribute="top" secondItem="Ltj-4q-wAl" secondAttribute="top" constant="10" id="J0n-cG-bPV"/>
+                                                <constraint firstItem="gOG-7h-r4I" firstAttribute="top" secondItem="Ltj-4q-wAl" secondAttribute="top" constant="5" id="J0n-cG-bPV"/>
                                                 <constraint firstAttribute="trailing" secondItem="gOG-7h-r4I" secondAttribute="trailing" constant="15" id="jQZ-r0-JM1"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gOG-7h-r4I" secondAttribute="bottom" constant="15" id="xeo-nW-Tev"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gOG-7h-r4I" secondAttribute="bottom" constant="5" id="xeo-nW-Tev"/>
                                                 <constraint firstItem="gOG-7h-r4I" firstAttribute="leading" secondItem="Ltj-4q-wAl" secondAttribute="leading" constant="15" id="zbd-fX-veS"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="189" height="338"/>
+                                        <size key="customSize" width="189" height="384"/>
                                         <connections>
                                             <outlet property="rankCharacterLabel" destination="T3K-j6-GCW" id="UZh-gy-xdh"/>
                                             <outlet property="rankImage" destination="Dd8-vW-13i" id="HlF-eO-fzb"/>
-                                            <outlet property="rankLabel" destination="R9w-Hg-Erp" id="eLC-29-ihw"/>
+                                            <outlet property="rankLabel" destination="ABI-U9-Et8" id="uON-9F-aZT"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
