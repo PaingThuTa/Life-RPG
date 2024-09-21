@@ -35,7 +35,7 @@
 		8B0CE1B82C9D5FD200E738A3 /* Ghoul-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1AF2C9D5FD200E738A3 /* Ghoul-3.png */; };
 		8B0CE1B92C9D5FD200E738A3 /* Ghoul-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1B02C9D5FD200E738A3 /* Ghoul-2.png */; };
 		8B0CE1BA2C9D5FD200E738A3 /* Ghoul-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1B12C9D5FD200E738A3 /* Ghoul-1.png */; };
-		E862417E2C9D630A00107E6E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E862417D2C9D630A00107E6E /* Alamofire */; };
+		E84ACC5F2C9EBC2A00683123 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E84ACC5E2C9EBC2A00683123 /* Alamofire */; };
 		E8B150952C9314C200571B93 /* QuestInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B150942C9314C200571B93 /* QuestInfoViewController.swift */; };
 		E8B150972C9318D300571B93 /* QuestEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B150962C9318D300571B93 /* QuestEditViewController.swift */; };
 		E8BABB972C8480EA006C9569 /* AddQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */; };
@@ -127,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E862417E2C9D630A00107E6E /* Alamofire in Frameworks */,
+				E84ACC5F2C9EBC2A00683123 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +307,7 @@
 			);
 			name = "Life RPG";
 			packageProductDependencies = (
-				E862417D2C9D630A00107E6E /* Alamofire */,
+				E84ACC5E2C9EBC2A00683123 /* Alamofire */,
 			);
 			productName = "Life RPG";
 			productReference = E8DA27022C7DAD4200949A4C /* Life RPG.app */;
@@ -382,7 +382,7 @@
 			);
 			mainGroup = E8DA26F92C7DAD4200949A4C;
 			packageReferences = (
-				E862417C2C9D630A00107E6E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E84ACC5D2C9EBC2A00683123 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = E8DA27032C7DAD4200949A4C /* Products */;
 			projectDirPath = "";
@@ -813,7 +813,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E862417C2C9D630A00107E6E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		E84ACC5D2C9EBC2A00683123 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -824,9 +824,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E862417D2C9D630A00107E6E /* Alamofire */ = {
+		E84ACC5E2C9EBC2A00683123 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E862417C2C9D630A00107E6E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = E84ACC5D2C9EBC2A00683123 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

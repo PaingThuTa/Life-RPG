@@ -27,7 +27,7 @@ class QuestViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     func updateQuestDisplay() {
         // Only display pending quests in QuestViewController
-        quests = quests.filter { $0.status == .pending }
+        quests = quests.filter { $0.status == .Inprogress }
         questsTableView.reloadData()
     }
 
