@@ -15,15 +15,15 @@ class DefaultViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func getStartedButtonTapped(_ sender: UIButton) {
+        guard let tabBarController = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {
+            return
+        }
+        // Present the tab bar controller
+        // This will replace the current view controller with the tab bar controller
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = tabBarController
+            window.makeKeyAndVisible()
+        }
     }
-    */
-
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rjc-BS-88Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z7i-Hy-lD4">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Life_RPG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="Life_RPG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
                                 <rect key="frame" x="-308" y="-240" width="940" height="704"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BJ0-9F-WWB">
-                                <rect key="frame" x="40" y="99" width="313" height="117"/>
+                                <rect key="frame" x="40" y="143" width="313" height="117"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solo Leveling" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1y-q8-nT5">
                                         <rect key="frame" x="0.0" y="0.0" width="168.33333333333334" height="33.666666666666664"/>
@@ -52,7 +52,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's boost up your productivity!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvE-MR-ogU">
-                                <rect key="frame" x="40" y="246" width="313" height="19.333333333333314"/>
+                                <rect key="frame" x="40" y="290" width="313" height="19.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -74,6 +74,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Continue">
                                     <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="continueButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dHH-Qq-rXJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gT4-Va-Bm7">
                                 <rect key="frame" x="40" y="598" width="313" height="50"/>
@@ -135,15 +138,16 @@
                             <constraint firstItem="J8L-ql-hko" firstAttribute="bottom" secondItem="UH1-To-X8d" secondAttribute="bottom" constant="20" id="zd2-DA-guf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="GsX-Ke-YXZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="58.778625954198468" y="33.802816901408455"/>
+            <point key="canvasLocation" x="985.49618320610682" y="33.802816901408455"/>
         </scene>
-        <!--View Controller-->
+        <!--Default View Controller-->
         <scene sceneID="7o6-9O-VK6">
             <objects>
-                <viewController id="tvq-r3-bjl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DefaultViewController" id="tvq-r3-bjl" customClass="DefaultViewController" customModule="Life_RPG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qYA-lY-4Nf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,6 +180,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="START LEVELING UP!">
                                     <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="getStartedButtonTapped:" destination="tvq-r3-bjl" eventType="touchUpInside" id="Bvx-nY-8yC"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your default ranking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g86-Ks-Bfm">
                                 <rect key="frame" x="40" y="258.66666666666669" width="313" height="26.333333333333314"/>
@@ -331,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3p-ct-NQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="875.57251908396938" y="33.802816901408455"/>
+            <point key="canvasLocation" x="1802.2900763358778" y="33.802816901408455"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="ehu-eu-jzX">
@@ -469,7 +476,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLn-1d-gqS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3904.5801526717555" y="381.69014084507046"/>
+            <point key="canvasLocation" x="4831.2977099236641" y="381.69014084507046"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="h8K-hS-nwc">
@@ -730,7 +737,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqK-SK-IZx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4833" y="382"/>
+            <point key="canvasLocation" x="5759.5419847328239" y="381.69014084507046"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xVW-Xm-V52">
@@ -1140,7 +1147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qu0-Kd-83c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3904.5801526717555" y="-270.42253521126764"/>
+            <point key="canvasLocation" x="4831.2977099236641" y="-270.42253521126764"/>
         </scene>
         <!--All Rank View Controller-->
         <scene sceneID="FF0-XI-vIC">
@@ -1260,7 +1267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aw7-f1-keZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4832.8244274809158" y="-270.42253521126764"/>
+            <point key="canvasLocation" x="5759.5419847328239" y="-270.42253521126764"/>
         </scene>
         <!--Quest Info View Controller-->
         <scene sceneID="QDt-Zs-aub">
@@ -1809,7 +1816,7 @@
         <!--Quest View Controller-->
         <scene sceneID="LI5-VS-E4B">
             <objects>
-                <viewController id="yo9-uQ-JQq" customClass="QuestViewController" customModule="Life_RPG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestViewController" id="yo9-uQ-JQq" customClass="QuestViewController" customModule="Life_RPG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y7a-lB-8j4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2238,7 +2245,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="utY-uz-RMR">
             <objects>
-                <tabBarController id="Rjc-BS-88Y" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="Rjc-BS-88Y" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J1x-Kw-dPa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2254,7 +2261,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Cc-jP-WZT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1710" y="34"/>
+            <point key="canvasLocation" x="2635.8778625954196" y="33.802816901408455"/>
         </scene>
         <!--Quests-->
         <scene sceneID="CZF-xO-E8M">
@@ -2292,7 +2299,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZ9-UR-SmB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2977.8625954198474" y="-270.42253521126764"/>
+            <point key="canvasLocation" x="3904.5801526717555" y="-270.42253521126764"/>
         </scene>
         <!--History-->
         <scene sceneID="s2B-X9-Lud">
@@ -2311,7 +2318,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNA-Ye-xcQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2977.8625954198474" y="381.69014084507046"/>
+            <point key="canvasLocation" x="3904.5801526717555" y="381.69014084507046"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Ovl-D1-tvq">
@@ -2331,6 +2338,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxU-Xe-jTe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2977.8625954198474" y="1046.4788732394368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="O44-Zn-dU8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z7i-Hy-lD4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="een-OQ-vgS">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ApB-0r-c7Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bEt-Dl-Ybn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="58.778625954198468" y="33.802816901408455"/>
         </scene>
     </scenes>
     <resources>
