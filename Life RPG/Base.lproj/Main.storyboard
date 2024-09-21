@@ -394,7 +394,7 @@
                                 <rect key="frame" x="0.0" y="136.66666666666669" width="393" height="632.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="228" id="DPd-xf-jtp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="228" id="DPd-xf-jtp" customClass="HistoryTableViewCell" customModule="Life_RPG" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="228"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DPd-xf-jtp" id="WaE-kg-ffE">
@@ -456,7 +456,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6Be-bt-Qk9">
                                                             <rect key="frame" x="0.0" y="54" width="333" height="20"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Quest Due:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Oh-1l-scX">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Oh-1l-scX">
                                                                     <rect key="frame" x="0.0" y="0.0" width="268" height="20"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -483,6 +483,12 @@
                                                 <constraint firstItem="0Cu-nI-Gmg" firstAttribute="top" secondItem="WaE-kg-ffE" secondAttribute="top" constant="10" id="p1E-Fw-RjQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailsLabel" destination="nLW-Qr-ZmX" id="EvU-Id-RsA"/>
+                                            <outlet property="difficultyLabel" destination="YLP-H3-5qG" id="yvJ-jB-f2E"/>
+                                            <outlet property="statusLabel" destination="Kho-vv-RXf" id="bqf-AW-wyG"/>
+                                            <outlet property="titleLabel" destination="dCB-Th-OQ9" id="6tk-5K-tkb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1571,6 +1577,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="completeButtonTapped:" destination="IC1-DX-bBe" eventType="touchUpInside" id="dMX-gR-oQ7"/>
                                     <action selector="doneButtonTapped:" destination="y5O-kq-MY2" eventType="touchUpInside" id="bS0-pW-6S3"/>
                                 </connections>
                             </button>
@@ -1587,6 +1594,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="cancelButtonTapped:" destination="IC1-DX-bBe" eventType="touchUpInside" id="dvG-1N-fHe"/>
                                     <action selector="doneButtonTapped:" destination="y5O-kq-MY2" eventType="touchUpInside" id="Brz-iX-j9X"/>
                                 </connections>
                             </button>

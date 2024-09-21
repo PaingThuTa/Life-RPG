@@ -7,9 +7,12 @@
 
 import Foundation
 
+enum QuestStatus: String, Codable {
+    case pending = "Pending"
+    case completed = "Completed"
+    case canceled = "Canceled"
+}
 
-
-// Updated Quest struct
 struct Quest: Codable {
     var title: String
     var details: String
@@ -17,5 +20,7 @@ struct Quest: Codable {
     var expValue: Int
     var difficulty: String
     var dueDate: Date
+    var status: QuestStatus = .pending
 }
+
 
