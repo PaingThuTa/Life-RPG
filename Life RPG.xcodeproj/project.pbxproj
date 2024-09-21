@@ -35,6 +35,9 @@
 		8B0CE1B82C9D5FD200E738A3 /* Ghoul-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1AF2C9D5FD200E738A3 /* Ghoul-3.png */; };
 		8B0CE1B92C9D5FD200E738A3 /* Ghoul-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1B02C9D5FD200E738A3 /* Ghoul-2.png */; };
 		8B0CE1BA2C9D5FD200E738A3 /* Ghoul-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1B12C9D5FD200E738A3 /* Ghoul-1.png */; };
+		8B0CE1C62C9F40BD00E738A3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CE1C52C9F40BD00E738A3 /* WelcomeViewController.swift */; };
+		8B0CE1C82C9F411D00E738A3 /* DefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CE1C72C9F411D00E738A3 /* DefaultViewController.swift */; };
+		8B0CE1CA2C9F41AB00E738A3 /* HistoryQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CE1C92C9F41AB00E738A3 /* HistoryQuestViewController.swift */; };
 		E84ACC5F2C9EBC2A00683123 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E84ACC5E2C9EBC2A00683123 /* Alamofire */; };
 		E8B150952C9314C200571B93 /* QuestInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B150942C9314C200571B93 /* QuestInfoViewController.swift */; };
 		E8B150972C9318D300571B93 /* QuestEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B150962C9318D300571B93 /* QuestEditViewController.swift */; };
@@ -100,6 +103,9 @@
 		8B0CE1AF2C9D5FD200E738A3 /* Ghoul-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ghoul-3.png"; sourceTree = "<group>"; };
 		8B0CE1B02C9D5FD200E738A3 /* Ghoul-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ghoul-2.png"; sourceTree = "<group>"; };
 		8B0CE1B12C9D5FD200E738A3 /* Ghoul-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ghoul-1.png"; sourceTree = "<group>"; };
+		8B0CE1C52C9F40BD00E738A3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		8B0CE1C72C9F411D00E738A3 /* DefaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultViewController.swift; sourceTree = "<group>"; };
+		8B0CE1C92C9F41AB00E738A3 /* HistoryQuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryQuestViewController.swift; sourceTree = "<group>"; };
 		E8B150942C9314C200571B93 /* QuestInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestInfoViewController.swift; sourceTree = "<group>"; };
 		E8B150962C9318D300571B93 /* QuestEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestEditViewController.swift; sourceTree = "<group>"; };
 		E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +237,7 @@
 			children = (
 				E8D3210D2C9DC5D400A038F3 /* HistoryTableViewCell.swift */,
 				E8D3210F2C9DC61200A038F3 /* HistoryViewController.swift */,
+				8B0CE1C92C9F41AB00E738A3 /* HistoryQuestViewController.swift */,
 			);
 			path = HistoryTab;
 			sourceTree = "<group>";
@@ -261,13 +268,15 @@
 				8B0CE13C2C9C995800E738A3 /* spikes */,
 				E8DA27052C7DAD4200949A4C /* AppDelegate.swift */,
 				E8DA27072C7DAD4200949A4C /* SceneDelegate.swift */,
+				E8DA27102C7DAD4300949A4C /* LaunchScreen.storyboard */,
 				E8DA270B2C7DAD4200949A4C /* Main.storyboard */,
+				8B0CE1C52C9F40BD00E738A3 /* WelcomeViewController.swift */,
+				8B0CE1C72C9F411D00E738A3 /* DefaultViewController.swift */,
 				E8D321062C9DC47100A038F3 /* QuestTab */,
 				E8D321072C9DC4DF00A038F3 /* RankTab */,
 				E8D3210A2C9DC55600A038F3 /* HistoryTab */,
 				E8D321092C9DC52700A038F3 /* SettingTab */,
 				E8DA270E2C7DAD4300949A4C /* Assets.xcassets */,
-				E8DA27102C7DAD4300949A4C /* LaunchScreen.storyboard */,
 				E8DA27132C7DAD4300949A4C /* Info.plist */,
 			);
 			path = "Life RPG";
@@ -451,6 +460,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8F7AFA22C89AAFE008AD97C /* QuestCell.swift in Sources */,
+				8B0CE1C82C9F411D00E738A3 /* DefaultViewController.swift in Sources */,
+				8B0CE1C62C9F40BD00E738A3 /* WelcomeViewController.swift in Sources */,
 				E8F7AFA02C89AAE0008AD97C /* Quest.swift in Sources */,
 				8B05127D2C9B3D4200D4BF3B /* RankViewController.swift in Sources */,
 				E8D321102C9DC61200A038F3 /* HistoryViewController.swift in Sources */,
@@ -464,6 +475,7 @@
 				8B0512852C9B56FA00D4BF3B /* Rank.swift in Sources */,
 				8B0512872C9C2B2900D4BF3B /* SettingsViewController.swift in Sources */,
 				E8BABB992C848204006C9569 /* QuestViewController.swift in Sources */,
+				8B0CE1CA2C9F41AB00E738A3 /* HistoryQuestViewController.swift in Sources */,
 				E8B150972C9318D300571B93 /* QuestEditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
