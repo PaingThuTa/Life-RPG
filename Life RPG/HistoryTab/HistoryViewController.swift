@@ -8,7 +8,11 @@ import UIKit
 
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
+    
     var quests: [Quest] = []
+    
+    // Define the key for loading all quests
+    let allQuestsKey = "allQuests"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +28,17 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.reloadData()  // Refresh the table view
     }
 
-    // Load quests from UserDefaults
+    // Load quests from UserDefaults using the allQuestsKey
+    // Load quests from UserDefaults using the allQuestsKey
     func loadQuests() {
-        if let savedData = UserDefaults.standard.data(forKey: "savedQuests") {
+        if let savedData = UserDefaults.standard.data(forKey: allQuestsKey) {
             let decoder = JSONDecoder()
             if let loadedQuests = try? decoder.decode([Quest].self, from: savedData) {
-                quests = loadedQuests
+                quests = loadedQuests.reversed()  // Reverse the order of quests to show the newest ones at the top
             }
         }
     }
+
 
     // TableView DataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,10 +50,11 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let quest = quests[indexPath.row]
         cell.titleLabel.text = quest.title
         cell.detailsLabel.text = quest.details
-        cell.difficultyLabel.text = quest.difficulty // Set difficulty instead of due date
+        cell.difficultyLabel.text = quest.difficulty
         cell.statusLabel.text = quest.status.rawValue
+
+        // Set difficulty color based on the quest's difficulty
         switch quest.difficulty {
-            
             case "Easy":
                 cell.difficultyLabel.textColor = UIColor.systemGreen
             case "Normal":
@@ -60,7 +67,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 cell.difficultyLabel.textColor = UIColor.systemPurple
             default:
                 cell.difficultyLabel.textColor = UIColor.black // Default color
-            }
+        }
         return cell
     }
 }
+

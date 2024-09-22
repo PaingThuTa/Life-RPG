@@ -7,12 +7,12 @@
 
 import UIKit
 
-class AddQuestViewController: UIViewController,UITextFieldDelegate {
+class AddQuestViewController: UIViewController, UITextFieldDelegate {
     
     // Outlets for the input fields
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var detailsTextField: UITextField!
-    @IBOutlet weak var difficultyPickerView: UIPickerView! // UIPickerView for selecting difficulty
+    @IBOutlet weak var difficultyPickerView: UIPickerView!
     @IBOutlet weak var expValueLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var repeatPopupButton: UIButton!
@@ -20,6 +20,10 @@ class AddQuestViewController: UIViewController,UITextFieldDelegate {
     // Difficulty levels and corresponding EXP values
     let difficultyLevels = ["Easy", "Normal", "Hard", "Extreme", "Absurd"]
     let expValues = [100, 200, 300, 500, 1000]
+    
+    // Keys for UserDefaults
+    let activeQuestsKey = "activeQuests"
+    let allQuestsKey = "allQuests"
     
     // Keep track of the selected difficulty
     var selectedDifficultyIndex: Int = 1 // Default is "Normal" (index 1)
@@ -69,45 +73,36 @@ class AddQuestViewController: UIViewController,UITextFieldDelegate {
         datePicker.calendar = Calendar(identifier: .gregorian)
         
         setRepeatPopupButton()
-        // Set the delegate for detailsTextField
         detailsTextField.delegate = self
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-                view.addGestureRecognizer(tapGesture)
+        view.addGestureRecognizer(tapGesture)
     }
     
     @objc func dismissKeyboard() {
-            view.endEditing(true)
-        }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-            if textField == detailsTextField {
-                let currentText = textField.text ?? ""
-                let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
-                
-                // Check the character count
-                if newText.count > 200 {
-                    // Show an alert when the character count exceeds 300
-                    showAlert()
-                    return false // Prevent further input
-                }
-                
-                return true // Allow input if under the character limit
-            }
-            return true
-        }
+        view.endEditing(true)
+    }
 
-        // Function to show an alert when the user passes 300 characters
+    // Handle character limit for the detailsTextField
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == detailsTextField {
+            let currentText = textField.text ?? ""
+            let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
+            return newText.count <= 200 // Limit to 200 characters
+        }
+        return true
+    }
+
+    // Function to show an alert when the user passes 200 characters
     func showAlert() {
         let alert = UIAlertController(title: "Character Limit Reached", message: "You have reached the 200-character limit for details.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-    
+
     // Repeat Pop-up Button
-    func setRepeatPopupButton(){
-        let optionClosure = {(action: UIAction) in
-            print(action.title)
+    func setRepeatPopupButton() {
+        let optionClosure = { (action: UIAction) in
             switch action.title {
             case "None":
                 self.selectedRepeatOption = .none
@@ -122,8 +117,6 @@ class AddQuestViewController: UIViewController,UITextFieldDelegate {
             default:
                 break
             }
-            
-            // update the button title to reflect the selection
             self.repeatPopupButton.setTitle(action.title, for: .normal)
         }
         
@@ -132,12 +125,13 @@ class AddQuestViewController: UIViewController,UITextFieldDelegate {
             UIAction(title: "Every Day", state: selectedRepeatOption == .daily ? .on : .off, handler: optionClosure),
             UIAction(title: "Every Week", state: selectedRepeatOption == .weekly ? .on : .off, handler: optionClosure),
             UIAction(title: "Every Month", state: selectedRepeatOption == .monthly ? .on : .off, handler: optionClosure),
-            UIAction(title: "Every Year", state: selectedRepeatOption == .yearly ? .on : .off, handler: optionClosure)])
+            UIAction(title: "Every Year", state: selectedRepeatOption == .yearly ? .on : .off, handler: optionClosure)
+        ])
         
         repeatPopupButton.showsMenuAsPrimaryAction = true
         repeatPopupButton.changesSelectionAsPrimaryAction = true
     }
-    
+
     // Action for Done button
     @IBAction func doneButtonTapped(_ sender: UIButton) {
         guard let title = titleTextField.text, !title.isEmpty,
@@ -149,14 +143,22 @@ class AddQuestViewController: UIViewController,UITextFieldDelegate {
         // Get the selected date from the date picker
         let selectedDate = datePicker.date
         
-        // Create a new quest with the selected date as both the completion and due date
+        // Create a new quest with the selected date
         let quest = Quest(
             title: title,
             details: details,
             repeats: selectedRepeatOption.description,
-            expValue: expValues[selectedDifficultyIndex], difficulty: difficultyLevels[selectedDifficultyIndex],
-            dueDate: selectedDate // You can customize this if the due date should be different
+            expValue: expValues[selectedDifficultyIndex],
+            difficulty: difficultyLevels[selectedDifficultyIndex],
+            dueDate: selectedDate,
+            status: .Inprogress  // All new quests are "In Progress" by default
         )
+
+        // Save the new quest to active quests
+        saveToActiveQuests(quest)
+
+        // Save the new quest to all quests
+        saveToAllQuests(quest)
         
         // Pass the quest back using the closure
         addQuestCompletion?(quest)
@@ -165,7 +167,45 @@ class AddQuestViewController: UIViewController,UITextFieldDelegate {
         navigationController?.popViewController(animated: true)
     }
 
+    // Save to Active Quests (only quests in progress)
+    func saveToActiveQuests(_ newQuest: Quest) {
+        var activeQuests: [Quest] = []
+        
+        // Load existing active quests
+        if let savedData = UserDefaults.standard.data(forKey: activeQuestsKey) {
+            let decoder = JSONDecoder()
+            if let loadedQuests = try? decoder.decode([Quest].self, from: savedData) {
+                activeQuests = loadedQuests
+            }
+        }
+        
+        // Add the new quest and save back to UserDefaults
+        activeQuests.append(newQuest)
+        let encoder = JSONEncoder()
+        if let encodedData = try? encoder.encode(activeQuests) {
+            UserDefaults.standard.set(encodedData, forKey: activeQuestsKey)
+        }
+    }
 
+    // Save to All Quests (including completed, canceled, and in progress)
+    func saveToAllQuests(_ newQuest: Quest) {
+        var allQuests: [Quest] = []
+        
+        // Load existing all quests
+        if let savedData = UserDefaults.standard.data(forKey: allQuestsKey) {
+            let decoder = JSONDecoder()
+            if let loadedQuests = try? decoder.decode([Quest].self, from: savedData) {
+                allQuests = loadedQuests
+            }
+        }
+        
+        // Add the new quest and save back to UserDefaults
+        allQuests.append(newQuest)
+        let encoder = JSONEncoder()
+        if let encodedData = try? encoder.encode(allQuests) {
+            UserDefaults.standard.set(encodedData, forKey: allQuestsKey)
+        }
+    }
 }
 
 // MARK: - UIPickerViewDelegate, UIPickerViewDataSource
