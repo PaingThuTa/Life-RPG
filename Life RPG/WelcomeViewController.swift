@@ -13,6 +13,10 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var titleTwoLabel: UILabel!
     @IBOutlet weak var titleThreeLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var chooseLanguageLabel: UILabel!
+    @IBOutlet weak var englishLanguageButton: UIButton!
+    @IBOutlet weak var thaiLanguageButton: UIButton!
+    @IBOutlet weak var continueButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +50,11 @@ class WelcomeViewController: UIViewController {
         titleTwoLabel.text = "Task Management".localized()
         titleThreeLabel.text = "Application".localized()
         subtitleLabel.text = "Let's boost up your productivity!".localized()
+        chooseLanguageLabel.text = "Choose a language".localized()
+        // Set title for button (app localization)
+        englishLanguageButton.setTitle("🇺🇸   English(US)".localized(), for: .normal)
+        thaiLanguageButton.setTitle("🇹🇭   Thai".localized(), for: .normal)
+        continueButton.setTitle("Continue".localized(), for: .normal)
         
     }
 }

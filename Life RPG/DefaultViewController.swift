@@ -8,11 +8,16 @@
 import UIKit
 
 class DefaultViewController: UIViewController {
+    
+    @IBOutlet weak var tellUsAboutYouLabel: UILabel!
+    @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var defaultRankingLabel: UILabel!
+    @IBOutlet weak var rankLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        updateLocalizationUI()
     }
     
     @IBAction func getStartedButtonTapped(_ sender: UIButton) {
@@ -25,5 +30,14 @@ class DefaultViewController: UIViewController {
             window.rootViewController = tabBarController
             window.makeKeyAndVisible()
         }
+    }
+    
+    @objc func updateLocalizationUI() {
+        // To access another language
+        tellUsAboutYouLabel.text = "Tell us about you!".localized()
+        nicknameLabel.text = "Nickname".localized()
+        defaultRankingLabel.text = "Your default ranking".localized()
+        rankLabel.text = "Rank".localized()
+        
     }
 }

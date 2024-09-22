@@ -146,7 +146,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="GsX-Ke-YXZ"/>
                     <connections>
+                        <outlet property="chooseLanguageLabel" destination="y4s-vJ-wDB" id="Za8-sg-6R9"/>
+                        <outlet property="continueButton" destination="UH1-To-X8d" id="kFz-ll-HP6"/>
+                        <outlet property="englishLanguageButton" destination="gT4-Va-Bm7" id="Xeh-Ha-TcB"/>
                         <outlet property="subtitleLabel" destination="zvE-MR-ogU" id="yh6-7T-wKQ"/>
+                        <outlet property="thaiLanguageButton" destination="rqP-YD-lRP" id="G4b-pK-Yae"/>
                         <outlet property="titleOneLabel" destination="u1y-q8-nT5" id="DmG-lG-jWL"/>
                         <outlet property="titleThreeLabel" destination="CJJ-yk-i6g" id="COx-u4-w8D"/>
                         <outlet property="titleTwoLabel" destination="AUa-eV-tJe" id="BD4-Cv-nX4"/>
@@ -347,6 +351,12 @@
                             <constraint firstItem="AOa-fb-Uor" firstAttribute="top" secondItem="dJ1-hl-FEY" secondAttribute="bottom" constant="30" id="zFt-CG-eny"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="defaultRankingLabel" destination="g86-Ks-Bfm" id="IAp-MI-mfu"/>
+                        <outlet property="nicknameLabel" destination="AOa-fb-Uor" id="xPi-TS-pqT"/>
+                        <outlet property="rankLabel" destination="ToG-3Q-Vdr" id="T4v-wh-RFR"/>
+                        <outlet property="tellUsAboutYouLabel" destination="dJ1-hl-FEY" id="9wp-Kp-utZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3p-ct-NQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
