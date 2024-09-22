@@ -38,6 +38,8 @@
 		8B0CE1C62C9F40BD00E738A3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CE1C52C9F40BD00E738A3 /* WelcomeViewController.swift */; };
 		8B0CE1C82C9F411D00E738A3 /* DefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CE1C72C9F411D00E738A3 /* DefaultViewController.swift */; };
 		8B0CE1CA2C9F41AB00E738A3 /* HistoryQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CE1C92C9F41AB00E738A3 /* HistoryQuestViewController.swift */; };
+		8B0CE1CE2CA049AA00E738A3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1CC2CA049AA00E738A3 /* Localizable.strings */; };
+		8B0CE1D32CA0709400E738A3 /* StringLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CE1D22CA0709400E738A3 /* StringLocalization.swift */; };
 		E84ACC5F2C9EBC2A00683123 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E84ACC5E2C9EBC2A00683123 /* Alamofire */; };
 		E8B150952C9314C200571B93 /* QuestInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B150942C9314C200571B93 /* QuestInfoViewController.swift */; };
 		E8B150972C9318D300571B93 /* QuestEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B150962C9318D300571B93 /* QuestEditViewController.swift */; };
@@ -106,6 +108,10 @@
 		8B0CE1C52C9F40BD00E738A3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		8B0CE1C72C9F411D00E738A3 /* DefaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultViewController.swift; sourceTree = "<group>"; };
 		8B0CE1C92C9F41AB00E738A3 /* HistoryQuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryQuestViewController.swift; sourceTree = "<group>"; };
+		8B0CE1CB2CA0496000E738A3 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Main.strings; sourceTree = "<group>"; };
+		8B0CE1CD2CA049AA00E738A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8B0CE1CF2CA049DA00E738A3 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8B0CE1D22CA0709400E738A3 /* StringLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLocalization.swift; sourceTree = "<group>"; };
 		E8B150942C9314C200571B93 /* QuestInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestInfoViewController.swift; sourceTree = "<group>"; };
 		E8B150962C9318D300571B93 /* QuestEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestEditViewController.swift; sourceTree = "<group>"; };
 		E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestViewController.swift; sourceTree = "<group>"; };
@@ -278,6 +284,8 @@
 				E8D321092C9DC52700A038F3 /* SettingTab */,
 				E8DA270E2C7DAD4300949A4C /* Assets.xcassets */,
 				E8DA27132C7DAD4300949A4C /* Info.plist */,
+				8B0CE1CC2CA049AA00E738A3 /* Localizable.strings */,
+				8B0CE1D22CA0709400E738A3 /* StringLocalization.swift */,
 			);
 			path = "Life RPG";
 			sourceTree = "<group>";
@@ -388,6 +396,7 @@
 			knownRegions = (
 				en,
 				Base,
+				th,
 			);
 			mainGroup = E8DA26F92C7DAD4200949A4C;
 			packageReferences = (
@@ -413,6 +422,7 @@
 				8B0CE15F2C9CA20900E738A3 /* castingSpell-0.png in Resources */,
 				8B0CE1662C9CA20900E738A3 /* castingSpell-7.png in Resources */,
 				8B0CE1B62C9D5FD200E738A3 /* Ghoul-5.png in Resources */,
+				8B0CE1CE2CA049AA00E738A3 /* Localizable.strings in Resources */,
 				8B0CE1632C9CA20900E738A3 /* castingSpell-4.png in Resources */,
 				8B0CE1B82C9D5FD200E738A3 /* Ghoul-3.png in Resources */,
 				8B0CE1B72C9D5FD200E738A3 /* Ghoul-6.png in Resources */,
@@ -462,6 +472,7 @@
 				E8F7AFA22C89AAFE008AD97C /* QuestCell.swift in Sources */,
 				8B0CE1C82C9F411D00E738A3 /* DefaultViewController.swift in Sources */,
 				8B0CE1C62C9F40BD00E738A3 /* WelcomeViewController.swift in Sources */,
+				8B0CE1D32CA0709400E738A3 /* StringLocalization.swift in Sources */,
 				E8F7AFA02C89AAE0008AD97C /* Quest.swift in Sources */,
 				8B05127D2C9B3D4200D4BF3B /* RankViewController.swift in Sources */,
 				E8D321102C9DC61200A038F3 /* HistoryViewController.swift in Sources */,
@@ -513,10 +524,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8B0CE1CC2CA049AA00E738A3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B0CE1CD2CA049AA00E738A3 /* en */,
+				8B0CE1CF2CA049DA00E738A3 /* th */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E8DA270B2C7DAD4200949A4C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E8DA270C2C7DAD4200949A4C /* Base */,
+				8B0CE1CB2CA0496000E738A3 /* th */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -537,6 +558,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -600,6 +622,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
