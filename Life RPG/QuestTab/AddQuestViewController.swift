@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddQuestViewController: UIViewController {
+class AddQuestViewController: UIViewController,UITextFieldDelegate {
     
     // Outlets for the input fields
     @IBOutlet weak var titleTextField: UITextField!
@@ -69,6 +69,39 @@ class AddQuestViewController: UIViewController {
         datePicker.calendar = Calendar(identifier: .gregorian)
         
         setRepeatPopupButton()
+        // Set the delegate for detailsTextField
+        detailsTextField.delegate = self
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+                view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard() {
+            view.endEditing(true)
+        }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            if textField == detailsTextField {
+                let currentText = textField.text ?? ""
+                let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
+                
+                // Check the character count
+                if newText.count > 200 {
+                    // Show an alert when the character count exceeds 300
+                    showAlert()
+                    return false // Prevent further input
+                }
+                
+                return true // Allow input if under the character limit
+            }
+            return true
+        }
+
+        // Function to show an alert when the user passes 300 characters
+    func showAlert() {
+        let alert = UIAlertController(title: "Character Limit Reached", message: "You have reached the 200-character limit for details.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
     // Repeat Pop-up Button
