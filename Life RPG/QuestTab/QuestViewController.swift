@@ -7,6 +7,12 @@
 import UIKit
 
 class QuestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var welcomePlayerLabel: UILabel!
+    @IBOutlet weak var letsMoveOnsubtitleLabel: UILabel!
+    @IBOutlet weak var activeQuestLabel: UILabel!
+    @IBOutlet weak var addQuestButton: UIButton!
+    
     @IBOutlet weak var questsTableView: UITableView!
     
     var quests: [Quest] = [] // Array to store active quests
@@ -23,6 +29,7 @@ class QuestViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         loadActiveQuests()  // Load active quests from UserDefaults
         updateQuestDisplay()  // Display only pending quests
+        updateLocalizationUI() // App localization
     }
 
     func updateQuestDisplay() {
@@ -130,6 +137,15 @@ class QuestViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
             navigationController?.pushViewController(questInfoVC, animated: true)
         }
+    }
+    
+    @objc func updateLocalizationUI() {
+        // To access another language
+        welcomePlayerLabel.text = "Welcome player,".localized()
+        letsMoveOnsubtitleLabel.text = "Subtitle".localized()
+        activeQuestLabel.text = "Active Quests".localized()
+        addQuestButton.setTitle("+ add new quest".localized(), for: .normal)
+
     }
 }
 

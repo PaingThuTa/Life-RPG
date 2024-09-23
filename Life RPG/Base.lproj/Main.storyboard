@@ -352,7 +352,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="EXPToLevelUpLabel" destination="omy-00-ulP" id="Xad-r1-SYg"/>
+                        <outlet property="StartButton" destination="AjU-C3-A6U" id="IzL-ex-nN2"/>
+                        <outlet property="TotalEXPLabel" destination="KZ8-5c-Wn3" id="EfK-G9-AXc"/>
                         <outlet property="defaultRankingLabel" destination="g86-Ks-Bfm" id="IAp-MI-mfu"/>
+                        <outlet property="levelLabel" destination="cya-AA-qh0" id="QPR-PV-tSa"/>
                         <outlet property="nicknameLabel" destination="AOa-fb-Uor" id="xPi-TS-pqT"/>
                         <outlet property="rankLabel" destination="ToG-3Q-Vdr" id="T4v-wh-RFR"/>
                         <outlet property="tellUsAboutYouLabel" destination="dJ1-hl-FEY" id="9wp-Kp-utZ"/>
@@ -1824,10 +1828,19 @@
                     </view>
                     <connections>
                         <outlet property="datePicker" destination="0dU-ve-pgC" id="h8Y-iF-rpm"/>
+                        <outlet property="detailsLabel" destination="dJg-e9-6pd" id="zfF-kr-uE3"/>
+                        <outlet property="detailsRestrictionLabel" destination="MZa-j8-7eU" id="apr-Pz-lxt"/>
                         <outlet property="detailsTextField" destination="X4D-SD-Wyr" id="yKe-xM-mST"/>
+                        <outlet property="difficultyLabel" destination="59k-KI-Zvf" id="NIz-eb-xbd"/>
                         <outlet property="difficultyPickerView" destination="ob3-xW-Xlo" id="dzu-fw-Jxa"/>
+                        <outlet property="doneButton" destination="EGZ-jX-SOK" id="oIh-jO-S9n"/>
+                        <outlet property="dueDateLabel" destination="xbC-f3-cSk" id="o0o-w4-dL5"/>
+                        <outlet property="editQuestPageLabel" destination="FTl-bi-AlN" id="WCh-6g-G1S"/>
                         <outlet property="expValueLabel" destination="RAv-Fk-WSL" id="n3M-d0-eSE"/>
+                        <outlet property="questEXPValueLabel" destination="jcu-9T-ZmF" id="SGD-dd-we4"/>
+                        <outlet property="repeatLabel" destination="5yU-uq-xWr" id="PH7-kr-B3R"/>
                         <outlet property="repeatPopupButton" destination="1uQ-tS-MTl" id="M6w-9c-HT8"/>
+                        <outlet property="titleLabel" destination="UVm-w9-aTu" id="JEh-k2-QGM"/>
                         <outlet property="titleTextField" destination="TFt-SB-PsL" id="H4U-k9-h43"/>
                     </connections>
                 </viewController>
@@ -1872,23 +1885,24 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="61" translatesAutoresizingMaskIntoConstraints="NO" id="Fgz-Rx-3bq">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Fgz-Rx-3bq">
                                 <rect key="frame" x="40" y="183" width="313" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active Quests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWP-aj-evm">
-                                        <rect key="frame" x="0.0" y="0.0" width="124.66666666666667" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <color key="textColor" systemColor="systemOrangeColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6z-5F-77f">
-                                        <rect key="frame" x="185.66666666666666" y="0.0" width="127.33333333333334" height="30"/>
+                                        <rect key="frame" x="183" y="0.0" width="130" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="tom-Ga-nlj"/>
+                                            <constraint firstAttribute="width" constant="130" id="uQQ-hD-hcV"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="systemOrangeColor"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="+ Add new quest">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                             <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -1896,6 +1910,10 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="uWP-aj-evm" firstAttribute="leading" secondItem="Fgz-Rx-3bq" secondAttribute="leading" id="EPa-GQ-uFq"/>
+                                    <constraint firstAttribute="trailing" secondItem="c6z-5F-77f" secondAttribute="trailing" id="njj-jn-FCc"/>
+                                </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aTe-DE-uWb">
                                 <rect key="frame" x="0.0" y="223" width="393" height="546"/>
@@ -2028,7 +2046,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="7ad-b1-iAp"/>
                     <connections>
+                        <outlet property="activeQuestLabel" destination="uWP-aj-evm" id="6w5-mw-QCe"/>
+                        <outlet property="addQuestButton" destination="c6z-5F-77f" id="uL5-Eh-ZV6"/>
+                        <outlet property="letsMoveOnsubtitleLabel" destination="oZH-Ir-Ddk" id="646-a0-n95"/>
                         <outlet property="questsTableView" destination="aTe-DE-uWb" id="41U-CT-rhy"/>
+                        <outlet property="welcomePlayerLabel" destination="yj7-qb-iaZ" id="vOC-no-2dO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bvl-Nu-tqQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2249,11 +2271,20 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addQuestPageLabel" destination="RiQ-Uj-C3R" id="vsA-tk-Rwc"/>
                         <outlet property="datePicker" destination="xdb-9t-eez" id="yu4-cf-94G"/>
+                        <outlet property="detailsLabel" destination="dVS-oF-96r" id="dSc-d7-j72"/>
+                        <outlet property="detailsRestrictionLabel" destination="HWr-af-ygr" id="zym-Dy-f7M"/>
                         <outlet property="detailsTextField" destination="QLl-p5-b16" id="hVD-jM-dW1"/>
+                        <outlet property="difficultyLabel" destination="tLp-Io-01R" id="HGl-7i-SIC"/>
                         <outlet property="difficultyPickerView" destination="hT5-2O-Izj" id="hDt-ig-p4K"/>
+                        <outlet property="doneButton" destination="fVF-1i-sKS" id="tOu-cg-5qf"/>
+                        <outlet property="dueDateLabel" destination="dg5-lK-SUM" id="hpb-O4-zV7"/>
                         <outlet property="expValueLabel" destination="EWc-Ob-k06" id="MSC-Q7-rcR"/>
+                        <outlet property="questEXPValueLabel" destination="Tgc-eG-hSt" id="VNl-zU-MEQ"/>
+                        <outlet property="repeatLabel" destination="2Bd-Ji-Wl1" id="IbO-bR-Nl0"/>
                         <outlet property="repeatPopupButton" destination="IkA-N9-V55" id="fx1-mQ-xiY"/>
+                        <outlet property="titleLabel" destination="le0-zQ-5Ot" id="EX1-Zm-JNc"/>
                         <outlet property="titleTextField" destination="Juy-z3-YlK" id="5z4-GL-pnO"/>
                     </connections>
                 </viewController>

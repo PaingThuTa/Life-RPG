@@ -13,6 +13,10 @@ class DefaultViewController: UIViewController {
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var defaultRankingLabel: UILabel!
     @IBOutlet weak var rankLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var EXPToLevelUpLabel: UILabel!
+    @IBOutlet weak var TotalEXPLabel: UILabel!
+    @IBOutlet weak var StartButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +42,9 @@ class DefaultViewController: UIViewController {
         nicknameLabel.text = "Nickname".localized()
         defaultRankingLabel.text = "Your default ranking".localized()
         rankLabel.text = "Rank".localized()
-        
+        levelLabel.text = "Level".localized()
+        EXPToLevelUpLabel.text = "EXP To Level Up".localized()
+        TotalEXPLabel.text = "Total EXP".localized()
+        StartButton.setTitle("START LEVELING UP!".localized(), for: .normal)
     }
 }

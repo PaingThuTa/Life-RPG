@@ -26,10 +26,70 @@
 
 // DefaultViewController
 
-"Tell us about you!" = "คุณคือใคร";
+"Tell us about you!" = "บอกเราเกี่ยวกับคุณ";
 
 "Nickname" = "ชื่อเล่น";
 
 "Your default ranking" = "แร้งค์เริ่มต้น";
 
 "Rank" = "แร้งค์";
+
+"Level" = "เลเวล";
+
+"EXP To Level Up" = "คะแนนเพื่อเลเวลอัพ";
+
+"Total EXP" = "คะแนนทั้งหมด";
+
+"START LEVELING UP!" = "ไปเริ่มกันเลย!";
+
+// QuestViewController
+
+"Welcome player," = "ยินดีต้อนรับผู้เล่น,";
+
+"Subtitle" = "มาเลเวลอัพไปพร้อมๆกับพวกเรากันเถอะ";
+
+"Active Quests" = "ภารกิจ";
+
+"+ add new quest" = "+ เพิ่มภารกิจ";
+
+// AddQuestViewController + QuestEditViewController
+
+"Add Quest" = "เพิ่มเควส";
+
+"Edit Quest Information" = "แก้ไขข้อมูลเควส";
+
+"Title" = "หัวข้อ";
+
+"Details" = "รายละเอียด";
+
+"*No more than 200 letters" = "*น้อยกว่า200ตัวอักษร";
+
+"Due Date" = "กำหนดวันเสร็จ";
+
+"Repeat" = "การทำซ้ำ";
+
+"Quest EXP Value" = "คะแนนของเควส";
+
+"Difficulty" = "ระดับความยาก";
+
+"Done" = "เสร็จสิ้น";
+
+"None" = "ครั้งเดียว";
+
+"Every Day" = "ทุกวัน";
+
+"Every Week" = "ทุกอาทิตย์";
+
+"Every Month" = "ทุกเดือน";
+
+"Every Year" = "ทุกปี";
+
+"Easy" = "ง่าย";
+
+"Normal" = "ปานกลาง";
+
+"Hard" = "ยาก";
+
+"Extreme" = "ยากมาก";
+
+"Absurd" = "ยากที่สุด";

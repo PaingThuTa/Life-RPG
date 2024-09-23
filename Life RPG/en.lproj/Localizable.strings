@@ -6,6 +6,8 @@
   
 */
 
+// WelcomeViewController
+
 "Life RPG" = "Life RPG";
 
 "Task Management" = "Task Management";
@@ -22,6 +24,8 @@
 
 "Continue" = "Continue";
 
+// DefaultViewController
+
 "Tell us about you!" = "Tell us about you!";
 
 "Nickname" = "Nickname";
@@ -29,3 +33,64 @@
 "Your default ranking" = "Your default ranking";
 
 "Rank" = "Rank";
+
+"Level" = "Level";
+
+"EXP To Level Up" = "EXP To Level Up";
+
+"Total EXP" = "Total EXP";
+
+"START LEVELING UP!" = "START LEVELING UP!";
+
+// QuestViewController
+
+"Welcome player," = "Welcome player,";
+
+"Subtitle" = "Let's move on to the next level with us.";
+
+"Active Quests" = "Active Quests";
+
+"+ add new quest" = "+ Add quest";
+
+// AddQuestViewController + QuestEditViewController
+
+"Add Quest" = "Add Quest";
+
+"Edit Quest Information" = "Edit Quest Information";
+
+"Title" = "Title";
+
+"Details" = "Details";
+
+"*No more than 200 letters" = "*No more than 200 letters";
+
+"Due Date" = "Due Date";
+
+"Repeat" = "Repeat";
+
+"Quest EXP Value" = "Quest EXP Value";
+
+"Difficulty" = "Difficulty";
+
+"Done" = "Done";
+
+"None" = "None";
+
+"Every Day" = "Every Day";
+
+"Every Week" = "Every Week";
+
+"Every Month" = "Every Month";
+
+"Every Year" = "Every Year";
+
+"Easy" = "Easy";
+
+"Normal" = "Normal";
+
+"Hard" = "Hard";
+
+"Extreme" = "Extreme";
+
+"Absurd" = "Absurd";
+

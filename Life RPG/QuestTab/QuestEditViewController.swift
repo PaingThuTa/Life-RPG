@@ -17,6 +17,17 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var difficultyPickerView: UIPickerView!
     @IBOutlet weak var repeatPopupButton: UIButton!
     
+    @IBOutlet weak var editQuestPageLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailsLabel: UILabel!
+    @IBOutlet weak var detailsRestrictionLabel: UILabel!
+    @IBOutlet weak var dueDateLabel: UILabel!
+    @IBOutlet weak var repeatLabel: UILabel!
+    @IBOutlet weak var questEXPValueLabel: UILabel!
+    @IBOutlet weak var difficultyLabel: UILabel!
+    
+    @IBOutlet weak var doneButton: UIButton!
+    
     
     // Variable to hold the quest passed from QuestInfoViewController
     var quest: Quest?
@@ -105,6 +116,10 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
         // Tap gesture to dismiss the keyboard
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
+        
+        // App Localize
+        updateLocalizationUI()
+        
     }
     
     @objc func dismissKeyboard() {
@@ -191,6 +206,43 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
         // Dismiss or pop the view controller
         navigationController?.popViewController(animated: true)
     }
+    
+    @objc func updateLocalizationUI() {
+        // To access another language
+        editQuestPageLabel.text = "Edit Quest Information".localized()
+        titleLabel.text = "Title".localized()
+        detailsLabel.text = "Details".localized()
+        detailsRestrictionLabel.text = "*No more than 200 letters".localized()
+        dueDateLabel.text = "Due Date".localized()
+        repeatLabel.text = "Repeat".localized()
+        questEXPValueLabel.text = "Quest EXP Value".localized()
+        difficultyLabel.text = "Difficulty".localized()
+        
+//        // App Localize for Repeat options
+//        repeatOptionTitles = [
+//            RepeatOption.none.description.localized(),
+//            RepeatOption.daily.description.localized(),
+//            RepeatOption.weekly.description.localized(),
+//            RepeatOption.monthly.description.localized(),
+//            RepeatOption.yearly.description.localized()
+//        ]
+//        
+//        repeatPopupButton.setTitle(repeatOptionTitles[selectedRepeatOptionIndex()], for: .normal)
+//        
+//        
+//        // App localization for Difficulty's choices
+//        difficultyLevels[0] = "Easy".localized()
+//        difficultyLevels[1] = "Normal".localized()
+//        difficultyLevels[2] = "Hard".localized()
+//        difficultyLevels[3] = "Extreme".localized()
+//        difficultyLevels[4] = "Absurd".localized()
+//        
+//        difficultyPickerView.reloadAllComponents()
+        
+        doneButton.setTitle("Done".localized(), for: .normal)
+        
+    }
+    
 }
 
 extension QuestEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
