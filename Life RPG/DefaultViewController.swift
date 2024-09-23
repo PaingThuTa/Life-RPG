@@ -11,6 +11,7 @@ class DefaultViewController: UIViewController {
     
     @IBOutlet weak var tellUsAboutYouLabel: UILabel!
     @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var defaultRankingLabel: UILabel!
     @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
@@ -40,6 +41,7 @@ class DefaultViewController: UIViewController {
         // To access another language
         tellUsAboutYouLabel.text = "Tell us about you!".localized()
         nicknameLabel.text = "Nickname".localized()
+        nicknameTextField.placeholder = "Enter your nickname".localized()
         defaultRankingLabel.text = "Your default ranking".localized()
         rankLabel.text = "Rank".localized()
         levelLabel.text = "Level".localized()

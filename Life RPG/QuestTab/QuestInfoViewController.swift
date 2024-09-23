@@ -8,12 +8,25 @@
 import UIKit
 
 class QuestInfoViewController: UIViewController {
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var repeatLabel: UILabel!
     @IBOutlet weak var expValueLabel: UILabel!
     @IBOutlet weak var difficultyLabel: UILabel!
+    
+    @IBOutlet weak var questInfoPageLabel: UILabel!
+    @IBOutlet weak var headTitleLabel: UILabel!
+    @IBOutlet weak var headDetailsLabel: UILabel!
+    @IBOutlet weak var headDueDateLabel: UILabel!
+    @IBOutlet weak var headRepeatLabel: UILabel!
+    @IBOutlet weak var headEXPValueLabel: UILabel!
+    @IBOutlet weak var headDifficultyLabel: UILabel!
+    
+    @IBOutlet weak var editQuestButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var completeButton: UIButton!
 
     var quest: Quest?
     var updateQuestCompletion: ((Quest) -> Void)?
@@ -21,6 +34,7 @@ class QuestInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        updateLocalizationUI()
     }
     @IBAction func editQuestTapped(_ sender: UIButton) {
             // Navigate to QuestEditViewController
@@ -68,4 +82,21 @@ class QuestInfoViewController: UIViewController {
         }
         navigationController?.popViewController(animated: true)
     }
+    
+    @objc func updateLocalizationUI() {
+        // To access another language
+        questInfoPageLabel.text = "Quest Info".localized()
+        headTitleLabel.text = "Title".localized()
+        headDetailsLabel.text = "Details".localized()
+        headDueDateLabel.text = "Due Date".localized()
+        headRepeatLabel.text = "Repeat".localized()
+        headEXPValueLabel.text = "Quest EXP Value".localized()
+        headDifficultyLabel.text = "Difficulty".localized()
+        
+        editQuestButton.setTitle("Edit Quest".localized(), for: .normal)
+        cancelButton.setTitle("Cancel".localized(), for: .normal)
+        completeButton.setTitle("Complete".localized(), for: .normal)
+
+    }
+
 }

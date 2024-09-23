@@ -243,6 +243,8 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
         repeatLabel.text = "Repeat".localized()
         questEXPValueLabel.text = "Quest EXP Value".localized()
         difficultyLabel.text = "Difficulty".localized()
+        titleTextField.placeholder = "Enter your quest title".localized()
+        detailsTextField.placeholder = "Enter task details".localized()
         
         // App Localize for Repeat options
         repeatOptionTitles = [

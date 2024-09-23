@@ -37,10 +37,14 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
     
     // Difficulty levels and corresponding EXP values
     let difficultyLevels = ["Easy", "Normal", "Hard", "Extreme", "Absurd"]
-    let expValues = [100, 200, 300, 500, 1000]
+    var difficultyLevels = ["Easy", "Normal", "Hard", "Extreme", "Absurd"]
+    var expValues = [100, 200, 300, 500, 1000]
     
     var selectedDifficultyIndex: Int = 1 // Default is "Normal"
 
+    // Keep the Repeat Option Value
+    var selectedRepeatOption: RepeatOption = .none
+    
     // Popup Button Implementation
     enum RepeatOption {
         case none
@@ -52,22 +56,22 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
         // String representation
         var description: String {
             switch self {
-            case .none:
-                return "None"
-            case .daily:
-                return "Every Day"
-            case .weekly:
-                return "Every Week"
-            case .monthly:
-                return "Every Month"
-            case .yearly:
-                return "Every Year"
+            case .none: return "None".localized()
+            case .daily: return "Every Day".localized()
+            case .weekly: return "Every Week".localized()
+            case .monthly: return "Every Month".localized()
+            case .yearly: return "Every Year".localized()
             }
         }
     }
     
-    // Keep the Repeat Option Value
-    var selectedRepeatOption: RepeatOption = .none
+    let repeatOptionTitles: [String] = [
+        RepeatOption.none.description,
+        RepeatOption.daily.description,
+        RepeatOption.weekly.description,
+        RepeatOption.monthly.description,
+        RepeatOption.yearly.description
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,19 +93,14 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
             
             // Popup Repeat Button edits
             switch quest.repeats {
-            case "None":
-                selectedRepeatOption = .none
-            case "Every Day":
-                selectedRepeatOption = .daily
-            case "Every Week":
-                selectedRepeatOption = .weekly
-            case "Every Month":
-                selectedRepeatOption = .monthly
-            case "Every Year":
-                selectedRepeatOption = .yearly
-            default:
-                selectedRepeatOption = .none
+            case "None".localized(): selectedRepeatOption = .none
+            case "Every Day".localized(): selectedRepeatOption = .daily
+            case "Every Week".localized(): selectedRepeatOption = .weekly
+            case "Every Month".localized(): selectedRepeatOption = .monthly
+            case "Every Year".localized(): selectedRepeatOption = .yearly
+            default: selectedRepeatOption = .none
             }
+            // Set title based on the selectedRepeatOption
             repeatPopupButton.setTitle(selectedRepeatOption.description, for: .normal)
         }
         
@@ -111,6 +110,7 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
         
         // Set up the Repeat Popup Button
         setRepeatPopupButton()
+        
         detailsTextField.delegate = self
                 
         // Tap gesture to dismiss the keyboard
@@ -119,6 +119,7 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
         
         // App Localize
         updateLocalizationUI()
+//        updateLocalizedDifficultyLevels()
         
     }
     
@@ -131,14 +132,12 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
             if textField == detailsTextField {
                 let currentText = textField.text ?? ""
                 let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
-                
                 // Check the character count
                 if newText.count > 200 {
                     // Show an alert when the character count exceeds 300
                     showAlert()
                     return false // Prevent further input
                 }
-                
                 return true // Allow input if under the character limit
             }
             return true
@@ -154,28 +153,22 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
     private func setRepeatPopupButton() {
         let optionClosure = { (action: UIAction) in
             switch action.title {
-            case "None":
-                self.selectedRepeatOption = .none
-            case "Every Day":
-                self.selectedRepeatOption = .daily
-            case "Every Week":
-                self.selectedRepeatOption = .weekly
-            case "Every Month":
-                self.selectedRepeatOption = .monthly
-            case "Every Year":
-                self.selectedRepeatOption = .yearly
-            default:
-                break
+            case self.repeatOptionTitles[0]: self.selectedRepeatOption = .none
+            case self.repeatOptionTitles[1]: self.selectedRepeatOption = .daily
+            case self.repeatOptionTitles[2]: self.selectedRepeatOption = .weekly
+            case self.repeatOptionTitles[3]: self.selectedRepeatOption = .monthly
+            case self.repeatOptionTitles[4]: self.selectedRepeatOption = .yearly
+            default: break
             }
             self.repeatPopupButton.setTitle(self.selectedRepeatOption.description, for: .normal)
         }
         // Create the menu for repeat options
         repeatPopupButton.menu = UIMenu(children: [
-            UIAction(title: "None", state: selectedRepeatOption == .none ? .on : .off, handler: optionClosure),
-            UIAction(title: "Every Day", state: selectedRepeatOption == .daily ? .on : .off, handler: optionClosure),
-            UIAction(title: "Every Week", state: selectedRepeatOption == .weekly ? .on : .off, handler: optionClosure),
-            UIAction(title: "Every Month", state: selectedRepeatOption == .monthly ? .on : .off, handler: optionClosure),
-            UIAction(title: "Every Year", state: selectedRepeatOption == .yearly ? .on : .off, handler: optionClosure)])
+            UIAction(title: self.repeatOptionTitles[0], state: selectedRepeatOption == .none ? .on : .off, handler: optionClosure),
+            UIAction(title: self.repeatOptionTitles[1], state: selectedRepeatOption == .daily ? .on : .off, handler: optionClosure),
+            UIAction(title: self.repeatOptionTitles[2], state: selectedRepeatOption == .weekly ? .on : .off, handler: optionClosure),
+            UIAction(title: self.repeatOptionTitles[3], state: selectedRepeatOption == .monthly ? .on : .off, handler: optionClosure),
+            UIAction(title: self.repeatOptionTitles[4], state: selectedRepeatOption == .yearly ? .on : .off, handler: optionClosure)])
         
         repeatPopupButton.showsMenuAsPrimaryAction = true
         repeatPopupButton.changesSelectionAsPrimaryAction = true
@@ -207,6 +200,29 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
         navigationController?.popViewController(animated: true)
     }
     
+    private func selectedRepeatOptionIndex() -> Int {
+        switch selectedRepeatOption {
+        case .none: return 0
+        case .daily: return 1
+        case .weekly: return 2
+        case .monthly: return 3
+        case .yearly: return 4
+        }
+        
+    }
+    
+//    private func updateLocalizedDifficultyLevels() {
+//        // App localization for Difficulty's choices
+//        difficultyLevels = [
+//            "Easy".localized(),
+//            "Normal".localized(),
+//            "Hard".localized(),
+//            "Extreme".localized(),
+//            "Absurd".localized()
+//        ]
+//        difficultyPickerView.reloadAllComponents()
+//    }
+    
     @objc func updateLocalizationUI() {
         // To access another language
         editQuestPageLabel.text = "Edit Quest Information".localized()
@@ -217,29 +233,22 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
         repeatLabel.text = "Repeat".localized()
         questEXPValueLabel.text = "Quest EXP Value".localized()
         difficultyLabel.text = "Difficulty".localized()
-        
-//        // App Localize for Repeat options
-//        repeatOptionTitles = [
-//            RepeatOption.none.description.localized(),
-//            RepeatOption.daily.description.localized(),
-//            RepeatOption.weekly.description.localized(),
-//            RepeatOption.monthly.description.localized(),
-//            RepeatOption.yearly.description.localized()
-//        ]
-//        
-//        repeatPopupButton.setTitle(repeatOptionTitles[selectedRepeatOptionIndex()], for: .normal)
-//        
-//        
-//        // App localization for Difficulty's choices
-//        difficultyLevels[0] = "Easy".localized()
-//        difficultyLevels[1] = "Normal".localized()
-//        difficultyLevels[2] = "Hard".localized()
-//        difficultyLevels[3] = "Extreme".localized()
-//        difficultyLevels[4] = "Absurd".localized()
-//        
-//        difficultyPickerView.reloadAllComponents()
+        titleTextField.placeholder = "Enter your quest title".localized()
+        detailsTextField.placeholder = "Enter task details".localized()
         
         doneButton.setTitle("Done".localized(), for: .normal)
+        
+        let repeatOptionTitles = [
+            RepeatOption.none.description,
+            RepeatOption.daily.description,
+            RepeatOption.weekly.description,
+            RepeatOption.monthly.description,
+            RepeatOption.yearly.description
+        ]
+
+        repeatPopupButton.setTitle(repeatOptionTitles[selectedRepeatOptionIndex()], for: .normal)
+        
+        difficultyPickerView.selectRow(selectedDifficultyIndex, inComponent: 0, animated: false)
         
     }
     

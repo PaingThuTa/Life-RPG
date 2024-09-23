@@ -358,6 +358,7 @@
                         <outlet property="defaultRankingLabel" destination="g86-Ks-Bfm" id="IAp-MI-mfu"/>
                         <outlet property="levelLabel" destination="cya-AA-qh0" id="QPR-PV-tSa"/>
                         <outlet property="nicknameLabel" destination="AOa-fb-Uor" id="xPi-TS-pqT"/>
+                        <outlet property="nicknameTextField" destination="XEt-ZO-a4k" id="jBi-g4-cjL"/>
                         <outlet property="rankLabel" destination="ToG-3Q-Vdr" id="T4v-wh-RFR"/>
                         <outlet property="tellUsAboutYouLabel" destination="dJ1-hl-FEY" id="9wp-Kp-utZ"/>
                     </connections>
@@ -1303,20 +1304,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yG8-Ns-ssi">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="yG8-Ns-ssi">
                                 <rect key="frame" x="40" y="100" width="313" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quest Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGr-QK-Stp">
-                                        <rect key="frame" x="0.0" y="0.0" width="198" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="143" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                         <color key="textColor" systemColor="systemOrangeColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJd-hD-wl0">
-                                        <rect key="frame" x="203" y="0.0" width="110" height="30"/>
+                                        <rect key="frame" x="193" y="0.0" width="120" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="efw-1r-ntg"/>
-                                            <constraint firstAttribute="width" constant="110" id="sR6-m3-ifk"/>
+                                            <constraint firstAttribute="width" constant="120" id="sR6-m3-ifk"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="systemOrangeColor"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="Edit Quest">
@@ -1330,6 +1331,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="cGr-QK-Stp" firstAttribute="leading" secondItem="yG8-Ns-ssi" secondAttribute="leading" id="XsL-d1-q0e"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="URX-GW-BWD">
                                 <rect key="frame" x="40" y="160.00000000000003" width="313" height="342.66666666666674"/>
@@ -1397,11 +1401,11 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="70" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRe-Qy-UJT">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRe-Qy-UJT">
                                         <rect key="frame" x="0.0" y="164.66666666666669" width="313" height="22"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="8qN-PT-aak">
-                                                <rect key="frame" x="0.0" y="0.0" width="113" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="163" height="22"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Tmr-IQ-4TY">
                                                         <rect key="frame" x="0.0" y="1.6666666666666643" width="22" height="19.000000000000004"/>
@@ -1412,10 +1416,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbv-5Z-WkR">
-                                                        <rect key="frame" x="25" y="0.0" width="88" height="22"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="88" id="FnM-cR-92p"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="25" y="0.0" width="138" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -1499,11 +1500,11 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="S3m-hX-WcP">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="S3m-hX-WcP">
                                         <rect key="frame" x="0.0" y="320.66666666666669" width="313" height="22"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="l7L-P2-0pz">
-                                                <rect key="frame" x="0.0" y="0.0" width="113" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="163" height="22"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bolt.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wlD-XU-7KV">
                                                         <rect key="frame" x="0.0" y="-0.33333333333333215" width="22" height="23"/>
@@ -1514,15 +1515,11 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaW-Xx-tJK">
-                                                        <rect key="frame" x="25" y="0.0" width="67.333333333333329" height="22"/>
+                                                        <rect key="frame" x="25" y="0.0" width="138" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="R8f-iS-z66">
-                                                        <rect key="frame" x="95.333333333333343" y="0.99999999999999822" width="17.666666666666671" height="20.666666666666664"/>
-                                                        <color key="tintColor" red="0.9529411793" green="0.68235301969999995" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    </imageView>
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extreme" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Js-2U-nCe">
@@ -1601,10 +1598,20 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="jBw-Yp-tAN" id="UpW-Cz-l8J"/>
+                        <outlet property="completeButton" destination="Gsd-dG-O4o" id="kvb-IC-X6v"/>
                         <outlet property="detailsLabel" destination="mPh-MT-tjt" id="pKJ-sZ-ofs"/>
                         <outlet property="difficultyLabel" destination="7Js-2U-nCe" id="3Dd-Zu-ETm"/>
                         <outlet property="dueDateLabel" destination="GAc-iI-6gF" id="76U-fV-B4b"/>
+                        <outlet property="editQuestButton" destination="BJd-hD-wl0" id="C9A-NS-Egr"/>
                         <outlet property="expValueLabel" destination="jAn-aj-5Tx" id="ILq-ih-7yC"/>
+                        <outlet property="headDetailsLabel" destination="XMU-IR-TkF" id="4w9-Yp-asD"/>
+                        <outlet property="headDifficultyLabel" destination="vaW-Xx-tJK" id="Q5m-6j-gc2"/>
+                        <outlet property="headDueDateLabel" destination="Mbv-5Z-WkR" id="b6i-EQ-oSh"/>
+                        <outlet property="headEXPValueLabel" destination="pJR-BA-K5d" id="LXe-lP-ScI"/>
+                        <outlet property="headRepeatLabel" destination="wAd-2U-YWD" id="ALV-zF-Mnu"/>
+                        <outlet property="headTitleLabel" destination="e0m-Rt-h0u" id="qS9-EE-mix"/>
+                        <outlet property="questInfoPageLabel" destination="cGr-QK-Stp" id="wXC-NO-QoQ"/>
                         <outlet property="repeatLabel" destination="hfg-dz-3cQ" id="Ci1-1A-zix"/>
                         <outlet property="titleLabel" destination="FiV-vK-MP5" id="a2J-P0-Fp3"/>
                     </connections>
@@ -1978,11 +1985,11 @@
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="K8z-iK-QcU">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="K8z-iK-QcU">
                                                             <rect key="frame" x="0.0" y="54" width="333" height="20"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Quest Due:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtR-3a-bhD">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="268" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="253" height="20"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -2009,10 +2016,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="DueDateLabel" destination="67a-kw-T5B" id="kEg-Rc-ajx"/>
                                             <outlet property="detailsLabel" destination="Hcf-0U-a9p" id="jhN-is-dEn"/>
                                             <outlet property="difficultyLabel" destination="BMi-IM-Aje" id="YDV-9x-kFi"/>
                                             <outlet property="dueDateLabel" destination="67a-kw-T5B" id="GfV-rA-KaB"/>
+                                            <outlet property="questDueLabel" destination="BtR-3a-bhD" id="HTY-H9-H13"/>
                                             <outlet property="titleLabel" destination="hht-su-QgT" id="B8j-cd-KRi"/>
                                         </connections>
                                     </tableViewCell>

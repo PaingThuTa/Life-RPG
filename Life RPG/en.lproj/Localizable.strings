@@ -30,6 +30,8 @@
 
 "Nickname" = "Nickname";
 
+"Enter your nickname" = "Enter your nickname";
+
 "Your default ranking" = "Your default ranking";
 
 "Rank" = "Rank";
@@ -58,9 +60,15 @@
 
 "Edit Quest Information" = "Edit Quest Information";
 
+"Quest Info" = "Quest Info";
+
 "Title" = "Title";
 
+"Enter your quest title" = "Enter your quest title";
+
 "Details" = "Details";
+
+"Enter task details" = "Enter task details";
 
 "*No more than 200 letters" = "*No more than 200 letters";
 
@@ -94,3 +102,10 @@
 
 "Absurd" = "Absurd";
 
+"Edit Quest" = "Edit Quest";
+
+"Cancel" = "Cancel";
+
+"Complete" = "Complete";
+
+"Quest Due:" = "Quest Due(Days left):";

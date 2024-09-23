@@ -30,6 +30,8 @@
 
 "Nickname" = "ชื่อเล่น";
 
+"Enter your nickname" = "โปรดใส่ชื่อเล่น";
+
 "Your default ranking" = "แร้งค์เริ่มต้น";
 
 "Rank" = "แร้งค์";
@@ -58,9 +60,15 @@
 
 "Edit Quest Information" = "แก้ไขข้อมูลเควส";
 
+"Quest Info" = "ข้อมูลภารกิจ";
+
 "Title" = "หัวข้อ";
 
+"Enter your quest title" = "โปรดใส่ห้อข้อภารกิจ";
+
 "Details" = "รายละเอียด";
+
+"Enter task details" = "โปรดใส่รายละเดียดภารกิจ";
 
 "*No more than 200 letters" = "*น้อยกว่า200ตัวอักษร";
 
@@ -93,3 +101,11 @@
 "Extreme" = "ยากมาก";
 
 "Absurd" = "ยากที่สุด";
+
+"Edit Quest" = "แก้ไข";
+
+"Cancel" = "ยกเลิก";
+
+"Complete" = "เสร็จสิ้น";
+
+"Quest Due:" = "กำหนดวันเสร็จ(จำนวนวัน):";

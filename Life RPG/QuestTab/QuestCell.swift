@@ -12,14 +12,15 @@ class QuestCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var difficultyLabel: UILabel!
-//    @IBOutlet weak var expValueLabel: UILabel!
-//    @IBOutlet weak var completionDateLabel: UILabel!
     @IBOutlet weak var dueDateLabel: UILabel!
+    
+    @IBOutlet weak var questDueLabel: UILabel!
     
     // Configure the cell with quest data
     func configure(with quest: Quest) {
         titleLabel.text = quest.title
         detailsLabel.text = quest.details
+        questDueLabel.text = "Quest Due:".localized()
         
         // Set difficulty label with color
         difficultyLabel.text = quest.difficulty
@@ -41,18 +42,19 @@ class QuestCell: UITableViewCell {
     // Set difficulty color based on the difficulty level
     private func setDifficultyColor(for difficulty: String) {
         switch difficulty {
-        case "Easy":
+        case "Easy".localized():
             difficultyLabel.textColor = .green
-        case "Normal":
+        case "Normal".localized():
             difficultyLabel.textColor = .blue
-        case "Hard":
+        case "Hard".localized():
             difficultyLabel.textColor = .purple
-        case "Extreme":
+        case "Extreme".localized():
             difficultyLabel.textColor = .red
-        case "Absurd":
+        case "Absurd".localized():
             difficultyLabel.textColor = .brown
         default:
             difficultyLabel.textColor = .black
         }
     }
+    
 }
