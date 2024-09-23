@@ -36,7 +36,6 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
     var updateQuestCompletion: ((Quest) -> Void)?
     
     // Difficulty levels and corresponding EXP values
-    let difficultyLevels = ["Easy", "Normal", "Hard", "Extreme", "Absurd"]
     var difficultyLevels = ["Easy", "Normal", "Hard", "Extreme", "Absurd"]
     var expValues = [100, 200, 300, 500, 1000]
     
