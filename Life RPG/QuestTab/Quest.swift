@@ -14,6 +14,7 @@ enum QuestStatus: String, Codable {
 }
 
 struct Quest: Codable {
+    let id: UUID
     var title: String
     var details: String
     var repeats: String

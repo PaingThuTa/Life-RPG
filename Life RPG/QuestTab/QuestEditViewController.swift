@@ -183,6 +183,7 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
 
         // Capture the updated quest details
         let updatedQuest = Quest(
+            id: quest?.id ?? UUID(),
             title: title,
             details: details,
             repeats: selectedRepeatOption.description,

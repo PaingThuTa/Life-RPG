@@ -130,6 +130,7 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
         
         // Create a new quest with the selected date
         let quest = Quest(
+            id: UUID(),
             title: title,
             details: details,
             repeats: selectedRepeatOption.description,

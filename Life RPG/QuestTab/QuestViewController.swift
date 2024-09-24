@@ -40,7 +40,7 @@ class QuestViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     func questDidUpdate(_ quest: Quest) {
         // Update the quest in the array
-        if let index = quests.firstIndex(where: { $0.title == quest.title }) {
+        if let index = quests.firstIndex(where: { $0.id == quest.id }) {
             quests[index] = quest
         } else {
             // Add new quest if not found
@@ -75,9 +75,10 @@ class QuestViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         // Update or append the quest
         for quest in quests {
-            if let index = currentQuests.firstIndex(where: { $0.title == quest.title }) {
+            if let index = currentQuests.firstIndex(where: { $0.id == quest.id }) {
                 currentQuests[index] = quest // Update existing quest
-            } else {
+            }
+            else {
                 currentQuests.append(quest) // Add new quest
             }
         }
