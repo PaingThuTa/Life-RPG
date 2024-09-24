@@ -28,7 +28,7 @@
 
 "Tell us about you!" = "Tell us about you!";
 
-"Nickname" = "Nickname";
+"Nickname" = "Nickname";  // SettingsViewController
 
 "Enter your nickname" = "Enter your nickname";
 
@@ -108,7 +108,7 @@
 
 "Complete" = "Complete";
 
-"Quest Due:" = "Quest Due(Days left):";
+"Quest Due:" = "Quest Due(days left):";
 
 // RankViewController
 
@@ -119,3 +119,24 @@
 // AllRankViewController
 
 "Requirements:" = "Requirements:";
+
+// SettingsViewController
+
+"Settings" = "Settings";
+
+"Personal Information" = "Personal Information";
+
+"Notifications" = "Notifications";
+
+"Enable Notifications" = "Enable Notifications";
+
+"Music" = "Music";
+
+"Background Music" = "Background Music";
+
+"Change Language" = "Change Language";
+
+"Language Changed" = "การเปลี่ยนภาษา";  // Alert Controller
+
+"Language change message" = "ภาษาเปลี่ยนเป็น %@ กรุณาเริ่มแอปใหม่เพื่อดูการเปลี่ยนแปลง";  // Alert Controller
+

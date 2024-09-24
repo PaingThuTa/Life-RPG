@@ -786,10 +786,10 @@
             </objects>
             <point key="canvasLocation" x="5759.5419847328239" y="381.69014084507046"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="xVW-Xm-V52">
             <objects>
-                <viewController id="5kn-nj-CSC" sceneMemberID="viewController">
+                <viewController id="5kn-nj-CSC" customClass="SettingsViewController" customModule="Life_RPG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MZR-LK-Uvu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -853,6 +853,9 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="🇺🇸   English(US)">
                                     <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="englishButtonTapped:" destination="5kn-nj-CSC" eventType="touchUpInside" id="b8U-cH-Wyy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkQ-lU-pPj">
                                 <rect key="frame" x="40" y="646" width="313" height="50"/>
@@ -864,6 +867,9 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="🇹🇭   Thai">
                                     <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="thaiButtonTapped:" destination="5kn-nj-CSC" eventType="touchUpInside" id="rQa-9w-nvA"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="119" translatesAutoresizingMaskIntoConstraints="NO" id="8L3-7T-l6x">
                                 <rect key="frame" x="40" y="346" width="313" height="31"/>
@@ -877,6 +883,9 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mWX-0E-J6Z">
                                         <rect key="frame" x="264" y="0.0" width="51" height="31"/>
                                         <color key="onTintColor" red="0.9529411793" green="0.68235301969999995" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="notiButtonToggled:" destination="5kn-nj-CSC" eventType="touchUpInside" id="rdW-eN-RR7"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -892,6 +901,9 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E7c-n3-gdD">
                                         <rect key="frame" x="264" y="0.0" width="51" height="31"/>
                                         <color key="onTintColor" red="0.9529411793" green="0.68235301969999995" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="backgroundMusicButtonToggled:" destination="5kn-nj-CSC" eventType="touchUpInside" id="rZ6-bh-Njv"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -951,6 +963,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ao2-Km-vfq"/>
+                    <connections>
+                        <outlet property="backgroundMusicLabel" destination="VjZ-vA-12o" id="d1P-Xh-Jqf"/>
+                        <outlet property="changeLanguageLabel" destination="aYA-gx-oRz" id="X7S-Jf-Kqa"/>
+                        <outlet property="enableNotiLabel" destination="Kza-Z0-Muw" id="bKd-2S-vAq"/>
+                        <outlet property="englishButton" destination="d3X-qy-TOZ" id="v6J-eh-3aq"/>
+                        <outlet property="musicLabel" destination="a7C-nh-ndp" id="PkC-hU-Bz3"/>
+                        <outlet property="nicknameLabel" destination="eqJ-rX-JV6" id="Ye8-gr-9PW"/>
+                        <outlet property="nicknameValueLabel" destination="5gb-T9-UwD" id="Epo-Zd-X5u"/>
+                        <outlet property="notiLabel" destination="QeH-qw-Enw" id="9O3-RZ-cFI"/>
+                        <outlet property="personalInfoLabel" destination="fTd-F5-0tC" id="l1J-7R-acf"/>
+                        <outlet property="settingsTitleLabel" destination="SmM-8q-wkv" id="PGO-hy-ADa"/>
+                        <outlet property="thaiButton" destination="OkQ-lU-pPj" id="gXA-s7-LKK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oo-Cm-iF9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

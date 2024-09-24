@@ -28,7 +28,7 @@
 
 "Tell us about you!" = "บอกเราเกี่ยวกับคุณ";
 
-"Nickname" = "ชื่อเล่น";
+"Nickname" = "ชื่อเล่น";  // SettingsViewController
 
 "Enter your nickname" = "โปรดใส่ชื่อเล่น";
 
@@ -119,3 +119,24 @@
 // AllRankViewController
 
 "Requirements:" = "ข้อกำหนด:";
+
+// SettingsViewController
+
+"Settings" = "การตั้งค่า";
+
+"Personal Information" = "เกี่ยวกับคุณ";
+
+"Notifications" = "การแจ้งเตือน";
+
+"Enable Notifications" = "เปิดการแจ้งเตือน";
+
+"Music" = "ดนตรี";
+
+"Background Music" = "ดนตรีประกอบ";
+
+"Change Language" = "เปลี่ยนภาษา";
+
+"Language Changed" = "Language Changed";  // Alert Controller
+
+"Language change message" = "The language has been changed to %@. Restart the app to see changes.";  // Alert Controller
+
