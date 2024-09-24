@@ -138,5 +138,14 @@
 
 "Language Changed" = "Language Changed";  // Alert Controller
 
+"No Change" = "ไม่มีการเปลี่ยนแปลง";
+
+"You are already using %@." = "คุณกำลังใช้%@";
+
 "Language change message" = "The language has been changed to %@. Restart the app to see changes.";  // Alert Controller
 
+"changingLangOK" = "OK";
+
+"changingLangCancel" = "Cancel";
+
+"OK" = "โอเค";
