@@ -23,13 +23,13 @@ class QuestCell: UITableViewCell {
         questDueLabel.text = "Quest Due:".localized()
         
         // Set difficulty label with color
-        difficultyLabel.text = quest.difficulty
+        difficultyLabel.text = quest.difficulty.localized()
         setDifficultyColor(for: quest.difficulty)
 
         
         // Set due date and days left
         let daysLeft = calculateDaysLeft(until: quest.dueDate)
-        dueDateLabel.text = "\(daysLeft) days left"
+        dueDateLabel.text = "\(daysLeft)"
     }
     
     // Helper function to calculate the days left

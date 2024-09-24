@@ -27,7 +27,7 @@ class RankCell: UICollectionViewCell {
         }
         
         if let alphabetRankLabel = self.rankLabel {
-            alphabetRankLabel.text = "Rank: \(String(describing: rank.alphabetRank!))"
+            alphabetRankLabel.text = String(describing: rank.alphabetRank!)
         }
         
         requirementsLabel.text = "Requirements:".localized()
