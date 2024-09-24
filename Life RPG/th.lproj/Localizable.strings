@@ -36,11 +36,11 @@
 
 "Rank" = "แร้งค์";
 
-"Level" = "เลเวล";
+"Level" = "เลเวล";  // RankViewController
 
-"EXP To Level Up" = "คะแนนเพื่อเลเวลอัพ";
+"EXP To Level Up" = "คะแนนเพื่อเลเวลอัพ";  // RankViewController
 
-"Total EXP" = "คะแนนทั้งหมด";
+"Total EXP" = "คะแนนทั้งหมด";  // RankViewController
 
 "START LEVELING UP!" = "ไปเริ่มกันเลย!";
 
@@ -109,3 +109,13 @@
 "Complete" = "เสร็จสิ้น";
 
 "Quest Due:" = "กำหนดวันเสร็จ(จำนวนวัน):";
+
+// RankViewController
+
+"Your Rank" = "แร้งค์ของคุณ"; // Title
+
+"All Ranks" = "แร้งค์ทั้งหมด";
+
+// AllRankViewController
+
+"Requirements:" = "ข้อกำหนด:";

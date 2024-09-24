@@ -9,6 +9,8 @@ import UIKit
 import Alamofire
 
 class AllRankViewController: UIViewController {
+    
+    @IBOutlet weak var rankTitleLabel: UILabel!
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -22,6 +24,7 @@ class AllRankViewController: UIViewController {
         collectionView.delegate = self
         
         fetchData()
+        updateLocalizationUI()
     }
     
     private func assignRanks() {
@@ -76,5 +79,9 @@ extension AllRankViewController: UICollectionViewDataSource, UICollectionViewDel
 
         return cell
         
+    }
+    
+    @objc func updateLocalizationUI() {
+        rankTitleLabel.text = "All Ranks".localized()
     }
 }

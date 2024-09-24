@@ -36,11 +36,11 @@
 
 "Rank" = "Rank";
 
-"Level" = "Level";
+"Level" = "Level";  // RankViewController
 
-"EXP To Level Up" = "EXP To Level Up";
+"EXP To Level Up" = "EXP To Level Up";  // RankViewController
 
-"Total EXP" = "Total EXP";
+"Total EXP" = "Total EXP";  // RankViewController
 
 "START LEVELING UP!" = "START LEVELING UP!";
 
@@ -109,3 +109,13 @@
 "Complete" = "Complete";
 
 "Quest Due:" = "Quest Due(Days left):";
+
+// RankViewController
+
+"Your Rank" = "Your Rank"; // Title
+
+"All Ranks" = "All Ranks";
+
+// AllRankViewController
+
+"Requirements:" = "Requirements:";

@@ -12,6 +12,8 @@ class RankCell: UICollectionViewCell {
     @IBOutlet weak var rankCharacterLabel: UILabel!
     @IBOutlet weak var rankLabel: UILabel!
     
+    @IBOutlet weak var requirementsLabel: UILabel!
+    
     func configure(with rank: Rank) {
         
         rankCharacterLabel.text = rank.name
@@ -27,6 +29,8 @@ class RankCell: UICollectionViewCell {
         if let alphabetRankLabel = self.rankLabel {
             alphabetRankLabel.text = "Rank: \(String(describing: rank.alphabetRank!))"
         }
+        
+        requirementsLabel.text = "Requirements:".localized()
             
     }
     private func loadImage(from url: URL) {

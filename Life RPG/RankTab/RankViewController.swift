@@ -14,6 +14,13 @@ class RankViewController: UIViewController {
     @IBOutlet weak var EXPToLevelUpLabel: UILabel!
     @IBOutlet weak var TotalExpLabel: UILabel!
     
+    @IBOutlet weak var yourRankLabel: UILabel!
+    @IBOutlet weak var headLevelLabel: UILabel!
+    @IBOutlet weak var headEXPToLevelUpLabel: UILabel!
+    @IBOutlet weak var headTotalEXPLabel: UILabel!
+    
+    @IBOutlet weak var allRankButton: UIButton!
+    
     @IBOutlet weak var castingSpellImageView: UIImageView!
     @IBOutlet weak var ghoulImageView: UIImageView!
     
@@ -23,6 +30,8 @@ class RankViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateLocalizationUI()
         
         castingSpellImages = createImageArray(total: 14, imagePrefix: "castingSpell")
         ghoulImages = createImageArray(total: 9, imagePrefix: "Ghoul")
@@ -64,5 +73,18 @@ class RankViewController: UIViewController {
         imageView.animationDuration = 3.0
         imageView.animationRepeatCount = 2
         imageView.startAnimating()
+    }
+    
+    @objc func updateLocalizationUI() {
+        // To access another language
+        yourRankLabel.text = "Your Rank".localized()
+        headLevelLabel.text = "Level".localized()
+        headEXPToLevelUpLabel.text = "EXP To Level Up".localized()
+        headTotalEXPLabel.text = "Total EXP".localized()
+
+//        let smallerFont = UIFont.systemFont(ofSize: 14) // Choose your desired size here
+        allRankButton.setTitle("All Ranks".localized(), for: .normal)
+//        allRankButton.titleLabel?.font = smallerFont
+        
     }
 }
