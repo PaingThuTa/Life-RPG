@@ -7,6 +7,10 @@
 import UIKit
 
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var historyLabel: UILabel!
+    @IBOutlet weak var clearHistoryButton: UIButton!
+    
     @IBOutlet weak var tableView: UITableView!
     
     var quests: [Quest] = []
@@ -19,6 +23,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         loadQuests()  // Initial loading of quests
+        updateLocalizationUI()
     }
 
     // Reload quests every time the view appears
@@ -31,7 +36,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     // Load quests from UserDefaults using the allQuestsKey
     func loadQuests() {
         guard let savedData = UserDefaults.standard.data(forKey: allQuestsKey) else {
-            print("Error: No data found in UserDefaults")
+            print("No data found in UserDefaults")
             // Optionally, update the UI to reflect that no data was loaded
             return
         }
@@ -57,14 +62,19 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     @IBAction func clearHistoryTapped(_ sender: UIButton) {
+
         // Create an alert controller to confirm the clearing of history
-        let alert = UIAlertController(title: "Clear History", message: "Are you sure you want to delete all quest history?", preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: "Clear History".localized(),
+            message: "Are you sure you want to delete all quest history?".localized(),
+            preferredStyle: .alert
+        )
 
         // Add a cancel action to allow the user to back out
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil))
 
         // Add a clear action that will remove the data
-        alert.addAction(UIAlertAction(title: "Clear", style: .destructive, handler: { [weak self] _ in
+        alert.addAction(UIAlertAction(title: "Clear".localized(), style: .destructive, handler: { [weak self] _ in
             self?.clearQuestHistory()
         }))
 
@@ -82,13 +92,20 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         // Reload the table view to reflect that history has been cleared
         tableView.reloadData()
-
-        // Optionally, provide feedback that history has been cleared
-        let feedbackAlert = UIAlertController(title: "Done", message: "Quest history has been successfully cleared.", preferredStyle: .alert)
-        feedbackAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        let feedbackAlert = UIAlertController(
+            title: "Done".localized(), // Localized title
+            message: "Quest history has been successfully cleared.".localized(), // Localized message
+            preferredStyle: .alert
+        )
+        feedbackAlert.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: nil)) // Localized button title
         present(feedbackAlert, animated: true, completion: nil)
     }
 
+    @objc func updateLocalizationUI() {
+        historyLabel.text = "History".localized()
+        clearHistoryButton.setTitle("Clear history".localized(), for: .normal)
+    }
     
 
 
@@ -109,24 +126,25 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as! HistoryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as! HistoryCell
         let quest = quests[indexPath.row]
         cell.titleLabel.text = quest.title
         cell.detailsLabel.text = quest.details
-        cell.difficultyLabel.text = quest.difficulty
-        cell.statusLabel.text = quest.status.rawValue
+        cell.difficultyLabel.text = quest.difficulty.localized()
+        cell.statusLabel.text = quest.status.localized
+        cell.headStatusLabel.text = "Status:".localized()
 
         // Set difficulty color based on the quest's difficulty
         switch quest.difficulty {
-            case "Easy":
+        case "Easy".localized():
                 cell.difficultyLabel.textColor = UIColor.systemGreen
-            case "Normal":
+        case "Normal".localized():
                 cell.difficultyLabel.textColor = UIColor.systemBlue
-            case "Hard":
+        case "Hard".localized():
                 cell.difficultyLabel.textColor = UIColor.systemOrange
-            case "Extreme":
+        case "Extreme".localized():
                 cell.difficultyLabel.textColor = UIColor.systemRed
-            case "Absurd":
+        case "Absurd".localized():
                 cell.difficultyLabel.textColor = UIColor.systemPurple
             default:
                 cell.difficultyLabel.textColor = UIColor.black // Default color

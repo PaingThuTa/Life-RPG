@@ -44,6 +44,16 @@
 
 "START LEVELING UP!" = "START LEVELING UP!";
 
+// TabBarViewController
+
+"Quests" = "Quests";
+
+"Rank" = "Rank";
+
+"History" = "History";
+
+"Settings" = "Settings";
+
 // QuestViewController
 
 "Welcome player," = "Welcome player,";
@@ -80,7 +90,7 @@
 
 "Difficulty" = "Difficulty";
 
-"Done" = "Done";
+"Done" = "Done";  // HistoryViewController (AlertAction)
 
 "None" = "None";
 
@@ -104,7 +114,7 @@
 
 "Edit Quest" = "Edit Quest";
 
-"Cancel" = "Cancel";
+"Cancel" = "Cancel";  // HistoryViewController (AlertAction)
 
 "Complete" = "Complete";
 
@@ -150,3 +160,28 @@
 
 "OK" = "OK";
 
+// HistoryViewController
+
+"History" = "History";
+
+"Clear history" = "Clear history";
+
+"Clear History" = "Clear History";  //AlertAction
+
+"Are you sure you want to delete all quest history?" = "Are you sure you want to delete all quest history?";  //AlertAction
+
+"Clear" = "Clear";  //AlertAction
+
+"Quest history has been successfully cleared." = "Quest history has been successfully cleared.";  //AlertAction
+
+// HistoryDetailViewController
+
+"Status" = "Status";
+
+"Status:" = "Status :";
+
+"In progress" = "In progress";
+
+"Completed" = "Completed";
+
+"Cancelled" = "Cancelled";

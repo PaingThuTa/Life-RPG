@@ -1,26 +1,25 @@
 //
-//  HistoryTableViewCell.swift
+//  HistoryCell.swift
 //  Life RPG
 //
-//  Created by Paing Thu Ta on 20/9/24.
+//  Created by Beau on 24/9/2567 BE.
 //
 
 import UIKit
 
-class HistoryTableViewCell: UITableViewCell {
+class HistoryCell: UITableViewCell {
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var difficultyLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    
+    @IBOutlet weak var headStatusLabel: UILabel!
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
+        // Configure the view for the selected state
     }
-    
+
 }

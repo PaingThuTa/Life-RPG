@@ -146,8 +146,9 @@ class QuestViewController: UIViewController, UITableViewDelegate, UITableViewDat
         letsMoveOnsubtitleLabel.text = "Subtitle".localized()
         activeQuestLabel.text = "Active Quests".localized()
         addQuestButton.setTitle("+ add new quest".localized(), for: .normal)
-
+        
     }
+    
 }
 
 

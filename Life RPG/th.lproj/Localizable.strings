@@ -44,6 +44,16 @@
 
 "START LEVELING UP!" = "ไปเริ่มกันเลย!";
 
+// TabBarViewController
+
+"Quests" = "ภารกิจ";
+
+"Rank" = "แร้งค์";
+
+"History" = "ประวัติ";
+
+"Settings" = "ตั้งค่า";
+
 // QuestViewController
 
 "Welcome player," = "ยินดีต้อนรับผู้เล่น,";
@@ -56,9 +66,9 @@
 
 // AddQuestViewController + QuestEditViewController
 
-"Add Quest" = "เพิ่มเควส";
+"Add Quest" = "เพิ่มภารกิจ";
 
-"Edit Quest Information" = "แก้ไขข้อมูลเควส";
+"Edit Quest Information" = "แก้ไขข้อมูลภารกิจ";
 
 "Quest Info" = "ข้อมูลภารกิจ";
 
@@ -76,11 +86,11 @@
 
 "Repeat" = "การทำซ้ำ";
 
-"Quest EXP Value" = "คะแนนของเควส";
+"Quest EXP Value" = "คะแนนของภารกิจ";
 
 "Difficulty" = "ระดับความยาก";
 
-"Done" = "เสร็จสิ้น";
+"Done" = "เสร็จสิ้น";  // HistoryViewController (AlertAction)
 
 "None" = "ครั้งเดียว";
 
@@ -104,11 +114,11 @@
 
 "Edit Quest" = "แก้ไข";
 
-"Cancel" = "ยกเลิก";
+"Cancel" = "ยกเลิก"; // HistoryViewController (AlertAction)
 
 "Complete" = "เสร็จสิ้น";
 
-"Quest Due:" = "กำหนดวันเสร็จ(จำนวนวัน):";
+"Quest Due:" = "เหลือเวลาอีก(วัน):";
 
 // RankViewController
 
@@ -149,3 +159,29 @@
 "changingLangCancel" = "Cancel";
 
 "OK" = "โอเค";
+
+// HistoryViewController
+
+"History" = "ประวัติภารกิจ";
+
+"Clear history" = "ลบประวัติ";
+
+"Clear History" = "ลบประวัติทั้งหมด";  //AlertAction
+
+"Are you sure you want to delete all quest history?" = "คุณแน่ใจหรือไม่ว่าต้องการลบประวัติภารกิจทั้งหมด?";  //AlertAction
+
+"Clear" = "ลบ";  //AlertAction
+
+"Quest history has been successfully cleared." = "ประวัติภารกิจถูกลบเรียบร้อยแล้ว";  //AlertAction
+
+// HistoryDetailViewController
+
+"Status" = "สถานะ";
+
+"Status:" = "สถานะ :";
+
+"In progress" = "กำลังดำเนินการ";
+
+"Completed" = "เสร็จสิ้น";
+
+"Cancelled" = "ยกเลิก";

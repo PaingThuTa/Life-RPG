@@ -80,35 +80,6 @@ class SettingsViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "changingLangOK".localized(), style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
         
-//        let currentLanguage = UserDefaults.standard.string(forKey: LocalizeUserDefaultKey) ?? "en" // Default to English
-//        if currentLanguage == langCode {
-//            
-//            // If the user is trying to set the same language, show an alert
-//            let sameLanguageAlert = UIAlertController(
-//                title: "No Change".localized(),
-//                message: "You are already using \(langCode == "en" ? "English" : "ภาษาไทย").",
-//                preferredStyle: .alert)
-//            
-//            sameLanguageAlert.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: nil))
-//            present(sameLanguageAlert, animated: true, completion: nil)
-//            return // Exit the function to prevent further execution
-//        }
-//        
-//        // If the language is different, proceed with setting it
-//        UserDefaults.standard.setValue(langCode, forKey: LocalizeUserDefaultKey)
-//            
-//        let languageName = langCode == "en" ? "English" : "ภาษาไทย"
-//        let changeLangMessage = String(format: "Language change message".localized(), languageName)
-//            
-//        let alertController = UIAlertController(
-//            title: "Language Changed".localized(),
-//            message: changeLangMessage,
-//            preferredStyle: .alert)
-//        
-//        alertController.addAction(UIAlertAction(title: "changingLangCancel".localized(), style: .cancel, handler: nil))
-//        alertController.addAction(UIAlertAction(title: "changingLangOK".localized(), style: .default, handler: nil))
-//        present(alertController, animated: true, completion: nil)
-        
         updateLocalizationUI()
         
     }

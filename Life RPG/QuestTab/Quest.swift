@@ -8,9 +8,17 @@
 import Foundation
 
 enum QuestStatus: String, Codable {
-    case Inprogress = "In Progress"
+    case Inprogress = "In progress"
     case completed = "Completed"
-    case canceled = "Canceled"
+    case canceled = "Cancelled"
+    
+    var localized: String {
+        switch self {
+        case .Inprogress: "In progress".localized()
+        case .completed: "Completed".localized()
+        case .canceled: "Cancelled".localized()
+        }
+    }
 }
 
 struct Quest: Codable {
