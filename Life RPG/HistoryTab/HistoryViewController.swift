@@ -29,20 +29,83 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     // Load quests from UserDefaults using the allQuestsKey
-    // Load quests from UserDefaults using the allQuestsKey
     func loadQuests() {
-        if let savedData = UserDefaults.standard.data(forKey: allQuestsKey) {
-            let decoder = JSONDecoder()
-            if let loadedQuests = try? decoder.decode([Quest].self, from: savedData) {
-                quests = loadedQuests.reversed()  // Reverse the order of quests to show the newest ones at the top
-            }
+        guard let savedData = UserDefaults.standard.data(forKey: allQuestsKey) else {
+            print("Error: No data found in UserDefaults")
+            // Optionally, update the UI to reflect that no data was loaded
+            return
+        }
+
+        let decoder = JSONDecoder()
+        do {
+            let loadedQuests = try decoder.decode([Quest].self, from: savedData)
+            quests = loadedQuests.reversed()  // Reverse the order of quests to show the newest ones at the top
+        } catch {
+            print("Error decoding quests: \(error)")
+            // Handle the error appropriately, possibly showing an alert to the user
+            displayLoadError()
         }
     }
+
+    func displayLoadError() {
+        let alert = UIAlertController(title: "Load Error", message: "Failed to load quest history.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    @IBAction func clearHistoryTapped(_ sender: UIButton) {
+        // Create an alert controller to confirm the clearing of history
+        let alert = UIAlertController(title: "Clear History", message: "Are you sure you want to delete all quest history?", preferredStyle: .alert)
+
+        // Add a cancel action to allow the user to back out
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        // Add a clear action that will remove the data
+        alert.addAction(UIAlertAction(title: "Clear", style: .destructive, handler: { [weak self] _ in
+            self?.clearQuestHistory()
+        }))
+
+        // Present the alert to the user
+        present(alert, animated: true, completion: nil)
+    }
+
+    // This function will clear the history from UserDefaults and update the UI
+    func clearQuestHistory() {
+        // Remove quests from UserDefaults
+        UserDefaults.standard.removeObject(forKey: allQuestsKey)
+
+        // Clear the local quests array
+        quests = []
+
+        // Reload the table view to reflect that history has been cleared
+        tableView.reloadData()
+
+        // Optionally, provide feedback that history has been cleared
+        let feedbackAlert = UIAlertController(title: "Done", message: "Quest history has been successfully cleared.", preferredStyle: .alert)
+        feedbackAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(feedbackAlert, animated: true, completion: nil)
+    }
+
+    
 
 
     // TableView DataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return quests.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let detailsVC = storyboard?.instantiateViewController(identifier: "HistoryDetailsViewController") as? HistoryDetailsViewController {
+            let selectedQuest = quests[indexPath.row]
+            detailsVC.quest = selectedQuest
+
+            navigationController?.pushViewController(detailsVC, animated: true)
+        }
+
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
