@@ -12,28 +12,17 @@ class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let questViewController = QuestViewController()
-        let rankViewController = RankViewController()
-        let historyViewController = HistoryViewController()
-        let settingsViewController = SettingsViewController()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil) // Use your storyboard name here
+            let questViewController = storyboard.instantiateViewController(withIdentifier: "QuestViewController") as! QuestViewController
+            let rankViewController = storyboard.instantiateViewController(withIdentifier: "RankViewController") as! RankViewController
+            let historyViewController = storyboard.instantiateViewController(withIdentifier: "HistoryViewController") as! HistoryViewController
+            let settingsViewController = storyboard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
         
         questViewController.tabBarItem = UITabBarItem(title: "Quests".localized(), image: UIImage(systemName: "square.stack.3d.up"), tag: 0)
         rankViewController.tabBarItem = UITabBarItem(title: "Rank".localized(), image: UIImage(systemName: "star"), tag: 1)
         historyViewController.tabBarItem = UITabBarItem(title: "History".localized(), image: UIImage(systemName: "list.clipboard"), tag: 2)
-        settingsViewController.tabBarItem = UITabBarItem(title: "Settings".localized(), image: UIImage(systemName: "gear"), tag: 3)
+        settingsViewController.tabBarItem = UITabBarItem(title: "Settings".localized(), image: UIImage(systemName: "gearshape"), tag: 3)
         
         self.viewControllers = [questViewController, rankViewController, historyViewController, settingsViewController]
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

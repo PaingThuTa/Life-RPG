@@ -370,7 +370,7 @@
         <!--History View Controller-->
         <scene sceneID="ehu-eu-jzX">
             <objects>
-                <viewController id="roL-op-NZz" customClass="HistoryViewController" customModule="Life_RPG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryViewController" id="roL-op-NZz" customClass="HistoryViewController" customModule="Life_RPG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KZY-Eo-Xd1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -839,7 +839,7 @@
         <!--Settings View Controller-->
         <scene sceneID="xVW-Xm-V52">
             <objects>
-                <viewController id="5kn-nj-CSC" customClass="SettingsViewController" customModule="Life_RPG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="5kn-nj-CSC" customClass="SettingsViewController" customModule="Life_RPG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MZR-LK-Uvu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1031,7 +1031,7 @@
         <!--Rank View Controller-->
         <scene sceneID="d2E-F4-2aT">
             <objects>
-                <viewController id="e5A-Kb-ISQ" customClass="RankViewController" customModule="Life_RPG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RankViewController" id="e5A-Kb-ISQ" customClass="RankViewController" customModule="Life_RPG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ELj-S3-E2h">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
