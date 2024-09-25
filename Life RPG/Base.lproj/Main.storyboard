@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z7i-Hy-lD4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rjc-BS-88Y">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
@@ -1650,8 +1650,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="completeButtonTapped:" destination="IC1-DX-bBe" eventType="touchUpInside" id="dMX-gR-oQ7"/>
-                                    <action selector="doneButtonTapped:" destination="y5O-kq-MY2" eventType="touchUpInside" id="bS0-pW-6S3"/>
+                                    <action selector="completeButtontapped:" destination="IC1-DX-bBe" eventType="touchUpInside" id="Dpr-Px-hTW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBw-Yp-tAN">
@@ -1692,7 +1691,7 @@
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="jBw-Yp-tAN" id="UpW-Cz-l8J"/>
-                        <outlet property="completeButton" destination="Gsd-dG-O4o" id="kvb-IC-X6v"/>
+                        <outlet property="completeButton" destination="Gsd-dG-O4o" id="aLB-f1-5ip"/>
                         <outlet property="detailsLabel" destination="mPh-MT-tjt" id="pKJ-sZ-ofs"/>
                         <outlet property="difficultyLabel" destination="7Js-2U-nCe" id="3Dd-Zu-ETm"/>
                         <outlet property="dueDateLabel" destination="GAc-iI-6gF" id="76U-fV-B4b"/>
@@ -2535,13 +2534,13 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

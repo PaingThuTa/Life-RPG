@@ -42,7 +42,9 @@
 		8B0CE1D32CA0709400E738A3 /* StringLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CE1D22CA0709400E738A3 /* StringLocalization.swift */; };
 		8B0CE1D52CA3179A00E738A3 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CE1D42CA3179A00E738A3 /* HistoryCell.swift */; };
 		8B0CE1D72CA32CCB00E738A3 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CE1D62CA32CCB00E738A3 /* MainTabBarViewController.swift */; };
-		E84ACC5F2C9EBC2A00683123 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E84ACC5E2C9EBC2A00683123 /* Alamofire */; };
+		E84947892CA354FD0074D9E3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E84947882CA354FD0074D9E3 /* Alamofire */; };
+		E849478B2CA357A00074D9E3 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849478A2CA357A00074D9E3 /* UserDefaultsKeys.swift */; };
+		E849478D2CA357CB0074D9E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849478C2CA357CB0074D9E3 /* User.swift */; };
 		E8B150952C9314C200571B93 /* QuestInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B150942C9314C200571B93 /* QuestInfoViewController.swift */; };
 		E8B150972C9318D300571B93 /* QuestEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B150962C9318D300571B93 /* QuestEditViewController.swift */; };
 		E8BABB972C8480EA006C9569 /* AddQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */; };
@@ -115,6 +117,8 @@
 		8B0CE1D22CA0709400E738A3 /* StringLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLocalization.swift; sourceTree = "<group>"; };
 		8B0CE1D42CA3179A00E738A3 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		8B0CE1D62CA32CCB00E738A3 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		E849478A2CA357A00074D9E3 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		E849478C2CA357CB0074D9E3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E8B150942C9314C200571B93 /* QuestInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestInfoViewController.swift; sourceTree = "<group>"; };
 		E8B150962C9318D300571B93 /* QuestEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestEditViewController.swift; sourceTree = "<group>"; };
 		E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E84ACC5F2C9EBC2A00683123 /* Alamofire in Frameworks */,
+				E84947892CA354FD0074D9E3 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,11 +216,13 @@
 			isa = PBXGroup;
 			children = (
 				E8F7AF9F2C89AAE0008AD97C /* Quest.swift */,
+				E849478C2CA357CB0074D9E3 /* User.swift */,
 				E8F7AFA12C89AAFE008AD97C /* QuestCell.swift */,
 				E8BABB982C848204006C9569 /* QuestViewController.swift */,
 				E8BABB962C8480EA006C9569 /* AddQuestViewController.swift */,
 				E8B150942C9314C200571B93 /* QuestInfoViewController.swift */,
 				E8B150962C9318D300571B93 /* QuestEditViewController.swift */,
+				E849478A2CA357A00074D9E3 /* UserDefaultsKeys.swift */,
 			);
 			path = QuestTab;
 			sourceTree = "<group>";
@@ -327,7 +333,7 @@
 			);
 			name = "Life RPG";
 			packageProductDependencies = (
-				E84ACC5E2C9EBC2A00683123 /* Alamofire */,
+				E84947882CA354FD0074D9E3 /* Alamofire */,
 			);
 			productName = "Life RPG";
 			productReference = E8DA27022C7DAD4200949A4C /* Life RPG.app */;
@@ -403,7 +409,7 @@
 			);
 			mainGroup = E8DA26F92C7DAD4200949A4C;
 			packageReferences = (
-				E84ACC5D2C9EBC2A00683123 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E84947872CA354FD0074D9E3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = E8DA27032C7DAD4200949A4C /* Products */;
 			projectDirPath = "";
@@ -473,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8F7AFA22C89AAFE008AD97C /* QuestCell.swift in Sources */,
+				E849478B2CA357A00074D9E3 /* UserDefaultsKeys.swift in Sources */,
 				8B0CE1C82C9F411D00E738A3 /* DefaultViewController.swift in Sources */,
 				8B0CE1C62C9F40BD00E738A3 /* WelcomeViewController.swift in Sources */,
 				8B0CE1D32CA0709400E738A3 /* StringLocalization.swift in Sources */,
@@ -481,6 +488,7 @@
 				8B05127D2C9B3D4200D4BF3B /* RankViewController.swift in Sources */,
 				E8D321102C9DC61200A038F3 /* HistoryViewController.swift in Sources */,
 				E8B150952C9314C200571B93 /* QuestInfoViewController.swift in Sources */,
+				E849478D2CA357CB0074D9E3 /* User.swift in Sources */,
 				E8DA27062C7DAD4200949A4C /* AppDelegate.swift in Sources */,
 				E8BABB972C8480EA006C9569 /* AddQuestViewController.swift in Sources */,
 				8B05127F2C9B44B900D4BF3B /* AllRankViewController.swift in Sources */,
@@ -852,7 +860,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E84ACC5D2C9EBC2A00683123 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		E84947872CA354FD0074D9E3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -863,9 +871,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E84ACC5E2C9EBC2A00683123 /* Alamofire */ = {
+		E84947882CA354FD0074D9E3 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E84ACC5D2C9EBC2A00683123 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = E84947872CA354FD0074D9E3 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

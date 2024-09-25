@@ -27,6 +27,7 @@ class RankViewController: UIViewController {
     var castingSpellImages: [UIImage] = []
     var ghoulImages: [UIImage] = []
     
+    var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +37,46 @@ class RankViewController: UIViewController {
         castingSpellImages = createImageArray(total: 14, imagePrefix: "castingSpell")
         ghoulImages = createImageArray(total: 9, imagePrefix: "Ghoul")
         
+        initializeUser()
+        updateUI()
+        
+        
+    }
+    private func initializeUser() {
+        // Load user data from UserDefaults or create a default user
+        let level = UserDefaults.standard.integer(forKey: UserDefaultsKeys.currentLevel)
+        let exp = UserDefaults.standard.integer(forKey: UserDefaultsKeys.currentExp)
+        let rank = UserDefaults.standard.string(forKey: UserDefaultsKeys.currentRank) ?? "F"
+        user = User(currentLevel: level, currentExp: exp, currentRank: rank)
+    }
+        
+    private func updateUI() {
+        if let user = user {
+            currentRankLabel.text = user.currentRank
+            currentLevelLabel.text = "\(user.currentLevel)"
+            let expNeeded = user.expToNextLevel()
+            EXPToLevelUpLabel.text = "\(user.currentExp)/\(expNeeded)"
+            TotalExpLabel.text = "\(user.currentExp)"
+        } else {
+            // Handle the case where user is nil
+            print("Error: User object is nil")
+            // Display default or error state
+            currentRankLabel.text = "N/A"
+            currentLevelLabel.text = "N/A"
+            EXPToLevelUpLabel.text = "N/A"
+            TotalExpLabel.text = "N/A"
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initializeUser()
+        updateUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         animateHarry(imageView: castingSpellImageView, images: castingSpellImages)
         animateGhoul(imageView: ghoulImageView, images: ghoulImages)
+        
         
     }
     

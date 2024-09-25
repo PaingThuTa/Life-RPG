@@ -29,6 +29,12 @@ class QuestInfoViewController: UIViewController {
     @IBOutlet weak var completeButton: UIButton!
 
     var quest: Quest?
+    var user: User? = {
+        let currentLevel = UserDefaults.standard.integer(forKey: UserDefaultsKeys.currentLevel)
+        let currentExp = UserDefaults.standard.integer(forKey: UserDefaultsKeys.currentExp)
+        let currentRank = UserDefaults.standard.string(forKey: UserDefaultsKeys.currentRank) ?? "F"
+        return User(currentLevel: currentLevel, currentExp: currentExp, currentRank: currentRank)
+    }()
     var updateQuestCompletion: ((Quest) -> Void)?
 
     override func viewDidLoad() {
@@ -67,13 +73,50 @@ class QuestInfoViewController: UIViewController {
         }
     }
 
-    @IBAction func completeButtonTapped(_ sender: UIButton) {
-        quest?.status = .completed
-        if let updatedQuest = quest {
-            updateQuestCompletion?(updatedQuest)
+    @IBAction func completeButtontapped(_ sender: UIButton) {
+        guard var quest = quest else {
+            print("Error: Quest object is nil")
+            return
         }
+        
+        guard let user = user else {
+            print("Error: User object is nil")
+            return
+        }
+
+        // Update quest status to completed
+        quest.status = .completed
+        
+        // Add EXP to user
+        user.addExp(quest.expValue)
+
+        // Save the updated user EXP to persistent storage
+        UserDefaults.standard.set(user.currentExp, forKey: UserDefaultsKeys.currentExp)
+
+        // Update UI or perform any other necessary updates
+        updateQuestCompletion?(quest)
+        
+        print("Quest completed, user gained \(quest.expValue) EXP. Total EXP: \(user.currentExp)")
+        DispatchQueue.main.async {
+                // Update UI or perform any other necessary updates
+                self.updateUI()
+                self.updateQuestCompletion?(quest)
+                print("Quest completed, user gained \(quest.expValue) EXP. Total EXP: \(user.currentExp)")
+                
+                // Go back or update the UI after completing the quest
+                self.navigationController?.popViewController(animated: true)
+            }
+        // Go back or update the UI after completing the quest
         navigationController?.popViewController(animated: true)
     }
+
+
+    private func showCompletionConfirmation() {
+        let alert = UIAlertController(title: "Quest Completed", message: "You've earned \(quest?.expValue ?? 0) EXP!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+
 
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
         quest?.status = .canceled
