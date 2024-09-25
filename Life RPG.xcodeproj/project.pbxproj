@@ -42,6 +42,7 @@
 		8B0CE1D32CA0709400E738A3 /* StringLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CE1D22CA0709400E738A3 /* StringLocalization.swift */; };
 		8B0CE1D52CA3179A00E738A3 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CE1D42CA3179A00E738A3 /* HistoryCell.swift */; };
 		8B0CE1D72CA32CCB00E738A3 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CE1D62CA32CCB00E738A3 /* MainTabBarViewController.swift */; };
+		E8057ABD2CA45578000082F6 /* harrypotterTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8057ABC2CA45578000082F6 /* harrypotterTheme.mp3 */; };
 		E84947892CA354FD0074D9E3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E84947882CA354FD0074D9E3 /* Alamofire */; };
 		E849478B2CA357A00074D9E3 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849478A2CA357A00074D9E3 /* UserDefaultsKeys.swift */; };
 		E849478D2CA357CB0074D9E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849478C2CA357CB0074D9E3 /* User.swift */; };
@@ -117,6 +118,7 @@
 		8B0CE1D22CA0709400E738A3 /* StringLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLocalization.swift; sourceTree = "<group>"; };
 		8B0CE1D42CA3179A00E738A3 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		8B0CE1D62CA32CCB00E738A3 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		E8057ABC2CA45578000082F6 /* harrypotterTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = harrypotterTheme.mp3; sourceTree = "<group>"; };
 		E849478A2CA357A00074D9E3 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		E849478C2CA357CB0074D9E3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E8B150942C9314C200571B93 /* QuestInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestInfoViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 		E8DA27042C7DAD4200949A4C /* Life RPG */ = {
 			isa = PBXGroup;
 			children = (
+				E8057ABC2CA45578000082F6 /* harrypotterTheme.mp3 */,
 				8B0CE13C2C9C995800E738A3 /* spikes */,
 				E8DA27052C7DAD4200949A4C /* AppDelegate.swift */,
 				E8DA27072C7DAD4200949A4C /* SceneDelegate.swift */,
@@ -452,6 +455,7 @@
 				8B0CE1B32C9D5FD200E738A3 /* Ghoul-7.png in Resources */,
 				8B0CE16C2C9CA20900E738A3 /* castingSpell-13.png in Resources */,
 				8B0CE16B2C9CA20900E738A3 /* castingSpell-12.png in Resources */,
+				E8057ABD2CA45578000082F6 /* harrypotterTheme.mp3 in Resources */,
 				8B0CE1B52C9D5FD200E738A3 /* Ghoul-4.png in Resources */,
 				8B0CE1BA2C9D5FD200E738A3 /* Ghoul-1.png in Resources */,
 			);

@@ -7,6 +7,8 @@
 
 import UIKit
 import Alamofire
+import AVFoundation
+
 
 class AllRankViewController: UIViewController {
     
@@ -17,6 +19,8 @@ class AllRankViewController: UIViewController {
     // Holds the fetched data
     var ranks: [Rank] = []
     
+    var audioPlayer: AVAudioPlayer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +29,25 @@ class AllRankViewController: UIViewController {
         
         fetchData()
         updateLocalizationUI()
+        
+        playBackgroundMusic()
+    }
+    
+    private func playBackgroundMusic() {
+        guard let path = Bundle.main.path(forResource: "harrypotterTheme", ofType: "mp3") else {
+            print("Music file not found")
+            return
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.numberOfLoops = -1 // Loop the music indefinitely
+            audioPlayer?.play()
+        } catch {
+            print("Error playing background music: \(error)")
+        }
     }
     
     private func assignRanks() {
@@ -39,18 +62,6 @@ class AllRankViewController: UIViewController {
             }
         }
     }
-    
-//    private func inspectJSONResponse() {
-//        AF.request("https://hp-api.herokuapp.com/api/characters/staff").responseJSON { response in
-//            switch response.result {
-//            case .success(let value):
-//                print(value)
-//                self.collectionView.reloadData()
-//            case .failure(let error):
-//                print("Error: \(error)")
-//            }
-//        }
-//    }
     
     private func fetchData() {
         AF.request("https://hp-api.herokuapp.com/api/characters/staff").responseDecodable(of: [Rank].self) {response in

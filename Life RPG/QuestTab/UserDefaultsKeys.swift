@@ -11,4 +11,5 @@ struct UserDefaultsKeys {
     static let currentLevel = "currentLevel"
     static let currentExp = "currentExp"
     static let currentRank = "currentRank"
+    
 }
