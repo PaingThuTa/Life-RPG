@@ -25,4 +25,5 @@ class MainTabBarViewController: UITabBarController {
         
         self.viewControllers = [questViewController, rankViewController, historyViewController, settingsViewController]
     }
+
 }

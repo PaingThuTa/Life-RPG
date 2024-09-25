@@ -27,7 +27,7 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var difficultyLabel: UILabel!
     
     @IBOutlet weak var doneButton: UIButton!
-    
+        
     // Difficulty levels and corresponding EXP values
     var difficultyLevels: [String] = ["Easy", "Normal", "Hard", "Extreme", "Absurd"]
     let expValues = [100, 200, 300, 500, 1000]
@@ -75,11 +75,10 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Setup UIPickerView
         difficultyPickerView.delegate = self
         difficultyPickerView.dataSource = self
-        
+                
         // Set the default difficulty and corresponding EXP value
         difficultyPickerView.selectRow(selectedDifficultyIndex, inComponent: 0, animated: false)
         expValueLabel.text = "\(expValues[selectedDifficultyIndex])"

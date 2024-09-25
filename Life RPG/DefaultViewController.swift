@@ -26,14 +26,13 @@ class DefaultViewController: UIViewController {
     }
     
     @IBAction func getStartedButtonTapped(_ sender: UIButton) {
-        guard let tabBarController = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {
-            return
-        }
-        // Present the tab bar controller
-        // This will replace the current view controller with the tab bar controller
-        if let window = UIApplication.shared.windows.first {
-            window.rootViewController = tabBarController
-            window.makeKeyAndVisible()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarViewController
+        
+        // Set the TabBarController as the root view controller
+        if let navigationController = self.navigationController {
+            // Replace the current view controllers with the TabBarController
+            navigationController.setViewControllers([tabBarController], animated: true)
         }
     }
     
