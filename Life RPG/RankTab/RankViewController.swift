@@ -46,7 +46,7 @@ class RankViewController: UIViewController {
         // Load user data from UserDefaults or create a default user
         let level = UserDefaults.standard.integer(forKey: UserDefaultsKeys.currentLevel)
         let exp = UserDefaults.standard.integer(forKey: UserDefaultsKeys.currentExp)
-        let rank = UserDefaults.standard.string(forKey: UserDefaultsKeys.currentRank) ?? "F"
+        let rank = UserDefaults.standard.string(forKey: UserDefaultsKeys.currentRank) ?? "E"
         user = User(currentLevel: level, currentExp: exp, currentRank: rank)
     }
         

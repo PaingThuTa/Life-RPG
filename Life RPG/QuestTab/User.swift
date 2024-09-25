@@ -64,7 +64,7 @@ class User {
     
     func expToNextLevel() -> Int {
         switch currentLevel {
-        case 1...20: return 1000
+        case 0...20: return 1000
         case 21...40: return 1500
         case 41...80: return 2000
         case 81...160: return 2500
@@ -72,13 +72,13 @@ class User {
         case 321...640: return 3500
         case 641...1280: return 4000
         case 1281...9999: return 4500
-        default: return 1000
+        default: return 500
         }
     }
     
     func calculateRank(for level: Int) -> String {
         switch level {
-        case 1...20: return "E"
+        case 0...20: return "E"
         case 21...40: return "D"
         case 41...80: return "C"
         case 81...160: return "B"
@@ -86,7 +86,7 @@ class User {
         case 321...640: return "S"
         case 641...1280: return "SS"
         case 1281...9999: return "SSS"
-        default: return "F"
+        default: return "Z"
         }
     }
 
