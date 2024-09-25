@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class QuestInfoViewController: UIViewController {
 
@@ -41,6 +42,8 @@ class QuestInfoViewController: UIViewController {
         super.viewDidLoad()
         updateUI()
         updateLocalizationUI()
+        UNUserNotificationCenter.current().delegate = self
+
     }
     @IBAction func editQuestTapped(_ sender: UIButton) {
             // Navigate to QuestEditViewController
@@ -72,6 +75,25 @@ class QuestInfoViewController: UIViewController {
             difficultyLabel.text = quest.difficulty
         }
     }
+    
+    func triggerLevelUpNotification(newLevel: Int) {
+        let content = UNMutableNotificationContent()
+        content.title = "Congratulations!"
+        content.body = "You've reached Level \(newLevel)! Keep up the great work."
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "LevelUpNotification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("Error scheduling notification: \(error)")
+            } else {
+                print("Level-up notification scheduled successfully.")
+            }
+        }
+    }
 
     @IBAction func completeButtontapped(_ sender: UIButton) {
         guard var quest = quest else {
@@ -88,37 +110,41 @@ class QuestInfoViewController: UIViewController {
         quest.status = .completed
         
         // Add EXP to user
+        let previousLevel = user.currentLevel
         user.addExp(quest.expValue)
+
+        // Check if the user has leveled up (this is automatically handled in addExp)
+        if user.currentLevel > previousLevel {
+            print("User leveled up to Level \(user.currentLevel)")
+            triggerLevelUpNotification(newLevel: user.currentLevel)
+        } else {
+            print("No level up.")
+        }
 
         // Save the updated user EXP to persistent storage
         UserDefaults.standard.set(user.currentExp, forKey: UserDefaultsKeys.currentExp)
-
+        
         // Update UI or perform any other necessary updates
         updateQuestCompletion?(quest)
         
         print("Quest completed, user gained \(quest.expValue) EXP. Total EXP: \(user.currentExp)")
         DispatchQueue.main.async {
-                // Update UI or perform any other necessary updates
-                self.updateUI()
-                self.updateQuestCompletion?(quest)
-                print("Quest completed, user gained \(quest.expValue) EXP. Total EXP: \(user.currentExp)")
-                
-                // Go back or update the UI after completing the quest
-                self.navigationController?.popViewController(animated: true)
-            }
-        // Go back or update the UI after completing the quest
-        navigationController?.popViewController(animated: true)
+            // Update UI or perform any other necessary updates
+            self.updateUI()
+            self.updateQuestCompletion?(quest)
+            
+            // Go back or update the UI after completing the quest
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 
 
-    private func showCompletionConfirmation() {
-        let alert = UIAlertController(title: "Quest Completed", message: "You've earned \(quest?.expValue ?? 0) EXP!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
+
+
 
 
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        
         quest?.status = .canceled
         if let updatedQuest = quest {
             updateQuestCompletion?(updatedQuest)
@@ -142,4 +168,11 @@ class QuestInfoViewController: UIViewController {
 
     }
 
+}
+
+extension QuestInfoViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // Show the notification as a banner and play the sound even when the app is in foreground
+        completionHandler([.banner, .sound])
+    }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class User {
     var currentLevel: Int {
         didSet {
@@ -38,6 +39,8 @@ class User {
         self.currentRank = UserDefaults.standard.string(forKey: UserDefaultsKeys.currentRank) ?? "E"
         updateRank()
     }
+
+    
     func addExp(_ exp: Int) {
         currentExp += exp
         checkForLevelUp()
