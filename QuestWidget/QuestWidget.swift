@@ -65,28 +65,38 @@ struct QuestProvider: TimelineProvider {
         }
         return 0
     }
-
-
-
-
 }
 
 struct QuestWidgetView: View {
     var entry: QuestEntry
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("\(entry.date, formatter: dayOnlyFormatter)")
-                .font(.system(size: 44, weight: .bold))
-                .foregroundColor(.black)
-            Text("\(entry.inProgressCount) in progress quests")
-                .font(.system(size: 16))
-                .foregroundColor(.red)
+        
+        ZStack {
+            ContainerRelativeShape()
+                .fill(.white)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(spacing: 5) {
+                HStack(spacing: 4) {
+                    Text("📙")
+                        .font(.system(size: 18))
+                    Text(weekdayFormatter.string(from: entry.date))
+                        .font(.system(size: 18))
+                        .fontWeight(.bold)
+                        .minimumScaleFactor(0.6)
+                        .foregroundColor(.black.opacity(0.6))
+                }
+                Text("\(entry.date, formatter: dayOnlyFormatter)")
+                    .font(.system(size: 60, weight: .bold))
+                    .foregroundColor(.black.opacity(0.8))
+
+                Text("\(entry.inProgressCount) Active Quests")
+                    .font(.system(size: 12))
+                    .fontWeight(.bold)
+                    .foregroundColor(.orange)
+            }
         }
-        .padding()
-        .background(Color.white) // Custom background color
-        .containerBackground(Color.white, for: .widget)
- // Ensure this is included for the system's background management
     }
     
     var dayOnlyFormatter: DateFormatter {
@@ -94,6 +104,13 @@ struct QuestWidgetView: View {
         formatter.dateFormat = "d"
         return formatter
     }
+    
+    var weekdayFormatter: DateFormatter {
+           let formatter = DateFormatter()
+           formatter.dateFormat = "EEEE" // Full weekday name, e.g. "Monday"
+           return formatter
+       }
+
 }
 
 
@@ -109,5 +126,3 @@ struct QuestWidget: Widget {
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
-
-
