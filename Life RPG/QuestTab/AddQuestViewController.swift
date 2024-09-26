@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WidgetKit
 
 class AddQuestViewController: UIViewController, UITextFieldDelegate {
     
@@ -31,6 +32,8 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
     // Difficulty levels and corresponding EXP values
     var difficultyLevels: [String] = ["Easy", "Normal", "Hard", "Extreme", "Absurd"]
     let expValues = [100, 200, 300, 500, 1000]
+    
+    let appGroupID = "group.com.6530288.Life-RPG"
     
     // Keys for UserDefaults
     let activeQuestsKey = "activeQuests"
@@ -149,6 +152,8 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
         // Pass the quest back using the closure
         addQuestCompletion?(quest)
         
+        triggerWidgetUpdate()
+        
         // Dismiss the view or go back to the previous screen
         navigationController?.popViewController(animated: true)
     }
@@ -157,21 +162,31 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
     func saveToActiveQuests(_ newQuest: Quest) {
         var activeQuests: [Quest] = []
         
-        // Load existing active quests
-        if let savedData = UserDefaults.standard.data(forKey: activeQuestsKey) {
+        // Load existing quests
+        if let sharedDefaults = UserDefaults(suiteName: appGroupID),
+           let savedData = sharedDefaults.data(forKey: UserDefaultsKeys.activeQuestsKey) {
             let decoder = JSONDecoder()
             if let loadedQuests = try? decoder.decode([Quest].self, from: savedData) {
                 activeQuests = loadedQuests
             }
         }
         
-        // Add the new quest and save back to UserDefaults
+        // Add the new quest
         activeQuests.append(newQuest)
+        
+        // Save back to UserDefaults
         let encoder = JSONEncoder()
         if let encodedData = try? encoder.encode(activeQuests) {
-            UserDefaults.standard.set(encodedData, forKey: activeQuestsKey)
+            let sharedDefaults = UserDefaults(suiteName: appGroupID)
+            sharedDefaults?.set(encodedData, forKey: UserDefaultsKeys.activeQuestsKey)
         }
     }
+    // Call this after a quest is added, completed, or changed.
+    func triggerWidgetUpdate() {
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+
+
     
     // Save to All Quests (including completed, canceled, and in progress)
     func saveToAllQuests(_ newQuest: Quest) {
