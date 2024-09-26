@@ -34,7 +34,7 @@ class SettingsViewController: UIViewController {
         if let userNickname = UserDefaults.standard.string(forKey: UserDefaultsKeys.userNickname) {
             nicknameValueLabel.text = userNickname
         } else {
-            nicknameValueLabel.text = "No nickname. Tap to set."
+            nicknameValueLabel.text = "No nickname. Tap to set.".localized()
         }
         
         // Update UI with localized text
@@ -42,20 +42,20 @@ class SettingsViewController: UIViewController {
     }
     @objc func nicknameValueLabelTapped() {
         // Create an alert controller with a text field for entering a new nickname
-        let alertController = UIAlertController(title: "Change Nickname", message: "Enter your new nickname", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Change Nickname".localized(), message: "Enter your new nickname".localized(), preferredStyle: .alert)
         
         // Add a text field to the alert
         alertController.addTextField { textField in
-            textField.placeholder = "Enter nickname"
+            textField.placeholder = "Enter nickname".localized()
             textField.text = self.nicknameValueLabel.text // Pre-fill with the current nickname
         }
         
         // Add a Cancel action
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         
         // Add a Save action
-        let saveAction = UIAlertAction(title: "Save", style: .default) { [weak self] _ in
+        let saveAction = UIAlertAction(title: "Save".localized(), style: .default) { [weak self] _ in
             guard let self = self else { return }
             
             // Get the input from the text field

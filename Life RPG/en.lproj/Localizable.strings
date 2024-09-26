@@ -164,19 +164,29 @@
 
 "Change Language" = "Change Language";
 
-"Language Changed" = "การเปลี่ยนภาษา";  // Alert Controller
+"Language Changed" = "Language Changed";  // Alert Controller
+
+"Language has been changed to %@." = "Language has been changed to %@.";
 
 "No Change" = "No Changes";
 
 "You are already using %@." = "You are already using %@.";
-
-"Language change message" = "ภาษาเปลี่ยนเป็น %@ กรุณาปิดและเปิดแอปใหม่เพื่อดูการเปลี่ยนแปลง";  // Alert Controller
 
 "changingLangOK" = "ตกลง";
 
 "changingLangCancel" = "ยกเลิก";
 
 "OK" = "OK";
+
+"No nickname. Tap to set." = "Tap to set your nickname";
+
+"Change Nickname" = "Change Nickname";
+
+"Enter your new nickname" = "Enter your new nickname";
+
+"Enter nickname" = "Enter nickname";  // Alert Controller
+
+"Save" = "Save";  // Alert Controller
 
 // HistoryViewController
 
