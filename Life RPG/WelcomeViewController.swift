@@ -22,12 +22,15 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         // Check if the language is already saved
-        if let savedLanguage = UserDefaults.standard.string(forKey: LocalizeUserDefaultKey) {
+        if UserDefaults.standard.string(forKey: LocalizeUserDefaultKey) != nil {
             // If language is already set, navigate to MainTabBarViewController
-            navigateToMainTabBar()
+            //navigateToMainTabBar()
         } else {
             // Set default language if not found in UserDefaults
             LocalizeDefaultLanguage = "en"
+            
+
+            
         }
         
         updateLocalizationUI()

@@ -15,19 +15,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        // Instantiate window and set the root view controller
         window = UIWindow(windowScene: windowScene)
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        // Make sure you have a UITabBarController in your storyboard with the correct ID
-        if let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController {
-            window?.rootViewController = tabBarController
-            window?.makeKeyAndVisible()
+        // Check if the user's nickname is set
+        if UserDefaults.standard.string(forKey: "userNickname") != nil {
+            // Nickname is set, so the user has completed the initial setup
+            if let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController {
+                window?.rootViewController = tabBarController
+            }
         } else {
-            print("Could not instantiate UITabBarController from storyboard.")
+            // No nickname set, start with WelcomeViewController for setup
+            if let welcomeVC = storyboard.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController {
+                let navigationController = UINavigationController(rootViewController: welcomeVC)
+                window?.rootViewController = navigationController
+            }
         }
+        
+        window?.makeKeyAndVisible()
     }
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

@@ -23,7 +23,7 @@ class DefaultViewController: UIViewController {
         super.viewDidLoad()
         
         // Check if the nickname is already saved
-        if let savedNickname = UserDefaults.standard.string(forKey: UserDefaultsKeys.userNickname) {
+        if UserDefaults.standard.string(forKey: UserDefaultsKeys.userNickname) != nil {
             // Skip this screen and go to the MainTabBarController
             navigateToMainTabBar()
         } else {
