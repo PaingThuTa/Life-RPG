@@ -31,11 +31,18 @@ class QuestViewController: UIViewController, UITableViewDelegate, UITableViewDat
         updateQuestDisplay()  // Display only pending quests
         updateLocalizationUI() // App localization
         //checkNickname()
+        NotificationCenter.default.addObserver(self, selector: #selector(loadAndRefreshQuests), name: NSNotification.Name("QuestAdded"), object: nil)
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkNickname()  // Check and update the nickname every time the view appears
+        //updateQuestDisplay()
+        
+    }
+    @objc func loadAndRefreshQuests() {
+        loadActiveQuests()  // Reload your data source from storage
+        questsTableView.reloadData()  // Refresh your table view
     }
     
     func checkNickname(){

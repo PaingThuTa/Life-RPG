@@ -105,13 +105,19 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
     
     // Handle character limit for the detailsTextField
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if textField == detailsTextField {
-            let currentText = textField.text ?? ""
-            let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
-            return newText.count <= 200 // Limit to 200 characters
+            if textField == detailsTextField {
+                let currentText = textField.text ?? ""
+                let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
+                // Check the character count
+                if newText.count > 200 {
+                    // Show an alert when the character count exceeds 300
+                    showAlert()
+                    return false // Prevent further input
+                }
+                return true // Allow input if under the character limit
+            }
+            return true
         }
-        return true
-    }
     
     // Function to show an alert when the user passes 200 characters
     func showAlert() {
