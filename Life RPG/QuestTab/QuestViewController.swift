@@ -30,17 +30,27 @@ class QuestViewController: UIViewController, UITableViewDelegate, UITableViewDat
         loadActiveQuests()  // Load active quests from UserDefaults
         updateQuestDisplay()  // Display only pending quests
         updateLocalizationUI() // App localization
+        //checkNickname()
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkNickname()  // Check and update the nickname every time the view appears
+    }
+    
+    func checkNickname(){
         if let userNickname = UserDefaults.standard.string(forKey: UserDefaultsKeys.userNickname) {
             // Update the labels with the user's nickname
             welcomePlayerLabel.text = "Welcome, Player \(userNickname)!"
             
         } else {
             // Fallback in case nickname is not found (you can adjust the message as needed)
-            welcomePlayerLabel.text = "Welcome, Player Kwee"
+            welcomePlayerLabel.text = "Welcome, Player ..."
             
         }
     }
+    
+    
 
     func updateQuestDisplay() {
         // Display only pending (In Progress) quests

@@ -24,16 +24,56 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nicknameValueLabel.isUserInteractionEnabled = true
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(nicknameValueLabelTapped))
+        
+        nicknameValueLabel.addGestureRecognizer(tapGesture)
+        
         // Set the nickname label from UserDefaults
         if let userNickname = UserDefaults.standard.string(forKey: UserDefaultsKeys.userNickname) {
             nicknameValueLabel.text = userNickname
         } else {
-            nicknameValueLabel.text = "No nickname set"
+            nicknameValueLabel.text = "No nickname. Tap to set."
         }
         
         // Update UI with localized text
         updateLocalizationUI()
     }
+    @objc func nicknameValueLabelTapped() {
+        // Create an alert controller with a text field for entering a new nickname
+        let alertController = UIAlertController(title: "Change Nickname", message: "Enter your new nickname", preferredStyle: .alert)
+        
+        // Add a text field to the alert
+        alertController.addTextField { textField in
+            textField.placeholder = "Enter nickname"
+            textField.text = self.nicknameValueLabel.text // Pre-fill with the current nickname
+        }
+        
+        // Add a Cancel action
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        // Add a Save action
+        let saveAction = UIAlertAction(title: "Save", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            
+            // Get the input from the text field
+            if let newNickname = alertController.textFields?.first?.text, !newNickname.isEmpty {
+                // Save the new nickname to UserDefaults
+                UserDefaults.standard.set(newNickname, forKey: UserDefaultsKeys.userNickname)
+                
+                // Update the label with the new nickname
+                self.nicknameValueLabel.text = newNickname
+            }
+        }
+        alertController.addAction(saveAction)
+        
+        // Present the alert controller
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
     
     @IBAction func notiButtonToggled(_ sender: UIButton) {
         // Handle local (in-app) notification toggle
