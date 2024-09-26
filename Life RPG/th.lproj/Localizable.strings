@@ -44,6 +44,8 @@
 
 "START LEVELING UP!" = "ไปเริ่มกันเลย!";
 
+"Please enter a nickname before continuing." = "กรุณาใส่ชื่อเล่น";
+
 // TabBarViewController
 
 "Quests" = "ภารกิจ";
@@ -133,6 +135,8 @@
 "notification_title_congratulations" = "ยินดีด้วย!";
 
 "You've reached the next level! Keep up the great work." = "คุณเลเวลอัพแล้ว ทำภารกิจต่อกันเถอะ!";
+
+"You've reached Level %d! Keep up the great work." = "คุณผ่านเลเวล %d แล้ว มาเลเวลอัพกันต่อกันเถอะ!";
 
 // RankViewController
 

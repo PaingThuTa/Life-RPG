@@ -35,7 +35,7 @@ class DefaultViewController: UIViewController {
     @IBAction func getStartedButtonTapped(_ sender: UIButton) {
         // Check if the nickname is entered
         guard let nickname = nicknameTextField.text, !nickname.isEmpty else {
-            showAlert(message: "Please enter a nickname before continuing.")
+            showAlert(message: "Please enter a nickname before continuing.".localized())
             return
         }
 

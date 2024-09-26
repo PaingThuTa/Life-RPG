@@ -79,7 +79,7 @@ class QuestInfoViewController: UIViewController {
     func triggerLevelUpNotification(newLevel: Int) {
         let content = UNMutableNotificationContent()
         content.title = "notification_title_congratulations".localized()
-        content.body = "You've reached the next level! Keep up the great work.".localized()
+        content.body = String(format: "You've reached Level %d! Keep up the great work.".localized(), newLevel)
         content.sound = UNNotificationSound.default
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)

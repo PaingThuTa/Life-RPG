@@ -44,6 +44,8 @@
 
 "START LEVELING UP!" = "START LEVELING UP!";
 
+"Please enter a nickname before continuing." = "Please enter a nickname before continuing.";
+
 // TabBarViewController
 
 "Quests" = "Quests";
@@ -133,6 +135,8 @@
 "notification_title_congratulations" = "Congratulations!";
 
 "You've reached the next level! Keep up the great work." = "You've reached the next level! Keep up the great work.";
+
+"You've reached Level %d! Keep up the great work." = "You've reached Level %d! Keep up the great work.";
 
 // RankViewController
 
