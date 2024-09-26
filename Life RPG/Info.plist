@@ -2,33 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-            <key>UIApplicationShortcutItemIconType</key>
-            <string>UIApplicationShortcutIconTypeFavorite</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>Rank</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>My Rank</string>
-		</dict>
-        <dict>
-            <key>UIApplicationShortcutItemIconType</key>
-            <string>UIApplicationShortcutIconTypeLove</string>
-            <key>UIApplicationShortcutItemType</key>
-            <string>Quests</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>My Quests</string>
-        </dict>
-        <dict>
-            <key>UIApplicationShortcutItemIconType</key>
-            <string>UIApplicationShortcutIconTypeAdd</string>
-            <key>UIApplicationShortcutItemType</key>
-            <string>AddQuest</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>Add Quest</string>
-        </dict>
-	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -48,5 +21,32 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeFavorite</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>My Rank</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Rank</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeLove</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>My Quests</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Quests</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeAdd</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Add Quest</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>AddQuest</string>
+		</dict>
+	</array>
 </dict>
 </plist>

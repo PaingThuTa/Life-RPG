@@ -23,7 +23,13 @@ class MainTabBarViewController: UITabBarController {
         historyViewController.tabBarItem = UITabBarItem(title: "History".localized(), image: UIImage(systemName: "list.clipboard"), tag: 2)
         settingsViewController.tabBarItem = UITabBarItem(title: "Settings".localized(), image: UIImage(systemName: "gearshape"), tag: 3)
         
-        self.viewControllers = [questViewController, rankViewController, historyViewController, settingsViewController]
+//        self.viewControllers = [questViewController, rankViewController, historyViewController, settingsViewController]
+        self.viewControllers = [
+            UINavigationController(rootViewController: questViewController),
+            UINavigationController(rootViewController: rankViewController),
+            UINavigationController(rootViewController: historyViewController),
+            UINavigationController(rootViewController: settingsViewController)
+        ]
     }
 
 }
