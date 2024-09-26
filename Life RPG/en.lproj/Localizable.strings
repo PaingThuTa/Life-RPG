@@ -44,6 +44,8 @@
 
 "START LEVELING UP!" = "START LEVELING UP!";
 
+"Error" = "Error";
+
 "Please enter a nickname before continuing." = "Please enter a nickname before continuing.";
 
 // TabBarViewController

@@ -44,6 +44,8 @@
 
 "START LEVELING UP!" = "ไปเริ่มกันเลย!";
 
+"Error" = "เกิดข้อผิดพลาด";
+
 "Please enter a nickname before continuing." = "กรุณาใส่ชื่อเล่น";
 
 // TabBarViewController
