@@ -10,7 +10,6 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     @IBOutlet weak var nicknameValueLabel: UILabel!
-    
     @IBOutlet weak var settingsTitleLabel: UILabel!
     @IBOutlet weak var personalInfoLabel: UILabel!
     @IBOutlet weak var nicknameLabel: UILabel!
@@ -25,35 +24,39 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateLocalizationUI()
+        // Set the nickname label from UserDefaults
+        if let userNickname = UserDefaults.standard.string(forKey: UserDefaultsKeys.userNickname) {
+            nicknameValueLabel.text = userNickname
+        } else {
+            nicknameValueLabel.text = "No nickname set"
+        }
         
+        // Update UI with localized text
+        updateLocalizationUI()
     }
     
     @IBAction func notiButtonToggled(_ sender: UIButton) {
-        // what happens when toggle (local (in-app) notification)
-        print("notification toggle clicked")
+        // Handle local (in-app) notification toggle
     }
     
     @IBAction func backgroundMusicButtonToggled(_ sender: UIButton) {
-        // what happens when toggle (play music (in collection viewcontroller))
-        print("background music toggle clicked")
+        // Handle background music toggle
     }
     
     @IBAction func englishButtonTapped(_ sender: UIButton) {
         setLanguage("en")
-        
     }
     
     @IBAction func thaiButtonTapped(_ sender: UIButton) {
         setLanguage("th")
     }
-
     
+    // Language change logic
     private func setLanguage(_ langCode: String) {
         
-        let currentLanguage = UserDefaults.standard.string(forKey: LocalizeUserDefaultKey) ?? "en" // Default to English
+        let currentLanguage = LocalizeDefaultLanguage
         if currentLanguage == langCode {
-            // If the user is trying to set the same language, show a localized alert
+            // If the same language is chosen, show an alert
             let languageName = langCode == "en" ? "English" : "ภาษาไทย"
             let sameLanguageAlert = UIAlertController(
                 title: "No Change".localized(),
@@ -62,28 +65,31 @@ class SettingsViewController: UIViewController {
             )
             sameLanguageAlert.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: nil))
             present(sameLanguageAlert, animated: true, completion: nil)
-            return // Prevent further execution
+            return
         }
         
-        UserDefaults.standard.setValue(langCode, forKey: LocalizeUserDefaultKey)
-            
+        // Save the new language
+        LocalizeDefaultLanguage = langCode
+        
+        // Show confirmation alert for language change
         let newLanguageName = langCode == "en" ? "English" : "ภาษาไทย"
-        let message = String(format: "Language change message".localized(), newLanguageName)
-            
+        let message = String(format: "Language has been changed to %@.".localized(), newLanguageName)
+        
         let alertController = UIAlertController(
             title: "Language Changed".localized(),
             message: message,
             preferredStyle: .alert
         )
         
-        alertController.addAction(UIAlertAction(title: "changingLangCancel".localized(), style: .cancel, handler: nil))
-        alertController.addAction(UIAlertAction(title: "changingLangOK".localized(), style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: { [weak self] _ in
+            // Restart the app interface to apply the language change
+            self?.restartAppForNewLanguage()
+        }))
         present(alertController, animated: true, completion: nil)
-        
-        updateLocalizationUI()
-        
     }
     
+    // Helper method to update localized UI elements
     @objc func updateLocalizationUI() {
         settingsTitleLabel.text = "Settings".localized()
         personalInfoLabel.text = "Personal Information".localized()
@@ -95,7 +101,26 @@ class SettingsViewController: UIViewController {
         changeLanguageLabel.text = "Change Language".localized()
         englishButton.setTitle("🇺🇸   English(US)".localized(), for: .normal)
         thaiButton.setTitle("🇹🇭   Thai".localized(), for: .normal)
-        
     }
-
+    
+    // Function to restart the app's root view controller for language changes to apply throughout the app
+    private func restartAppForNewLanguage() {
+        guard let window = UIApplication.shared.windows.first else {
+            return
+        }
+        
+        // Instantiate the initial view controller (or MainTabBarController)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let rootViewController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+        
+        // Set the new root view controller
+        window.rootViewController = rootViewController
+        window.makeKeyAndVisible()
+        
+        // Optionally, add a transition animation
+        let transition = CATransition()
+        transition.type = .fade
+        transition.duration = 0.5
+        window.layer.add(transition, forKey: kCATransition)
+    }
 }

@@ -21,12 +21,18 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LocalizeDefaultLanguage = UserDefaults.standard.string(forKey: LocalizeUserDefaultKey) ?? "en"
+        // Check if the language is already saved
+        if let savedLanguage = UserDefaults.standard.string(forKey: LocalizeUserDefaultKey) {
+            // If language is already set, navigate to MainTabBarViewController
+            navigateToMainTabBar()
+        } else {
+            // Set default language if not found in UserDefaults
+            LocalizeDefaultLanguage = "en"
+        }
+        
         updateLocalizationUI()
- 
     }
 
-    
     @IBAction func englishButtonTapped(_ sender: UIButton) {
         LocalizeDefaultLanguage = "en"
         UserDefaults.standard.setValue(LocalizeDefaultLanguage, forKey: LocalizeUserDefaultKey)
@@ -40,6 +46,12 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func continueButtonTapped(_ sender: UIButton) {
+        // Save language selection in UserDefaults if needed
+        if LocalizeDefaultLanguage != nil {
+            UserDefaults.standard.setValue(LocalizeDefaultLanguage, forKey: LocalizeUserDefaultKey)
+        }
+        
+        // Navigate to nickname screen (DefaultViewController)
         guard let defaultVC = storyboard?.instantiateViewController(withIdentifier: "DefaultViewController") else { return  }
         navigationController?.pushViewController(defaultVC, animated: true)
     }
@@ -51,10 +63,19 @@ class WelcomeViewController: UIViewController {
         titleThreeLabel.text = "Application".localized()
         subtitleLabel.text = "Let's boost up your productivity!".localized()
         chooseLanguageLabel.text = "Choose a language".localized()
-        // Set title for button (app localization)
         englishLanguageButton.setTitle("🇺🇸   English(US)".localized(), for: .normal)
         thaiLanguageButton.setTitle("🇹🇭   Thai".localized(), for: .normal)
         continueButton.setTitle("Continue".localized(), for: .normal)
+    }
+    
+    // Function to navigate to the MainTabBarViewController
+    func navigateToMainTabBar() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarViewController
         
+        // Set the TabBarController as the root view controller
+        if let navigationController = self.navigationController {
+            navigationController.setViewControllers([tabBarController], animated: true)
+        }
     }
 }

@@ -2150,7 +2150,7 @@
                         <outlet property="addQuestButton" destination="c6z-5F-77f" id="uL5-Eh-ZV6"/>
                         <outlet property="letsMoveOnsubtitleLabel" destination="oZH-Ir-Ddk" id="646-a0-n95"/>
                         <outlet property="questsTableView" destination="aTe-DE-uWb" id="41U-CT-rhy"/>
-                        <outlet property="welcomePlayerLabel" destination="yj7-qb-iaZ" id="vOC-no-2dO"/>
+                        <outlet property="welcomePlayerLabel" destination="yj7-qb-iaZ" id="p1H-ji-duw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bvl-Nu-tqQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

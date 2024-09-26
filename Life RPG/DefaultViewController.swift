@@ -22,22 +22,32 @@ class DefaultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateLocalizationUI()
-    }
-    
-    @IBAction func getStartedButtonTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarViewController
-        
-        // Set the TabBarController as the root view controller
-        if let navigationController = self.navigationController {
-            // Replace the current view controllers with the TabBarController
-            navigationController.setViewControllers([tabBarController], animated: true)
+        // Check if the nickname is already saved
+        if let savedNickname = UserDefaults.standard.string(forKey: UserDefaultsKeys.userNickname) {
+            // Skip this screen and go to the MainTabBarController
+            navigateToMainTabBar()
+        } else {
+            // Update the UI for entering nickname
+            updateLocalizationUI()
         }
     }
     
+    @IBAction func getStartedButtonTapped(_ sender: UIButton) {
+        // Check if the nickname is entered
+        guard let nickname = nicknameTextField.text, !nickname.isEmpty else {
+            showAlert(message: "Please enter a nickname before continuing.")
+            return
+        }
+
+        // Save the nickname to UserDefaults
+        UserDefaults.standard.set(nickname, forKey: UserDefaultsKeys.userNickname)
+        
+        // Navigate to the MainTabBarController
+        navigateToMainTabBar()
+    }
+    
     @objc func updateLocalizationUI() {
-        // To access another language
+        // Update UI elements for localization
         tellUsAboutYouLabel.text = "Tell us about you!".localized()
         nicknameLabel.text = "Nickname".localized()
         nicknameTextField.placeholder = "Enter your nickname".localized()
@@ -47,5 +57,24 @@ class DefaultViewController: UIViewController {
         EXPToLevelUpLabel.text = "EXP To Level Up".localized()
         TotalEXPLabel.text = "Total EXP".localized()
         StartButton.setTitle("START LEVELING UP!".localized(), for: .normal)
+    }
+    
+    // Helper function to show an alert if nickname is empty
+    func showAlert(message: String) {
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(action)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    // Function to navigate to the MainTabBarController
+    func navigateToMainTabBar() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarViewController
+        
+        // Set the TabBarController as the root view controller
+        if let navigationController = self.navigationController {
+            navigationController.setViewControllers([tabBarController], animated: true)
+        }
     }
 }
