@@ -121,8 +121,8 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
     
     // Function to show an alert when the user passes 200 characters
     func showAlert() {
-        let alert = UIAlertController(title: "Character Limit Reached", message: "You have reached the 200-character limit for details.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        let alert = UIAlertController(title: "alert_title_character_limit".localized(), message: "alert_message_character_limit".localized(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "alert_action_ok".localized(), style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     

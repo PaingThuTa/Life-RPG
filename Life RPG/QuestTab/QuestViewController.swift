@@ -48,11 +48,11 @@ class QuestViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func checkNickname(){
         if let userNickname = UserDefaults.standard.string(forKey: UserDefaultsKeys.userNickname) {
             // Update the labels with the user's nickname
-            welcomePlayerLabel.text = "Welcome, Player \(userNickname)!"
+            welcomePlayerLabel.text = String(format: "welcome_player".localized(), userNickname)
             
         } else {
             // Fallback in case nickname is not found (you can adjust the message as needed)
-            welcomePlayerLabel.text = "Welcome, Player ..."
+            welcomePlayerLabel.text = "Welcome player,".localized()
             
         }
     }
@@ -169,7 +169,6 @@ class QuestViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @objc func updateLocalizationUI() {
         // To access another language
-        welcomePlayerLabel.text = "Welcome player,".localized()
         letsMoveOnsubtitleLabel.text = "Subtitle".localized()
         activeQuestLabel.text = "Active Quests".localized()
         addQuestButton.setTitle("+ add new quest".localized(), for: .normal)

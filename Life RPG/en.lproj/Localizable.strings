@@ -58,6 +58,8 @@
 
 "Welcome player," = "Welcome player,";
 
+"welcome_player" = "Welcome, Player %@!";
+
 "Subtitle" = "Let's move on to the next level with us.";
 
 "Active Quests" = "Active Quests";
@@ -119,6 +121,18 @@
 "Complete" = "Complete";
 
 "Quest Due:" = "Quest Due(days left):";
+
+"alert_title_character_limit" = "Character Limit Reached";  // AlertAction
+
+"alert_message_character_limit" = "You have reached the 200-character limit for details.";  // AlertAction
+
+"alert_action_ok" = "OK";  // AlertAction
+
+// QuestInfoViewController
+
+"notification_title_congratulations" = "Congratulations!";
+
+"You've reached the next level! Keep up the great work." = "You've reached the next level! Keep up the great work.";
 
 // RankViewController
 

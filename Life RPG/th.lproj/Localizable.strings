@@ -58,6 +58,8 @@
 
 "Welcome player," = "ยินดีต้อนรับผู้เล่น,";
 
+"welcome_player" = "สวัสดี ผู้เล่น %@,";
+
 "Subtitle" = "มาเลเวลอัพไปพร้อมๆกับพวกเรากันเถอะ";
 
 "Active Quests" = "ภารกิจ";
@@ -119,6 +121,18 @@
 "Complete" = "เสร็จสิ้น";
 
 "Quest Due:" = "เหลือเวลาอีก(วัน):";
+
+"alert_title_character_limit" = "จำนวนตัวอักษรเกิน";  // AlertAction
+
+"alert_message_character_limit" = "กรุณากรอกน้อยกว่า 200 ตัวอักษรสำหรับรายละเดียด";  // AlertAction
+
+"alert_action_ok" = "โอเค";  // AlertAction
+
+// QuestInfoViewController
+
+"notification_title_congratulations" = "ยินดีด้วย!";
+
+"You've reached the next level! Keep up the great work." = "คุณเลเวลอัพแล้ว ทำภารกิจต่อกันเถอะ!";
 
 // RankViewController
 
