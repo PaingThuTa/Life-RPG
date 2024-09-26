@@ -13,12 +13,9 @@ enum QuestStatus: String, Codable {
     case canceled = "Cancelled"
     
     var localized: String {
-        switch self {
-        case .Inprogress: "In progress".localized()
-        case .completed: "Completed".localized()
-        case .canceled: "Cancelled".localized()
+            return self.rawValue.localized()
         }
-    }
+    
 }
 
 struct Quest: Codable {
@@ -31,5 +28,9 @@ struct Quest: Codable {
     var dueDate: Date
     var status: QuestStatus = .Inprogress
 }
+
+
+
+
 
 
