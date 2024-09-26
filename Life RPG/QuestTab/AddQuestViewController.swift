@@ -27,13 +27,7 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var difficultyLabel: UILabel!
     
     @IBOutlet weak var doneButton: UIButton!
-<<<<<<< Updated upstream
-        
-=======
     
-    let appGroupID = "group.com.6530288.Life-RPG"
-    
->>>>>>> Stashed changes
     // Difficulty levels and corresponding EXP values
     var difficultyLevels: [String] = ["Easy", "Normal", "Hard", "Extreme", "Absurd"]
     let expValues = [100, 200, 300, 500, 1000]
@@ -81,10 +75,11 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Setup UIPickerView
         difficultyPickerView.delegate = self
         difficultyPickerView.dataSource = self
-                
+        
         // Set the default difficulty and corresponding EXP value
         difficultyPickerView.selectRow(selectedDifficultyIndex, inComponent: 0, animated: false)
         expValueLabel.text = "\(expValues[selectedDifficultyIndex])"
@@ -159,35 +154,24 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Save to Active Quests (only quests in progress)
-    
-
     func saveToActiveQuests(_ newQuest: Quest) {
         var activeQuests: [Quest] = []
         
-        // Load existing quests
-        if let sharedDefaults = UserDefaults(suiteName: appGroupID),
-           let savedData = sharedDefaults.data(forKey: UserDefaultsKeys.activeQuestsKey) {
+        // Load existing active quests
+        if let savedData = UserDefaults.standard.data(forKey: activeQuestsKey) {
             let decoder = JSONDecoder()
             if let loadedQuests = try? decoder.decode([Quest].self, from: savedData) {
                 activeQuests = loadedQuests
             }
         }
         
-        // Add the new quest
+        // Add the new quest and save back to UserDefaults
         activeQuests.append(newQuest)
-        
-        // Save back to UserDefaults
         let encoder = JSONEncoder()
         if let encodedData = try? encoder.encode(activeQuests) {
-            let sharedDefaults = UserDefaults(suiteName: appGroupID)
-            sharedDefaults?.set(encodedData, forKey: UserDefaultsKeys.activeQuestsKey)
+            UserDefaults.standard.set(encodedData, forKey: activeQuestsKey)
         }
     }
-
-
-
-
-
     
     // Save to All Quests (including completed, canceled, and in progress)
     func saveToAllQuests(_ newQuest: Quest) {
