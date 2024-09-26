@@ -13,10 +13,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        // Instantiate window and set the root view controller
+        window = UIWindow(windowScene: windowScene)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // Make sure you have a UITabBarController in your storyboard with the correct ID
+        if let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController {
+            window?.rootViewController = tabBarController
+            window?.makeKeyAndVisible()
+        } else {
+            print("Could not instantiate UITabBarController from storyboard.")
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,95 +57,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
     
-//    func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-//        print("item type: \(shortcutItem.type)")
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        var viewController: UIViewController?
-//
-//        switch shortcutItem.type {
-////        case "AddQuest":
-////            viewController = storyboard.instantiateViewController(withIdentifier: "AddQuestViewController")
-//        case "Quests":
-//            viewController = storyboard.instantiateViewController(withIdentifier: "QuestViewController")
-//        case "Rank":
-//            viewController = storyboard.instantiateViewController(withIdentifier: "RankViewController")
-//        default:
-//            completionHandler(false) // If the type is not recognized, complete with false
-//            return
-//        }
-//
-//        // Create a UINavigationController with the desired view controller
-//        let navigationController = UINavigationController(rootViewController: viewController!)
-//        
-//        // Ensure window is not nil and set the rootViewController
-//        if let window = window {
-//            window.rootViewController = navigationController
-//            window.makeKeyAndVisible()
-//            completionHandler(true) // Successful navigation
-//        } else {
-//            completionHandler(false) // Failure, window is nil
-//        }
-//    }
-    
-//    func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-//        print("item type: \(shortcutItem.type)")
-//        switch shortcutItem.type {
-//        case "AddQuest":
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let AddQuestVC = storyboard.instantiateViewController(withIdentifier: "AddQuestViewController")
-//            window?.rootViewController = AddQuestVC
-//            break
-//        case "Quests":
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let QuestsVC = storyboard.instantiateViewController(withIdentifier: "QuestViewController")
-//            window?.rootViewController = QuestsVC
-//            break
-//        case "Rank":
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let RankVC = storyboard.instantiateViewController(withIdentifier: "RankViewController")
-//            window?.rootViewController = RankVC
-//            break
-//        default:
-//            break
-//        }
-//    }
-    
-//    func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-//        print("item type: \(shortcutItem.type)")
-//        
-//        guard let tabBarController = window?.rootViewController as? UITabBarController else {
-//            completionHandler(false)
-//            return
-//        }
-//        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        
-//        switch shortcutItem.type {
-//        case "AddQuest":
-//            let AddQuestVC = storyboard.instantiateViewController(withIdentifier: "AddQuestViewController")
-//            tabBarController.selectedIndex = 0 // Adjust index to your tab's order
-//            if let navigationController = tabBarController.selectedViewController as? UINavigationController {
-//                navigationController.pushViewController(AddQuestVC, animated: true)
-//            }
-//        case "Quests":
-//            tabBarController.selectedIndex = 0 // Adjust index to your tab's order
-//            if let navigationController = tabBarController.selectedViewController as? UINavigationController {
-//                let QuestsVC = storyboard.instantiateViewController(withIdentifier: "QuestViewController")
-//                navigationController.pushViewController(QuestsVC, animated: true)
-//            }
-//        case "Rank":
-//            tabBarController.selectedIndex = 1 // Adjust index to your tab's order
-//            if let navigationController = tabBarController.selectedViewController as? UINavigationController {
-//                let RankVC = storyboard.instantiateViewController(withIdentifier: "RankViewController")
-//                navigationController.pushViewController(RankVC, animated: true)
-//            }
-//        default:
-//            completionHandler(false)
-//            return
-//        }
-//        
-//        completionHandler(true)
-//    }
     
     func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         print("item type: \(shortcutItem.type)")
@@ -146,42 +67,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)  // Instantiating the storyboard here
+
         switch shortcutItem.type {
         case "AddQuest":
             print("Navigating to AddQuestViewController")
-            tabBarController.selectedIndex = 0 // Quests tab index
+            tabBarController.selectedIndex = 0 // Quests tab
             if let navigationController = tabBarController.selectedViewController as? UINavigationController {
-                let AddQuestVC = storyboard.instantiateViewController(withIdentifier: "AddQuestViewController")
-                navigationController.pushViewController(AddQuestVC, animated: true)
-            } else {
-                print("Selected view controller is not UINavigationController")
+                // Check if AddQuestViewController is already in the navigation stack
+                if !(navigationController.topViewController is AddQuestViewController) {
+                    let addQuestVC = storyboard.instantiateViewController(withIdentifier: "AddQuestViewController") as! AddQuestViewController
+                    navigationController.pushViewController(addQuestVC, animated: true)
+                }
             }
         case "Quests":
             print("Navigating to QuestViewController")
-            tabBarController.selectedIndex = 0 // Quests tab index
-            if let navigationController = tabBarController.selectedViewController as? UINavigationController {
-                let QuestsVC = storyboard.instantiateViewController(withIdentifier: "QuestViewController")
-                navigationController.pushViewController(QuestsVC, animated: true)
-            } else {
-                print("Selected view controller is not UINavigationController")
-            }
+            tabBarController.selectedIndex = 0 // Quests tab
+            // No need to push the QuestViewController because it's already loaded with the tab
         case "Rank":
             print("Navigating to RankViewController")
-            tabBarController.selectedIndex = 1 // Rank tab index
-            if let navigationController = tabBarController.selectedViewController as? UINavigationController {
-                let RankVC = storyboard.instantiateViewController(withIdentifier: "RankViewController")
-                navigationController.pushViewController(RankVC, animated: true)
-            } else {
-                print("Selected view controller is not UINavigationController")
-            }
+            tabBarController.selectedIndex = 1 // Rank tab
+            // No need to push the RankViewController because it's already loaded with the tab
         default:
             print("Unknown item type: \(shortcutItem.type)")
             completionHandler(false)
             return
         }
-        
+
         completionHandler(true)
     }
 
