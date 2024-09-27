@@ -44,14 +44,6 @@
 			<key>UIApplicationShortcutItemType</key>
 			<string>Quests</string>
 		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeAdd</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Add Quest</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>AddQuest</string>
-		</dict>
 	</array>
 </dict>
 </plist>
