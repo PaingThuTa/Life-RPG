@@ -31,6 +31,8 @@ class RankCell: UICollectionViewCell {
         }
         
         requirementsLabel.text = "Requirements:".localized()
+        
+        rankCharacterLabel.font = UIFont(name: "Whisper-Regular", size: 22)
             
     }
     private func loadImage(from url: URL) {

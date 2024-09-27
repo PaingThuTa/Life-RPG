@@ -988,6 +988,7 @@
                         <outlet property="nicknameLabel" destination="eqJ-rX-JV6" id="Ye8-gr-9PW"/>
                         <outlet property="nicknameValueLabel" destination="5gb-T9-UwD" id="Epo-Zd-X5u"/>
                         <outlet property="notiLabel" destination="QeH-qw-Enw" id="9O3-RZ-cFI"/>
+                        <outlet property="notiToggleButton" destination="mWX-0E-J6Z" id="2qu-z7-7Jg"/>
                         <outlet property="personalInfoLabel" destination="fTd-F5-0tC" id="l1J-7R-acf"/>
                         <outlet property="settingsTitleLabel" destination="SmM-8q-wkv" id="PGO-hy-ADa"/>
                         <outlet property="thaiButton" destination="OkQ-lU-pPj" id="gXA-s7-LKK"/>
@@ -1221,14 +1222,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Ranks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="074-aA-Nd9">
-                                <rect key="frame" x="40" y="40" width="313" height="28"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hogwarts Lecturers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="074-aA-Nd9">
+                                <rect key="frame" x="40" y="40" width="313" height="26"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="26"/>
                                 <color key="textColor" red="0.97254902119999997" green="0.83529412749999998" blue="0.37647059560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IIq-Yc-8p3">
-                                <rect key="frame" x="0.0" y="88" width="393" height="754"/>
+                                <rect key="frame" x="0.0" y="86" width="393" height="756"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gss-xv-qdg">
                                     <size key="itemSize" width="189" height="384"/>

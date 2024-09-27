@@ -31,18 +31,8 @@ class AllRankViewController: UIViewController {
         updateLocalizationUI()
         
         playBackgroundMusic()
-        
-        rankTitleLabel.font = UIFont(name: "HomemadeApple-Regular", size: 30)
 
     }
-    
-//    private func customFont() {
-//        if let custom = UIFont(name: "HomemadeApple-Regular", size: 24) {
-//            rankTitleLabel.font = custom
-//        } else {
-//            rankTitleLabel.font = UIFont.systemFont(ofSize: 24)
-//        }
-//    }
     
     private func playBackgroundMusic() {
         guard let path = Bundle.main.path(forResource: "harrypotterTheme", ofType: "mp3") else {
@@ -104,6 +94,6 @@ extension AllRankViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     @objc func updateLocalizationUI() {
-        rankTitleLabel.text = "All Ranks".localized()
+        rankTitleLabel.text = "All Ranks - Hogwarts".localized()
     }
 }

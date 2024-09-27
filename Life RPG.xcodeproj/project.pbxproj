@@ -44,6 +44,7 @@
 		8B0CE1D72CA32CCB00E738A3 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CE1D62CA32CCB00E738A3 /* MainTabBarViewController.swift */; };
 		8B0CE1D92CA5EE9C00E738A3 /* HarryPotterFont.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1D82CA5EE9C00E738A3 /* HarryPotterFont.TTF */; };
 		8B0CE1DB2CA5F45C00E738A3 /* HomemadeApple-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1DA2CA5F45C00E738A3 /* HomemadeApple-Regular.ttf */; };
+		8B0CE1DF2CA6A3AB00E738A3 /* Whisper-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B0CE1DE2CA6A3AB00E738A3 /* Whisper-Regular.ttf */; };
 		E8057ABD2CA45578000082F6 /* harrypotterTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8057ABC2CA45578000082F6 /* harrypotterTheme.mp3 */; };
 		E812ABD92CA4865100380347 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E812ABD82CA4865100380347 /* WidgetKit.framework */; };
 		E812ABDB2CA4865100380347 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E812ABDA2CA4865100380347 /* SwiftUI.framework */; };
@@ -157,6 +158,7 @@
 		8B0CE1D62CA32CCB00E738A3 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		8B0CE1D82CA5EE9C00E738A3 /* HarryPotterFont.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = HarryPotterFont.TTF; sourceTree = "<group>"; };
 		8B0CE1DA2CA5F45C00E738A3 /* HomemadeApple-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HomemadeApple-Regular.ttf"; sourceTree = "<group>"; };
+		8B0CE1DE2CA6A3AB00E738A3 /* Whisper-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Whisper-Regular.ttf"; sourceTree = "<group>"; };
 		E8057ABC2CA45578000082F6 /* harrypotterTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = harrypotterTheme.mp3; sourceTree = "<group>"; };
 		E812ABD62CA4865100380347 /* QuestWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QuestWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E812ABD82CA4865100380347 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -368,8 +370,10 @@
 			children = (
 				E8A96C942CA497B60096E495 /* Life RPG.entitlements */,
 				E8057ABC2CA45578000082F6 /* harrypotterTheme.mp3 */,
-				8B0CE1DA2CA5F45C00E738A3 /* HomemadeApple-Regular.ttf */,
 				8B0CE1D82CA5EE9C00E738A3 /* HarryPotterFont.TTF */,
+				8B0CE1DE2CA6A3AB00E738A3 /* Whisper-Regular.ttf */,
+				8B0CE1DA2CA5F45C00E738A3 /* HomemadeApple-Regular.ttf */,
+				E8DA27132C7DAD4300949A4C /* Info.plist */,
 				8B0CE13C2C9C995800E738A3 /* spikes */,
 				E8DA27052C7DAD4200949A4C /* AppDelegate.swift */,
 				E8DA27072C7DAD4200949A4C /* SceneDelegate.swift */,
@@ -383,7 +387,6 @@
 				E8D3210A2C9DC55600A038F3 /* HistoryTab */,
 				E8D321092C9DC52700A038F3 /* SettingTab */,
 				E8DA270E2C7DAD4300949A4C /* Assets.xcassets */,
-				E8DA27132C7DAD4300949A4C /* Info.plist */,
 				8B0CE1CC2CA049AA00E738A3 /* Localizable.strings */,
 				8B0CE1D22CA0709400E738A3 /* StringLocalization.swift */,
 			);
@@ -550,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B0CE1682C9CA20900E738A3 /* castingSpell-9.png in Resources */,
+				8B0CE1DF2CA6A3AB00E738A3 /* Whisper-Regular.ttf in Resources */,
 				8B0CE15F2C9CA20900E738A3 /* castingSpell-0.png in Resources */,
 				8B0CE1662C9CA20900E738A3 /* castingSpell-7.png in Resources */,
 				8B0CE1B62C9D5FD200E738A3 /* Ghoul-5.png in Resources */,
