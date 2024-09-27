@@ -9,8 +9,8 @@ import Foundation
 
 struct UserDefaultsKeys {
     static let activeQuestsKey = "activeQuests"
-    static let inProgressQuestsCountKey = "inProgressQuestsCount"
     
+    static let totalExp = "totalExp"
     static let currentLevel = "currentLevel"
     static let currentExp = "currentExp"
     static let currentRank = "currentRank"

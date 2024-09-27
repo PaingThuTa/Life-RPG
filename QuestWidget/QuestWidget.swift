@@ -13,7 +13,7 @@ import Intents
 
 struct QuestEntry: TimelineEntry {
     let date: Date
-    let inProgressCount: Int
+    var inProgressCount: Int
     
 }
 
@@ -44,18 +44,17 @@ struct QuestProvider: TimelineProvider {
     }
 
 
-
-
     
     func fetchInProgressQuestsCount() -> Int {
         guard let sharedDefaults = UserDefaults(suiteName: appGroupID) else {
             print("Failed to fetch shared defaults for app group: \(appGroupID)")
             return 0
         }
-        
+
         if let savedData = sharedDefaults.data(forKey: UserDefaultsKeys.activeQuestsKey) {
             let decoder = JSONDecoder()
             if let quests = try? decoder.decode([Quest].self, from: savedData) {
+                // Correct status reference to match your QuestStatus enum
                 let inProgressCount = quests.filter { $0.status == .Inprogress }.count
                 print("Fetched in-progress quest count: \(inProgressCount)")
                 return inProgressCount
@@ -65,6 +64,9 @@ struct QuestProvider: TimelineProvider {
         }
         return 0
     }
+
+
+
 }
 
 struct QuestWidgetView: View {

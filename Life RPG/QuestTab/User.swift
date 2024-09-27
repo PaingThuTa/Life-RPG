@@ -9,6 +9,13 @@ import Foundation
 
 
 class User {
+    
+    var totalExp: Int {
+        didSet {
+            UserDefaults.standard.set(totalExp, forKey: UserDefaultsKeys.totalExp)
+            UserDefaults.standard.synchronize()
+        }
+    }
     var currentLevel: Int {
         didSet {
             UserDefaults.standard.set(currentLevel, forKey: UserDefaultsKeys.currentLevel)
@@ -33,7 +40,8 @@ class User {
         
     }
 
-    init(currentLevel: Int, currentExp: Int, currentRank: String) {
+    init(currentLevel: Int, currentExp: Int, currentRank: String, totalExp: Int) {
+        self.totalExp = UserDefaults.standard.integer(forKey: UserDefaultsKeys.totalExp)
         self.currentLevel = UserDefaults.standard.integer(forKey: UserDefaultsKeys.currentLevel)
         self.currentExp = UserDefaults.standard.integer(forKey: UserDefaultsKeys.currentExp)
         self.currentRank = UserDefaults.standard.string(forKey: UserDefaultsKeys.currentRank) ?? "E"

@@ -7,6 +7,7 @@
 
 import UIKit
 import UserNotifications
+import WidgetKit
 
 class QuestInfoViewController: UIViewController {
 
@@ -33,10 +34,12 @@ class QuestInfoViewController: UIViewController {
     var user: User? = {
         let currentLevel = UserDefaults.standard.integer(forKey: UserDefaultsKeys.currentLevel)
         let currentExp = UserDefaults.standard.integer(forKey: UserDefaultsKeys.currentExp)
+        let totalExp = UserDefaults.standard.integer(forKey: UserDefaultsKeys.totalExp)
         let currentRank = UserDefaults.standard.string(forKey: UserDefaultsKeys.currentRank) ?? "F"
-        return User(currentLevel: currentLevel, currentExp: currentExp, currentRank: currentRank)
+        return User(currentLevel: currentLevel, currentExp: currentExp, currentRank: currentRank, totalExp: totalExp)
     }()
     var updateQuestCompletion: ((Quest) -> Void)?
+    let appGroupID = "group.com.6530288.Life-RPG"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +97,37 @@ class QuestInfoViewController: UIViewController {
             }
         }
     }
+    
+    func updateQuestStatus(quest: Quest, newStatus: QuestStatus) {
+        var updatedQuests = loadQuests() // Load existing quests
+        if let index = updatedQuests.firstIndex(where: { $0.id == quest.id }) {
+            updatedQuests[index].status = newStatus // Update the status
+        }
+        saveQuests(updatedQuests) // Save the updated list back to UserDefaults
+        WidgetCenter.shared.reloadAllTimelines() // Refresh the widget
+    }
+
+    func loadQuests() -> [Quest] {
+        guard let sharedDefaults = UserDefaults(suiteName: appGroupID),
+              let savedData = sharedDefaults.data(forKey: UserDefaultsKeys.activeQuestsKey),
+              let quests = try? JSONDecoder().decode([Quest].self, from: savedData) else {
+            return []
+        }
+        return quests
+    }
+
+    func saveQuests(_ quests: [Quest]) {
+        guard let sharedDefaults = UserDefaults(suiteName: appGroupID) else {
+            print("Failed to fetch shared defaults for app group.")
+            return
+        }
+        if let encodedData = try? JSONEncoder().encode(quests) {
+            sharedDefaults.set(encodedData, forKey: UserDefaultsKeys.activeQuestsKey)
+        }
+    }
+
+    
+    
 
     @IBAction func completeButtontapped(_ sender: UIButton) {
         guard var quest = quest else {
@@ -108,6 +142,11 @@ class QuestInfoViewController: UIViewController {
 
         // Update quest status to completed
         quest.status = .completed
+        
+        updateQuestStatus(quest: quest, newStatus: .completed)
+        WidgetCenter.shared.reloadAllTimelines() // Add this line
+            
+        print("Quest completed, widget should update.")
         
         // Add EXP to user
         let previousLevel = user.currentLevel
@@ -124,14 +163,18 @@ class QuestInfoViewController: UIViewController {
         // Save the updated user EXP to persistent storage
         UserDefaults.standard.set(user.currentExp, forKey: UserDefaultsKeys.currentExp)
         
-        // Update UI or perform any other necessary updates
-        updateQuestCompletion?(quest)
+        // Save the total EXP to UserDefaults (new implementation)
+        let currentTotalExp = UserDefaults.standard.integer(forKey: UserDefaultsKeys.totalExp) // Retrieve current total EXP
+        let newTotalExp = currentTotalExp + quest.expValue // Add quest's EXP to total EXP
+        UserDefaults.standard.set(newTotalExp, forKey: UserDefaultsKeys.totalExp) // Save the updated total EXP
+
+        print("Quest completed, user gained \(quest.expValue) EXP. Total EXP: \(newTotalExp)")
         
-        print("Quest completed, user gained \(quest.expValue) EXP. Total EXP: \(user.currentExp)")
         DispatchQueue.main.async {
             // Update UI or perform any other necessary updates
             self.updateUI()
             self.updateQuestCompletion?(quest)
+            
             
             // Go back or update the UI after completing the quest
             self.navigationController?.popViewController(animated: true)
@@ -140,15 +183,21 @@ class QuestInfoViewController: UIViewController {
 
 
 
-
-
-
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        
-        quest?.status = .canceled
-        if let updatedQuest = quest {
-            updateQuestCompletion?(updatedQuest)
+        guard var quest = quest else {
+            print("Error: Quest object is nil")
+            return
         }
+        
+        quest.status = .canceled
+        updateQuestCompletion?(quest)
+        
+        
+    
+        updateQuestStatus(quest: quest, newStatus: .canceled)
+        WidgetCenter.shared.reloadAllTimelines() // Add this line
+            
+        print("Quest completed, widget should update.")
         navigationController?.popViewController(animated: true)
     }
     

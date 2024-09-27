@@ -47,7 +47,8 @@ class RankViewController: UIViewController {
         let level = UserDefaults.standard.integer(forKey: UserDefaultsKeys.currentLevel)
         let exp = UserDefaults.standard.integer(forKey: UserDefaultsKeys.currentExp)
         let rank = UserDefaults.standard.string(forKey: UserDefaultsKeys.currentRank) ?? "E"
-        user = User(currentLevel: level, currentExp: exp, currentRank: rank)
+        let totalExp = UserDefaults.standard.integer(forKey: UserDefaultsKeys.totalExp)
+        user = User(currentLevel: level, currentExp: exp, currentRank: rank, totalExp: totalExp)
     }
         
     private func updateUI() {
@@ -56,7 +57,7 @@ class RankViewController: UIViewController {
             currentLevelLabel.text = "\(user.currentLevel)"
             let expNeeded = user.expToNextLevel()
             EXPToLevelUpLabel.text = "\(user.currentExp)/\(expNeeded)"
-            TotalExpLabel.text = "\(user.currentExp)"
+            TotalExpLabel.text = "\(user.totalExp)"
         } else {
             // Handle the case where user is nil
             print("Error: User object is nil")

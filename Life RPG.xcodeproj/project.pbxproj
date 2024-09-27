@@ -54,7 +54,6 @@
 		E812ABE42CA4865100380347 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812ABE32CA4865100380347 /* AppIntent.swift */; };
 		E812ABE62CA4865200380347 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E812ABE52CA4865200380347 /* Assets.xcassets */; };
 		E812ABEA2CA4865200380347 /* QuestWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E812ABD62CA4865100380347 /* QuestWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		E84947892CA354FD0074D9E3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E84947882CA354FD0074D9E3 /* Alamofire */; };
 		E849478B2CA357A00074D9E3 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849478A2CA357A00074D9E3 /* UserDefaultsKeys.swift */; };
 		E849478D2CA357CB0074D9E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849478C2CA357CB0074D9E3 /* User.swift */; };
 		E8A96C912CA48A160096E495 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F7AF9F2C89AAE0008AD97C /* Quest.swift */; };
@@ -76,6 +75,7 @@
 		E8DA271D2C7DAD4300949A4C /* Life_RPGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DA271C2C7DAD4300949A4C /* Life_RPGTests.swift */; };
 		E8DA27272C7DAD4300949A4C /* Life_RPGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DA27262C7DAD4300949A4C /* Life_RPGUITests.swift */; };
 		E8DA27292C7DAD4300949A4C /* Life_RPGUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DA27282C7DAD4300949A4C /* Life_RPGUITestsLaunchTests.swift */; };
+		E8DF95D02CA6E78F00595B2C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E8DF95CF2CA6E78F00595B2C /* Alamofire */; };
 		E8F7AFA02C89AAE0008AD97C /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F7AF9F2C89AAE0008AD97C /* Quest.swift */; };
 		E8F7AFA22C89AAFE008AD97C /* QuestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F7AFA12C89AAFE008AD97C /* QuestCell.swift */; };
 /* End PBXBuildFile section */
@@ -208,7 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E84947892CA354FD0074D9E3 /* Alamofire in Frameworks */,
+				E8DF95D02CA6E78F00595B2C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +446,7 @@
 			);
 			name = "Life RPG";
 			packageProductDependencies = (
-				E84947882CA354FD0074D9E3 /* Alamofire */,
+				E8DF95CF2CA6E78F00595B2C /* Alamofire */,
 			);
 			productName = "Life RPG";
 			productReference = E8DA27022C7DAD4200949A4C /* Life RPG.app */;
@@ -525,7 +525,7 @@
 			);
 			mainGroup = E8DA26F92C7DAD4200949A4C;
 			packageReferences = (
-				E84947872CA354FD0074D9E3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E8DF95CE2CA6E78F00595B2C /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = E8DA27032C7DAD4200949A4C /* Products */;
 			projectDirPath = "";
@@ -1096,7 +1096,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E84947872CA354FD0074D9E3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		E8DF95CE2CA6E78F00595B2C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -1107,9 +1107,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E84947882CA354FD0074D9E3 /* Alamofire */ = {
+		E8DF95CF2CA6E78F00595B2C /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E84947872CA354FD0074D9E3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = E8DF95CE2CA6E78F00595B2C /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
