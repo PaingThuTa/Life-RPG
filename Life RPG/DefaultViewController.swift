@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DefaultViewController: UIViewController {
+class DefaultViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var tellUsAboutYouLabel: UILabel!
     @IBOutlet weak var nicknameLabel: UILabel!
@@ -30,6 +30,17 @@ class DefaultViewController: UIViewController {
             // Update the UI for entering nickname
             updateLocalizationUI()
         }
+        
+        nicknameTextField.delegate = self
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
+        
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @IBAction func getStartedButtonTapped(_ sender: UIButton) {
