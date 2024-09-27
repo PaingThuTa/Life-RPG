@@ -15,8 +15,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var notiLabel: UILabel!
     @IBOutlet weak var enableNotiLabel: UILabel!
-    @IBOutlet weak var musicLabel: UILabel!
-    @IBOutlet weak var backgroundMusicLabel: UILabel!
+    @IBOutlet weak var notiToggleButton: UISwitch!
+//    @IBOutlet weak var musicLabel: UILabel!
+//    @IBOutlet weak var backgroundMusicLabel: UILabel!
     @IBOutlet weak var changeLanguageLabel: UILabel!
     @IBOutlet weak var englishButton: UIButton!
     @IBOutlet weak var thaiButton: UIButton!
@@ -39,6 +40,8 @@ class SettingsViewController: UIViewController {
         
         // Update UI with localized text
         updateLocalizationUI()
+        
+        notiToggleButton.isEnabled = false
     }
     @objc func nicknameValueLabelTapped() {
         // Create an alert controller with a text field for entering a new nickname
