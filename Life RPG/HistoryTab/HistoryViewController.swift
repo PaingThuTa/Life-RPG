@@ -137,15 +137,15 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Set difficulty color based on the quest's difficulty
         switch quest.difficulty {
         case "Easy".localized():
-                cell.difficultyLabel.textColor = UIColor.systemGreen
+                cell.difficultyLabel.textColor = UIColor.black
         case "Normal".localized():
-                cell.difficultyLabel.textColor = UIColor.systemBlue
+                cell.difficultyLabel.textColor = UIColor.black
         case "Hard".localized():
-                cell.difficultyLabel.textColor = UIColor.systemOrange
+                cell.difficultyLabel.textColor = UIColor.black
         case "Extreme".localized():
-                cell.difficultyLabel.textColor = UIColor.systemRed
+                cell.difficultyLabel.textColor = UIColor.black
         case "Absurd".localized():
-                cell.difficultyLabel.textColor = UIColor.systemPurple
+                cell.difficultyLabel.textColor = UIColor.black
             default:
                 cell.difficultyLabel.textColor = UIColor.black // Default color
         }
