@@ -88,6 +88,7 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
         expValueLabel.text = "\(expValues[selectedDifficultyIndex])"
         
         datePicker.calendar = Calendar(identifier: .gregorian)
+        datePicker.minimumDate = Date()
         
         setupRepeatButtonMenu()
         detailsTextField.delegate = self

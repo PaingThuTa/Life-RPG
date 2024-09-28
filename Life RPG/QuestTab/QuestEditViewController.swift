@@ -82,6 +82,7 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
             
             // Set the date picker to the quest's due date
             datePicker.date = quest.dueDate
+            datePicker.minimumDate = Date()
             
             // Set the difficulty picker and EXP value
             if let index = difficultyLevels.firstIndex(of: quest.difficulty) {
