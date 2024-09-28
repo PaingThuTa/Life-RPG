@@ -120,6 +120,28 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
             return true
         }
     
+    func validateFields() -> Bool {
+        var isValid = true
+        
+        if let titleText = titleTextField.text, titleText.isEmpty {
+            titleTextField.layer.borderColor = UIColor.red.cgColor
+            titleTextField.layer.borderWidth = 1.0
+            isValid = false
+        } else {
+            titleTextField.layer.borderColor = UIColor.clear.cgColor
+        }
+        
+        if let detailsText = detailsTextField.text, detailsText.isEmpty {
+            detailsTextField.layer.borderColor = UIColor.red.cgColor
+            detailsTextField.layer.borderWidth = 1.0
+            isValid = false
+        } else {
+            detailsTextField.layer.borderColor = UIColor.clear.cgColor
+        }
+        
+        return isValid
+    }
+    
     // Function to show an alert when the user passes 200 characters
     func showAlert() {
         let alert = UIAlertController(title: "alert_title_character_limit".localized(), message: "alert_message_character_limit".localized(), preferredStyle: .alert)
@@ -129,20 +151,18 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
     
     // Action for Done button
     @IBAction func doneButtonTapped(_ sender: UIButton) {
-        guard let title = titleTextField.text, !title.isEmpty,
-              let details = detailsTextField.text, !details.isEmpty else {
-            // Show error if fields are empty
-            return
+        guard validateFields() else {
+            return // Stop further execution if validation fails
         }
-        
+
         // Get the selected date from the date picker
         let selectedDate = datePicker.date
         
         // Create a new quest with the selected date
         let quest = Quest(
             id: UUID(),
-            title: title,
-            details: details,
+            title: titleTextField.text!,
+            details: detailsTextField.text!,
             repeats: selectedRepeatOption.description,
             expValue: expValues[selectedDifficultyIndex],
             difficulty: difficultyLevels[selectedDifficultyIndex],
@@ -150,10 +170,8 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
             status: .Inprogress  // All new quests are "In Progress" by default
         )
         
-        // Save the new quest to active quests
+        // Save the new quest to active quests and all quests
         saveToActiveQuests(quest)
-        
-        // Save the new quest to all quests
         saveToAllQuests(quest)
         
         // Pass the quest back using the closure
@@ -164,7 +182,6 @@ class AddQuestViewController: UIViewController, UITextFieldDelegate {
         // Dismiss the view or go back to the previous screen
         navigationController?.popViewController(animated: true)
     }
-    
     // Save to Active Quests (only quests in progress)
     func saveToActiveQuests(_ newQuest: Quest) {
         var activeQuests: [Quest] = []

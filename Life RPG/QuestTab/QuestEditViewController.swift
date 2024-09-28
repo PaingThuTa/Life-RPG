@@ -173,13 +173,40 @@ class QuestEditViewController: UIViewController, UITextFieldDelegate {
         repeatPopupButton.showsMenuAsPrimaryAction = true
         repeatPopupButton.changesSelectionAsPrimaryAction = true
     }
+    
+    func validateFields() -> Bool {
+        var isValid = true
+        
+        if let titleText = titleTextField.text, titleText.isEmpty {
+            titleTextField.layer.borderColor = UIColor.red.cgColor
+            titleTextField.layer.borderWidth = 1.0
+            isValid = false
+        } else {
+            titleTextField.layer.borderColor = UIColor.clear.cgColor
+        }
+        
+        if let detailsText = detailsTextField.text, detailsText.isEmpty {
+            detailsTextField.layer.borderColor = UIColor.red.cgColor
+            detailsTextField.layer.borderWidth = 1.0
+            isValid = false
+        } else {
+            detailsTextField.layer.borderColor = UIColor.clear.cgColor
+        }
+        
+        return isValid
+    }
 
     // Action for the Done button
     @IBAction func doneButtonTapped(_ sender: UIButton) {
+        
+        guard validateFields() else {
+            return // Stop further execution if validation fails
+        }
         // Ensure the title and details are not empty
         guard let title = titleTextField.text, !title.isEmpty,
               let details = detailsTextField.text, !details.isEmpty else {
             return // Handle empty fields (show an error if needed)
+            
         }
 
         // Capture the updated quest details
