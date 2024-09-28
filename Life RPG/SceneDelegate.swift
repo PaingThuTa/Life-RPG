@@ -77,16 +77,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)  // Instantiating the storyboard here
 
         switch shortcutItem.type {
-        case "AddQuest":
-            print("Navigating to AddQuestViewController")
-            tabBarController.selectedIndex = 0 // Quests tab
-            if let navigationController = tabBarController.selectedViewController as? UINavigationController {
-                // Check if AddQuestViewController is already in the navigation stack
-                if !(navigationController.topViewController is AddQuestViewController) {
-                    let addQuestVC = storyboard.instantiateViewController(withIdentifier: "AddQuestViewController") as! AddQuestViewController
-                    navigationController.pushViewController(addQuestVC, animated: true)
-                }
-            }
+//        case "AddQuest":
+//            print("Navigating to AddQuestViewController")
+//            tabBarController.selectedIndex = 0 // Quests tab
+//            if let navigationController = tabBarController.selectedViewController as? UINavigationController {
+//                // Check if AddQuestViewController is already in the navigation stack
+//                if !(navigationController.topViewController is AddQuestViewController) {
+//                    let addQuestVC = storyboard.instantiateViewController(withIdentifier: "AddQuestViewController") as! AddQuestViewController
+//                    navigationController.pushViewController(addQuestVC, animated: true)
+//                }
+//            }
         case "Quests":
             print("Navigating to QuestViewController")
             tabBarController.selectedIndex = 0 // Quests tab
