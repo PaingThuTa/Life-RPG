@@ -43,15 +43,15 @@ class QuestCell: UITableViewCell {
     private func setDifficultyColor(for difficulty: String) {
         switch difficulty {
         case "Easy".localized():
-            difficultyLabel.textColor = .green
+            difficultyLabel.textColor = .black
         case "Normal".localized():
-            difficultyLabel.textColor = .blue
+            difficultyLabel.textColor = .black
         case "Hard".localized():
-            difficultyLabel.textColor = .purple
+            difficultyLabel.textColor = .black
         case "Extreme".localized():
-            difficultyLabel.textColor = .red
+            difficultyLabel.textColor = .black
         case "Absurd".localized():
-            difficultyLabel.textColor = .brown
+            difficultyLabel.textColor = .black
         default:
             difficultyLabel.textColor = .black
         }
